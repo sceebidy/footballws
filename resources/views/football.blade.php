@@ -11,37 +11,81 @@
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
         }
+        h1 {
+            color: #5bc0be;
+            text-shadow: 0 0 12px rgba(91,192,190,0.6);
+        }
         .club-card {
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.15);
             border-radius: 16px;
-            padding: 15px;
-            transition: 0.3s;
+            padding: 18px;
+            transition: 0.35s ease;
             height: 100%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         .club-card:hover {
             transform: translateY(-6px);
             background: rgba(255,255,255,0.12);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.5);
         }
         h3 {
             color: #5bc0be;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             margin-bottom: 8px;
         }
         .desc {
             color: #ddd;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             overflow: hidden;
             text-overflow: ellipsis;
             max-height: 70px;
         }
         .search-bar {
-            max-width: 450px;
-            margin: 20px auto;
+            max-width: 480px;
+            margin: 25px auto;
         }
         .controls {
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #5bc0be;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #4ba3a1;
+            transform: scale(1.05);
+        }
+        .btn-outline-info {
+            color: #5bc0be;
+            border-color: #5bc0be;
+        }
+        .btn-outline-info.active {
+            background-color: #5bc0be;
+            color: #fff;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            color: #5bc0be;
+            text-shadow: 0 0 8px rgba(91,192,190,0.6);
+        }
+        mark {
+            background: #5bc0be;
+            color: #000;
+            border-radius: 3px;
+            padding: 0 2px;
+        }
+        footer {
+            font-size: 0.85rem;
+            opacity: 0.75;
         }
     </style>
 </head>
@@ -54,9 +98,15 @@
             <button class="btn btn-primary">Search</button>
         </form>
 
-        <div class="controls">
-            <a href="?sort=name" class="btn btn-outline-info btn-sm {{ $sort=='name'?'active':'' }}">Sort by Name</a>
-            <a href="?sort=year" class="btn btn-outline-info btn-sm {{ $sort=='year'?'active':'' }}">Sort by Year</a>
+        @if(!empty($search))
+            <div class="text-center">
+                <a href="{{ url('/football') }}" class="back-btn">← Back to all clubs</a>
+            </div>
+        @endif
+
+        <div class="controls mt-3">
+            <a href="?sort=name{{ $search ? '&q='.urlencode($search) : '' }}" class="btn btn-outline-info btn-sm {{ $sort=='name'?'active':'' }}">Sort by Name</a>
+            <a href="?sort=year{{ $search ? '&q='.urlencode($search) : '' }}" class="btn btn-outline-info btn-sm {{ $sort=='year'?'active':'' }}">Sort by Year</a>
         </div>
 
         @isset($error)
@@ -65,9 +115,16 @@
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @forelse($results as $r)
+                @php
+                    $teamName = $r['team']['value'];
+                    if (!empty($search)) {
+                        $pattern = '/' . preg_quote($search, '/') . '/i';
+                        $teamName = preg_replace($pattern, '<mark>$0</mark>', $teamName);
+                    }
+                @endphp
                 <div class="col">
-                    <div class="club-card">
-                        <h3>{{ $r['team']['value'] }}</h3>
+                    <div class="club-card h-100">
+                        <h3>{!! $teamName !!}</h3>
                         <p><strong>🏟️ Stadium:</strong> {{ $r['stadium']['value'] }}</p>
                         <p><strong>🌍 Country:</strong> {{ $r['country']['value'] }}</p>
                         <p><strong>👔 Manager:</strong> {{ $r['manager']['value'] }}</p>
@@ -80,7 +137,7 @@
             @endforelse
         </div>
 
-        <footer class="text-center mt-4 mb-3 text-secondary">
+        <footer class="text-center mt-5 mb-3 text-secondary">
             Data source: RDF via Fuseki | Displayed with Laravel
         </footer>
     </div>

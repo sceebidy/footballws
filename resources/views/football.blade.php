@@ -124,7 +124,12 @@
                 @endphp
                 <div class="col">
                     <div class="club-card h-100">
-                        <h3>{!! $teamName !!}</h3>
+                       <h3>
+    <a href="{{ route('football.show', basename($r['club']['value'])) }}" 
+       class="text-decoration-none text-info">
+       {!! $teamName !!}
+    </a>
+</h3>
                         <p><strong>🏟️ Stadium:</strong> {{ $r['stadium']['value'] }}</p>
                         <p><strong>🌍 Country:</strong> {{ $r['country']['value'] }}</p>
                         <p><strong>👔 Manager:</strong> {{ $r['manager']['value'] }}</p>

@@ -20,261 +20,34 @@
             color: #fff;
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
         }
-
-        /* Animated background particles */
-        body::before {
-            content: '';
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(91, 192, 190, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(120, 111, 255, 0.05) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
-            z-index: 0;
+        h1 {
+            color: #5bc0be;
+            text-shadow: 0 0 12px rgba(91,192,190,0.6);
         }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            33% { transform: translate(30px, -30px); }
-            66% { transform: translate(-20px, 20px); }
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Header Styles */
-        .header-section {
-            text-align: center;
-            padding: 40px 20px 20px;
-            position: relative;
-        }
-
-        .main-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, #5bc0be 0%, #6fffe9 50%, #5bc0be 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-            animation: slideDown 0.8s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .subtitle {
-            color: #a0a0a0;
-            font-size: 1rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            animation: fadeIn 1s ease-out 0.3s both;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Search Bar */
-        .search-section {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            animation: fadeIn 1s ease-out 0.5s both;
-        }
-
-        .search-wrapper {
-            position: relative;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            padding: 8px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .search-wrapper:hover {
-            border-color: rgba(91, 192, 190, 0.4);
-            box-shadow: 0 8px 32px rgba(91, 192, 190, 0.2);
-        }
-
-        .search-wrapper:focus-within {
-            border-color: rgba(91, 192, 190, 0.6);
-            box-shadow: 0 8px 32px rgba(91, 192, 190, 0.3);
-        }
-
-        .search-input {
-            background: transparent;
-            border: none;
-            color: #fff;
-            padding: 12px 24px;
-            font-size: 1rem;
-            width: calc(100% - 120px);
-            outline: none;
-        }
-
-        .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        .search-btn {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(135deg, #5bc0be 0%, #3a9d9a 100%);
-            border: none;
-            border-radius: 50px;
-            padding: 10px 28px;
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .search-btn:hover {
-            background: linear-gradient(135deg, #6fffe9 0%, #5bc0be 100%);
-            transform: translateY(-50%) scale(1.05);
-            box-shadow: 0 5px 20px rgba(91, 192, 190, 0.4);
-        }
-
-        /* Controls */
-        .controls {
-            text-align: center;
-            margin-bottom: 30px;
-            animation: fadeIn 1s ease-out 0.7s both;
-        }
-
-        .sort-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 10px 24px;
-            color: #fff;
-            font-size: 0.9rem;
-            margin: 5px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .sort-btn:hover {
-            background: rgba(91, 192, 190, 0.2);
-            border-color: rgba(91, 192, 190, 0.4);
-            color: #6fffe9;
-            transform: translateY(-2px);
-        }
-
-        .sort-btn.active {
-            background: linear-gradient(135deg, #5bc0be 0%, #3a9d9a 100%);
-            border-color: #5bc0be;
-            color: #fff;
-        }
-
-        /* Club Cards */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-            padding: 20px 0;
-            animation: fadeIn 1s ease-out 0.9s both;
-        }
-
         .club-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 25px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .club-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 18px;
+            transition: 0.35s ease;
             height: 100%;
-            background: linear-gradient(135deg, rgba(91, 192, 190, 0.1) 0%, rgba(111, 255, 233, 0.05) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
         .club-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(91, 192, 190, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(91, 192, 190, 0.2);
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.12);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.5);
         }
-
-        .club-card:hover::before {
-            opacity: 1;
-        }
-
-        .club-name {
-            color: #6fffe9;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .club-info {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-            position: relative;
-            z-index: 1;
-        }
-
-        .info-icon {
+        h3 {
+            color: #5bc0be;
             font-size: 1.2rem;
-            margin-right: 10px;
-            min-width: 25px;
+            margin-bottom: 8px;
         }
-
-        .info-label {
-            color: #a0a0a0;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-right: 8px;
-        }
-
-        .info-value {
-            color: #e0e0e0;
+        .desc {
+            color: #ddd;
             font-size: 0.9rem;
-            flex: 1;
-        }
-
-        .club-desc {
-            color: #b0b0b0;
-            font-size: 0.85rem;
-            line-height: 1.6;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            max-height: 80px;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -283,29 +56,9 @@
             position: relative;
             z-index: 1;
         }
-
-        /* Alert */
-        .alert-custom {
-            background: rgba(255, 107, 107, 0.1);
-            border: 1px solid rgba(255, 107, 107, 0.3);
-            border-radius: 15px;
-            padding: 15px 25px;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #ff6b6b;
-            animation: shake 0.5s ease-in-out;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            75% { transform: translateX(10px); }
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 80px 20px;
-            color: #6a6a6a;
+        .search-bar {
+            max-width: 480px;
+            margin: 25px auto;
         }
 
         .empty-state-icon {
@@ -317,41 +70,45 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 40px 20px;
-            color: #5a5a5a;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 60px;
+            margin-bottom: 20px;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .main-title {
-                font-size: 2rem;
-            }
-
-            .search-input {
-                width: calc(100% - 100px);
-            }
+        .btn-primary {
+            background-color: #5bc0be;
+            border: none;
+            transition: 0.3s;
         }
-
-        /* Loading animation */
-        .loading {
+        .btn-primary:hover {
+            background-color: #4ba3a1;
+            transform: scale(1.05);
+        }
+        .btn-outline-info {
+            color: #5bc0be;
+            border-color: #5bc0be;
+        }
+        .btn-outline-info.active {
+            background-color: #5bc0be;
+            color: #fff;
+        }
+        .back-btn {
             display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: #5bc0be;
-            animation: spin 0.8s linear infinite;
+            margin-top: 10px;
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
         }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .back-btn:hover {
+            color: #5bc0be;
+            text-shadow: 0 0 8px rgba(91,192,190,0.6);
+        }
+        mark {
+            background: #5bc0be;
+            color: #000;
+            border-radius: 3px;
+            padding: 0 2px;
+        }
+        footer {
+            font-size: 0.85rem;
+            opacity: 0.75;
         }
     </style>
 </head>
@@ -373,10 +130,15 @@
             </form>
         </div>
 
-        <!-- Controls -->
-        <div class="controls">
-            <a href="?sort=name" class="sort-btn {{ $sort=='name'?'active':'' }}">📝 Sort by Name</a>
-            <a href="?sort=year" class="sort-btn {{ $sort=='year'?'active':'' }}">📅 Sort by Year</a>
+        @if(!empty($search))
+            <div class="text-center">
+                <a href="{{ url('/football') }}" class="back-btn">← Back to all clubs</a>
+            </div>
+        @endif
+
+        <div class="controls mt-3">
+            <a href="?sort=name{{ $search ? '&q='.urlencode($search) : '' }}" class="btn btn-outline-info btn-sm {{ $sort=='name'?'active':'' }}">Sort by Name</a>
+            <a href="?sort=year{{ $search ? '&q='.urlencode($search) : '' }}" class="btn btn-outline-info btn-sm {{ $sort=='year'?'active':'' }}">Sort by Year</a>
         </div>
 
         <!-- Error Alert -->
@@ -389,39 +151,26 @@
         <!-- Club Cards Grid -->
         <div class="cards-grid">
             @forelse($results as $r)
-                <div class="club-card">
-                    <h3 class="club-name">{{ $r['team']['value'] }}</h3>
-                    
-                    <div class="club-info">
-                        <span class="info-icon">🏟️</span>
-                        <div>
-                            <span class="info-label">Stadium:</span>
-                            <span class="info-value">{{ $r['stadium']['value'] }}</span>
-                        </div>
-                    </div>
-
-                    <div class="club-info">
-                        <span class="info-icon">🌍</span>
-                        <div>
-                            <span class="info-label">Country:</span>
-                            <span class="info-value">{{ $r['country']['value'] }}</span>
-                        </div>
-                    </div>
-
-                    <div class="club-info">
-                        <span class="info-icon">👔</span>
-                        <div>
-                            <span class="info-label">Manager:</span>
-                            <span class="info-value">{{ $r['manager']['value'] }}</span>
-                        </div>
-                    </div>
-
-                    <div class="club-info">
-                        <span class="info-icon">📅</span>
-                        <div>
-                            <span class="info-label">Founded:</span>
-                            <span class="info-value">{{ $r['year']['value'] }}</span>
-                        </div>
+                @php
+                    $teamName = $r['team']['value'];
+                    if (!empty($search)) {
+                        $pattern = '/' . preg_quote($search, '/') . '/i';
+                        $teamName = preg_replace($pattern, '<mark>$0</mark>', $teamName);
+                    }
+                @endphp
+                <div class="col">
+                    <div class="club-card h-100">
+                       <h3>
+    <a href="{{ route('football.show', basename($r['club']['value'])) }}" 
+       class="text-decoration-none text-info">
+       {!! $teamName !!}
+    </a>
+</h3>
+                        <p><strong>🏟️ Stadium:</strong> {{ $r['stadium']['value'] }}</p>
+                        <p><strong>🌍 Country:</strong> {{ $r['country']['value'] }}</p>
+                        <p><strong>👔 Manager:</strong> {{ $r['manager']['value'] }}</p>
+                        <p><strong>📅 Founded:</strong> {{ $r['year']['value'] }}</p>
+                        <p class="desc">{{ $r['desc']['value'] }}</p>
                     </div>
 
                     <div class="club-desc">{{ $r['desc']['value'] }}</div>
@@ -435,10 +184,8 @@
             @endforelse
         </div>
 
-        <!-- Footer -->
-        <footer>
-            <p>🔗 Data source: <strong>RDF via Apache Jena Fuseki</strong></p>
-            <p>Built with Laravel & Semantic Web Technologies</p>
+        <footer class="text-center mt-4 mb-3 text-secondary">
+            Data source: RDF via Fuseki | Displayed with Laravel
         </footer>
     </div>
 

@@ -10,10 +10,10 @@ class FootballController extends Controller
     public function index(Request $request)
     {
         $sparqlEndpoint = 'http://localhost:3030/football/query';
-        $search = strtolower(trim($request->query('q', '')));
-        $sort = $request->query('sort', 'name');
 
-        // 🧠 Normalisasi karakter agar typo seperti madr1d -> madrid
+        $search = strtolower(trim($request->query('q', '')));
+
+        // NORMALISASI TYPO
         $replacements = [
             '0' => 'o',
             '1' => 'i',
@@ -27,27 +27,29 @@ class FootballController extends Controller
         ];
         $search = strtr($search, $replacements);
 
-        // 🔍 Filter mirip LIKE '%keyword%'
+        // FILTER
         $filter = '';
         if ($search) {
-            $safeSearch = preg_quote($search, '/');
-            $filter = "FILTER(REGEX(LCASE(?team), '.*{$safeSearch}.*'))";
+            $safe = preg_quote($search, '/');
+            $filter = "FILTER (REGEX(LCASE(?team), '.*{$safe}.*'))";
         }
 
-        // 🧠 Query ke Fuseki
+        // SPARQL UNTUK SCHEMA.ORG
         $query = "
-            PREFIX foot: <http://example.org/football#>
-            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-            SELECT ?club ?team ?country ?stadium ?manager ?year ?desc
+            PREFIX schema: <http://schema.org/>
+
+            SELECT ?club ?team ?alt ?country ?location ?stadium ?coach ?owner ?logo
             WHERE {
-                ?club a foot:Club ;
-                      foaf:name ?team ;
-                      foot:country ?country ;
-                      foot:stadium ?stadium ;
-                      foot:manager ?manager ;
-                      foot:formedYear ?year ;
-                      foot:description ?desc .
-                {$filter}
+                ?club a schema:SportsTeam ;
+                      schema:name ?team ;
+                      schema:alternateName ?alt ;
+                      schema:addressCountry ?country ;
+                      schema:homeLocation ?location ;
+                      schema:homeStadium ?stadium ;
+                      schema:coach ?coach ;
+                      schema:owner ?owner ;
+                      schema:logo ?logo .
+                $filter
             }
             LIMIT 300
         ";
@@ -62,81 +64,37 @@ class FootballController extends Controller
             $data = json_decode($response->getBody(), true);
             $results = $data['results']['bindings'] ?? [];
 
-            // 🧹 Hapus duplikat klub berdasarkan nama
-            $uniqueResults = [];
-            foreach ($results as $r) {
-                $teamName = strtolower($r['team']['value']);
-                if (!isset($uniqueResults[$teamName])) {
-                    $uniqueResults[$teamName] = $r;
-                }
-            }
-            $results = array_values($uniqueResults);
-
-            // ✨ Fuzzy filtering di sisi PHP
-            if ($search) {
-                $results = array_filter($results, function ($item) use ($search) {
-                    $team = strtolower($item['team']['value']);
-                    $distance = levenshtein($search, $team);
-                    $similarity = 0;
-                    similar_text($search, $team, $similarity);
-                    return str_contains($team, $search) || $distance <= 3 || $similarity >= 70;
-                });
-
-                // Urutkan berdasarkan kemiripan
-                usort($results, function ($a, $b) use ($search) {
-                    $teamA = strtolower($a['team']['value']);
-                    $teamB = strtolower($b['team']['value']);
-                    similar_text($search, $teamA, $simA);
-                    similar_text($search, $teamB, $simB);
-                    return $simB <=> $simA;
-                });
-            } else {
-                // Urutkan default
-                usort($results, function ($a, $b) use ($sort) {
-                    switch ($sort) {
-                        case 'year':
-                            return ($a['year']['value'] ?? 0) <=> ($b['year']['value'] ?? 0);
-                        default:
-                            return strcmp($a['team']['value'], $b['team']['value']);
-                    }
-                });
-            }
-
         } catch (\Exception $e) {
-            $results = [];
-            $error = $e->getMessage();
-            return view('football', compact('results', 'search', 'sort', 'error'));
+            return view('football', [
+                'results' => [],
+                'search' => $search,
+                'error' => $e->getMessage(),
+            ]);
         }
 
-        return view('football', compact('results', 'search', 'sort'));
+        return view('football', compact('results', 'search'));
     }
 
-    // 🆕 Detail klub
     public function show($id)
     {
         $sparqlEndpoint = 'http://localhost:3030/football/query';
 
-        // 🎯 Query detail berdasarkan ID RDF
+        // DETAIL QUERY SESUAI RDF SCHEMA.ORG
         $query = "
-            PREFIX foot: <http://example.org/football#>
-            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-            SELECT ?team ?country ?stadium ?manager ?year ?desc ?website ?facebook ?twitter ?instagram ?badge ?banner ?jersey
+            PREFIX schema: <http://schema.org/>
+
+            SELECT ?team ?alt ?country ?location ?stadium ?coach ?owner ?logo
             WHERE {
-                ?club a foot:Club ;
-                      foaf:name ?team ;
-                      foot:country ?country ;
-                      foot:stadium ?stadium ;
-                      foot:manager ?manager ;
-                      foot:formedYear ?year ;
-                      foot:description ?desc ;
-                      foot:website ?website ;
-                      foot:facebook ?facebook ;
-                      foot:twitter ?twitter ;
-                      foot:instagram ?instagram ;
-                      foot:badge ?badge ;
-                      foot:banner ?banner ;
-                      foot:jersey ?jersey .
-                FILTER(STR(?club) = 'http://example.org/football/{$id}')
+                ?club a schema:SportsTeam ;
+                      schema:name ?team ;
+                      schema:alternateName ?alt ;
+                      schema:addressCountry ?country ;
+                      schema:homeLocation ?location ;
+                      schema:homeStadium ?stadium ;
+                      schema:coach ?coach ;
+                      schema:owner ?owner ;
+                      schema:logo ?logo .
+                FILTER(STR(?club) = 'http://example.com/resource/{$id}')
             }
             LIMIT 1
         ";
@@ -150,10 +108,13 @@ class FootballController extends Controller
 
             $data = json_decode($response->getBody(), true);
             $club = $data['results']['bindings'][0] ?? null;
+
         } catch (\Exception $e) {
-            $club = null;
-            $error = $e->getMessage();
-            return view('clubdetail', compact('club', 'id', 'error'));
+            return view('clubdetail', [
+                'club' => null,
+                'id' => $id,
+                'error' => $e->getMessage(),
+            ]);
         }
 
         return view('clubdetail', compact('club', 'id'));

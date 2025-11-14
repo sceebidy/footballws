@@ -1,0 +1,3259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:schema="http://schema.org/"
+    xmlns:ex="http://example.com/resource/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+
+    <!-- 1. Persib Bandung -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersibBandung">
+        <schema:name>Persib Bandung</schema:name>
+        <schema:alternateName>Maung Bandung</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1933</schema:foundingDate>
+        <schema:homeLocation>Bandung</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GedebageStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Persib Bandung Bermartabat</schema:owner>
+        <schema:coach>Bojan Hodak</schema:coach>
+        <schema:logo>https://example.com/logo/persib.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- 2. Persija Jakarta -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersijaJakarta">
+        <schema:name>Persija Jakarta</schema:name>
+        <schema:alternateName>Macan Kemayoran</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1928</schema:foundingDate>
+        <schema:homeLocation>Jakarta</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadionGBK"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Persija Jaya Jakarta</schema:owner>
+        <schema:coach>Thomas Doll</schema:coach>
+        <schema:logo>https://example.com/logo/persija.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- 3. Arema FC -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AremaFC">
+        <schema:name>Arema FC</schema:name>
+        <schema:alternateName>Singo Edan</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1987</schema:foundingDate>
+        <schema:homeLocation>Malang</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KanjuruhanStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Arema Aremania Bersatu</schema:owner>
+        <schema:coach>Fernando Valente</schema:coach>
+        <schema:logo>https://example.com/logo/arema.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- 4. Persebaya Surabaya -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersebayaSurabaya">
+        <schema:name>Persebaya Surabaya</schema:name>
+        <schema:alternateName>Bajul Ijo</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1927</schema:foundingDate>
+        <schema:homeLocation>Surabaya</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadionGeloraBungTomo"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Persebaya Indonesia</schema:owner>
+        <schema:coach>Paul Munster</schema:coach>
+        <schema:logo>https://example.com/logo/persebaya.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- 5. PSM Makassar -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PSMMakassar">
+        <schema:name>PSM Makassar</schema:name>
+        <schema:alternateName>Juku Eja</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1915</schema:foundingDate>
+        <schema:homeLocation>Makassar</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadionGeloraBJHabibie"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT PSM Makassar</schema:owner>
+        <schema:coach>Bernardo Tavares</schema:coach>
+        <schema:logo>https://example.com/logo/psm.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- 6. Bali United -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/BaliUnited">
+        <schema:name>Bali United</schema:name>
+        <schema:alternateName>Serdadu Tridatu</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1989</schema:foundingDate>
+        <schema:homeLocation>Gianyar</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KaptenIWayanDiptaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Bali Bintang Sejahtera</schema:owner>
+        <schema:coach>Stefano Cugurra</schema:coach>
+        <schema:logo>https://example.com/logo/baliunited.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- 7. Bhayangkara FC -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/BhayangkaraFC">
+        <schema:name>Bhayangkara FC</schema:name>
+        <schema:alternateName>The Guardian</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2010</schema:foundingDate>
+        <schema:homeLocation>Bekasi</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/PatriotChandrabhagaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>Polri</schema:owner>
+        <schema:coach>Putu Gede</schema:coach>
+        <schema:logo>https://example.com/logo/bhayangkara.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- 8. Madura United -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/MaduraUnited">
+        <schema:name>Madura United</schema:name>
+        <schema:alternateName>Laskar Sape Kerrab</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2016</schema:foundingDate>
+        <schema:homeLocation>Pamekasan</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadionPamekasan"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Polana Bola Madura Bersatu</schema:owner>
+        <schema:coach>Mauricio Souza</schema:coach>
+        <schema:logo>https://example.com/logo/maduraunited.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- 9. Borneo FC Samarinda -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/BorneoFCSamarinda">
+        <schema:name>Borneo FC Samarinda</schema:name>
+        <schema:alternateName>Pesut Etam</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2014</schema:foundingDate>
+        <schema:homeLocation>Samarinda</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SamarindaSegiriStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Borneo FC</schema:owner>
+        <schema:coach>André Gaspar</schema:coach>
+        <schema:logo>https://example.com/logo/borneofc.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- 10. PSIS Semarang -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PSISSemarang">
+        <schema:name>PSIS Semarang</schema:name>
+        <schema:alternateName>Laskar Mahesa Jenar</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1932</schema:foundingDate>
+        <schema:homeLocation>Semarang</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/JatidiriStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Mahesa Jenar Semarang</schema:owner>
+        <schema:coach>Gilberto Silva</schema:coach>
+        <schema:logo>https://example.com/logo/psis.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persikabo 1973 -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Persikabo1973">
+        <schema:name>Persikabo 1973</schema:name>
+        <schema:alternateName>Laskar Padjadjaran</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1973</schema:foundingDate>
+        <schema:homeLocation>Bogor</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/PakansariStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Persikabo</schema:owner>
+        <schema:coach>Aji Santoso</schema:coach>
+        <schema:logo>https://example.com/logo/persikabo1973.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persita Tangerang -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersitaTangerang">
+        <schema:name>Persita Tangerang</schema:name>
+        <schema:alternateName>Pendekar Cisadane</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1953</schema:foundingDate>
+        <schema:homeLocation>Tangerang</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BentengTarunaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Persita Tangerang</schema:owner>
+        <schema:coach>Divaldo Alves</schema:coach>
+        <schema:logo>https://example.com/logo/persita.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persik Kediri -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersikKediri">
+        <schema:name>Persik Kediri</schema:name>
+        <schema:alternateName>Macan Putih</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1950</schema:foundingDate>
+        <schema:homeLocation>Kediri</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BrawijayaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Persik Kediri Jaya</schema:owner>
+        <schema:coach>Marc Klok</schema:coach>
+        <schema:logo>https://example.com/logo/persik.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Dewa United -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/DewaUnited">
+        <schema:name>Dewa United</schema:name>
+        <schema:alternateName>Tangerang Warriors</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2021</schema:foundingDate>
+        <schema:homeLocation>Tangerang</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/IndomilkArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Dewa United</schema:owner>
+        <schema:coach>Jan Olde Riekerink</schema:coach>
+        <schema:logo>https://example.com/logo/dewaunited.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Barito Putera -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/BaritoPutera">
+        <schema:name>Barito Putera</schema:name>
+        <schema:alternateName>Laskar Antasari</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1988</schema:foundingDate>
+        <schema:homeLocation>Banjarmasin</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/17MeiStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Barito Putera</schema:owner>
+        <schema:coach>Rahmad Darmawan</schema:coach>
+        <schema:logo>https://example.com/logo/baritoputera.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- RANS Nusantara -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RANSNusantara">
+        <schema:name>RANS Nusantara</schema:name>
+        <schema:alternateName>RANS Phoenix</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2021</schema:foundingDate>
+        <schema:homeLocation>Tangerang</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/PatriotStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT RANS Nusantara FC</schema:owner>
+        <schema:coach>Eduardo Almeida</schema:coach>
+        <schema:logo>https://example.com/logo/ransnusantara.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- PSS Sleman -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PSSSleman">
+        <schema:name>PSS Sleman</schema:name>
+        <schema:alternateName>Super Elang Jawa</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1976</schema:foundingDate>
+        <schema:homeLocation>Sleman</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/MaguwoharjoStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Putra Sleman Sembada</schema:owner>
+        <schema:coach>Mariano Soso</schema:coach>
+        <schema:logo>https://example.com/logo/psssleman.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persis Solo -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersisSolo">
+        <schema:name>Persis Solo</schema:name>
+        <schema:alternateName>Laskar Sambernyawa</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1923</schema:foundingDate>
+        <schema:homeLocation>Solo</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/ManahanStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga1"/>
+        <schema:owner>PT Persis Solo Saestu</schema:owner>
+        <schema:coach>Leonardo Medina</schema:coach>
+        <schema:logo>https://example.com/logo/persissolo.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Semen Padang -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SemenPadang">
+        <schema:name>Semen Padang</schema:name>
+        <schema:alternateName>Kabau Sirah</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1980</schema:foundingDate>
+        <schema:homeLocation>Padang</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/HajiAgusSalimStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Kabau Sirah Semen Padang</schema:owner>
+        <schema:coach>Nilmaizar</schema:coach>
+        <schema:logo>https://example.com/logo/semenpadang.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- PSMS Medan -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PSMSMedan">
+        <schema:name>PSMS Medan</schema:name>
+        <schema:alternateName>Ayam Kinantan</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1950</schema:foundingDate>
+        <schema:homeLocation>Medan</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/TeladanStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Kinantan Medan</schema:owner>
+        <schema:coach>Legimin Raharjo</schema:coach>
+        <schema:logo>https://example.com/logo/psmsmedan.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persiraja Banda Aceh -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersirajaBandaAceh">
+        <schema:name>Persiraja Banda Aceh</schema:name>
+        <schema:alternateName>Lantak Laju</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1957</schema:foundingDate>
+        <schema:homeLocation>Banda Aceh</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/HDimurthalaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Persiraja</schema:owner>
+        <schema:coach>Akhmad Kurniawan</schema:coach>
+        <schema:logo>https://example.com/logo/persiraja.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sriwijaya FC -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SriwijayaFC">
+        <schema:name>Sriwijaya FC</schema:name>
+        <schema:alternateName>Laskar Wong Kito</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2004</schema:foundingDate>
+        <schema:homeLocation>Palembang</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/JakabaringStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Sriwijaya Optimis Mandiri</schema:owner>
+        <schema:coach>Budiardjo Thalib</schema:coach>
+        <schema:logo>https://example.com/logo/sriwijayafc.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persiba Balikpapan -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersibaBalikpapan">
+        <schema:name>Persiba Balikpapan</schema:name>
+        <schema:alternateName>Beruang Madu</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1950</schema:foundingDate>
+        <schema:homeLocation>Balikpapan</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BatunirwanaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Balikpapan Sportindo</schema:owner>
+        <schema:coach>Yudi Guntara</schema:coach>
+        <schema:logo>https://example.com/logo/persiba.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Deltras Sidoarjo -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/DeltrasSidoarjo">
+        <schema:name>Deltras Sidoarjo</schema:name>
+        <schema:alternateName>The Lobster</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1989</schema:foundingDate>
+        <schema:homeLocation>Sidoarjo</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GeloraDeltaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Delta Raya Sidoarjo</schema:owner>
+        <schema:coach>Ibnu Grahan</schema:coach>
+        <schema:logo>https://example.com/logo/deltras.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persijap Jepara -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersijapJepara">
+        <schema:name>Persijap Jepara</schema:name>
+        <schema:alternateName>Elang Laut</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1954</schema:foundingDate>
+        <schema:homeLocation>Jepara</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GeloraBumiKartiniStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Jepara Raya</schema:owner>
+        <schema:coach>Jaya Hartono</schema:coach>
+        <schema:logo>https://example.com/logo/persijap.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persela Lamongan -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PerselaLamongan">
+        <schema:name>Persela Lamongan</schema:name>
+        <schema:alternateName>Laskar Joko Tingkir</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1967</schema:foundingDate>
+        <schema:homeLocation>Lamongan</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SuranadiStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Persela Lamongan</schema:owner>
+        <schema:coach>Rangga Hermansyah</schema:coach>
+        <schema:logo>https://example.com/logo/persela.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persikad Depok -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersikadDepok">
+        <schema:name>Persikad Depok</schema:name>
+        <schema:alternateName>Pandawa Depok</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1990</schema:foundingDate>
+        <schema:homeLocation>Depok</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/MahasenaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Depok Raya</schema:owner>
+        <schema:coach>Imran Nahumarury</schema:coach>
+        <schema:logo>https://example.com/logo/persikad.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Kalteng Putra -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/KaltengPutra">
+        <schema:name>Kalteng Putra</schema:name>
+        <schema:alternateName>Laskar Isen Mulang</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1970</schema:foundingDate>
+        <schema:homeLocation>Palangkaraya</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/TuahPahoeStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Kalteng Putra</schema:owner>
+        <schema:coach>Kas Hartadi</schema:coach>
+        <schema:logo>https://example.com/logo/kaltengputra.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Mitra Kukar -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/MitraKukar">
+        <schema:name>Mitra Kukar</schema:name>
+        <schema:alternateName>Naga Mekes</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1979</schema:foundingDate>
+        <schema:homeLocation>Tenggarong</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AjiImbutStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Mitra Kutai Kartanegara</schema:owner>
+        <schema:coach>Jafri Sastra</schema:coach>
+        <schema:logo>https://example.com/logo/mitrakukar.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persekat Tegal -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersekatTegal">
+        <schema:name>Persekat Tegal</schema:name>
+        <schema:alternateName>Laskar Ki Gede Sebayu</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1962</schema:foundingDate>
+        <schema:homeLocation>Tegal</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KardinalStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Persekat Tegal Mandiri</schema:owner>
+        <schema:coach>Joko Susilo</schema:coach>
+        <schema:logo>https://example.com/logo/persekat.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- FC Bekasi City -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/FCBekasiCity">
+        <schema:name>FC Bekasi City</schema:name>
+        <schema:alternateName>The Guardians</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2014</schema:foundingDate>
+        <schema:homeLocation>Bekasi</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/PatriotChandrabhagaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>Atta Halilintar Group</schema:owner>
+        <schema:coach>Joko Susilo</schema:coach>
+        <schema:logo>https://example.com/logo/fcbekasicity.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persipa Pati -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersipaPati">
+        <schema:name>Persipa Pati</schema:name>
+        <schema:alternateName>Laskar Saridin</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1953</schema:foundingDate>
+        <schema:homeLocation>Pati</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/JoyoKusumoStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Pati Raya</schema:owner>
+        <schema:coach>Mas’ud Arifin</schema:coach>
+        <schema:logo>https://example.com/logo/persipa.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- PSCS Cilacap -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PSCSCilacap">
+        <schema:name>PSCS Cilacap</schema:name>
+        <schema:alternateName>Laskar Nusakambangan</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1970</schema:foundingDate>
+        <schema:homeLocation>Cilacap</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/WijayaKusumaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Cilacap Bersatu</schema:owner>
+        <schema:coach>Suharto AD</schema:coach>
+        <schema:logo>https://example.com/logo/pscs.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Gresik United -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/GresikUnited">
+        <schema:name>Gresik United</schema:name>
+        <schema:alternateName>Laskar Joko Tingkir</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2005</schema:foundingDate>
+        <schema:homeLocation>Gresik</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GeloraJokoSamudroStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Gresik United</schema:owner>
+        <schema:coach>Charismatic Choirul Anam</schema:coach>
+        <schema:logo>https://example.com/logo/gresikunited.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Hizbul Wathan -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/HizbulWathan">
+        <schema:name>Hizbul Wathan</schema:name>
+        <schema:alternateName>Laskar Matahari</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2017</schema:foundingDate>
+        <schema:homeLocation>Sidoarjo</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GeloraDeltaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>Persyarikatan Muhammadiyah</schema:owner>
+        <schema:coach>Rochy Putiray</schema:coach>
+        <schema:logo>https://example.com/logo/hizbulwathan.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persiba Bantul -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersibaBantul">
+        <schema:name>Persiba Bantul</schema:name>
+        <schema:alternateName>Laskar Sultan Agung</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1967</schema:foundingDate>
+        <schema:homeLocation>Bantul</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SultanAgungStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Bantul Jaya</schema:owner>
+        <schema:coach>Gatot Barnowo</schema:coach>
+        <schema:logo>https://example.com/logo/persibabantul.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persiba Badung -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersibaBadung">
+        <schema:name>Persiba Badung</schema:name>
+        <schema:alternateName>Laskar Keris</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1960</schema:foundingDate>
+        <schema:homeLocation>Badung</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KesimanStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Badung Raya</schema:owner>
+        <schema:coach>Dewa Made</schema:coach>
+        <schema:logo>https://example.com/logo/persibabadung.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- PSBS Biak -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PSBSBiak">
+        <schema:name>PSBS Biak</schema:name>
+        <schema:alternateName>Biawak Papua</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1960</schema:foundingDate>
+        <schema:homeLocation>Biak</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/CenderawasihStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Biak Raya</schema:owner>
+        <schema:coach>Yudi Syahrial</schema:coach>
+        <schema:logo>https://example.com/logo/psbsbiak.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persidago Gorontalo -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersidagoGorontalo">
+        <schema:name>Persidago Gorontalo</schema:name>
+        <schema:alternateName>Laskar Menara</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1962</schema:foundingDate>
+        <schema:homeLocation>Gorontalo</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/MerdekaGorontaloStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Gorontalo Sejahtera</schema:owner>
+        <schema:coach>Ahmad Wahab</schema:coach>
+        <schema:logo>https://example.com/logo/persidago.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persikota Tangerang -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersikotaTangerang">
+        <schema:name>Persikota Tangerang</schema:name>
+        <schema:alternateName>Bayi Ajaib</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1994</schema:foundingDate>
+        <schema:homeLocation>Tangerang</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BentengStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Persikota Tangerang</schema:owner>
+        <schema:coach>Rudy Eka Priyambada</schema:coach>
+        <schema:logo>https://example.com/logo/persikota.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Putra Delta Sidoarjo -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PutraDeltaSidoarjo">
+        <schema:name>Putra Delta Sidoarjo</schema:name>
+        <schema:alternateName>Laskar Jenggolo</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1989</schema:foundingDate>
+        <schema:homeLocation>Sidoarjo</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GeloraDeltaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Delta Sidoarjo</schema:owner>
+        <schema:coach>Bagong Ismoyo</schema:coach>
+        <schema:logo>https://example.com/logo/putradelta.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sulut United -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SulutUnited">
+        <schema:name>Sulut United</schema:name>
+        <schema:alternateName>The Blue White</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1999</schema:foundingDate>
+        <schema:homeLocation>Manado</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KlabatStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Sulut United</schema:owner>
+        <schema:coach>Rivai Nusi</schema:coach>
+        <schema:logo>https://example.com/logo/sulutunited.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persewar Waropen -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersewarWaropen">
+        <schema:name>Persewar Waropen</schema:name>
+        <schema:alternateName>Mamberamo Tiger</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2005</schema:foundingDate>
+        <schema:homeLocation>Waropen</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Mandiristadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Waropen Bersatu</schema:owner>
+        <schema:coach>Alan La’ala</schema:coach>
+        <schema:logo>https://example.com/logo/persewar.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Perserang Serang -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PerserangSerang">
+        <schema:name>Perserang Serang</schema:name>
+        <schema:alternateName>Laskar Singandaru</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1958</schema:foundingDate>
+        <schema:homeLocation>Serang</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/MaulanaYusufStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Perserang Serang</schema:owner>
+        <schema:coach>Robby Aryanto</schema:coach>
+        <schema:logo>https://example.com/logo/perserang.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Persipal Palu -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PersipalPalu">
+        <schema:name>Persipal Palu</schema:name>
+        <schema:alternateName>Laskar Tadulako</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1960</schema:foundingDate>
+        <schema:homeLocation>Palu</schema:homeLocation>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GawaliseStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/BRILiga2"/>
+        <schema:owner>PT Persipal Palu</schema:owner>
+        <schema:coach>Jusran Efendi</schema:coach>
+        <schema:logo>https://example.com/logo/persipal.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Manchester United -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ManchesterUnited">
+        <schema:name>Manchester United</schema:name>
+        <schema:alternateName>The Red Devils</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1878</schema:foundingDate>
+        <schema:homeLocation>Manchester</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/OldTrafford"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Manchester United PLC</schema:owner>
+        <schema:coach>Erik ten Hag</schema:coach>
+        <schema:logo>https://example.com/logo/manutd.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Manchester City -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ManchesterCity">
+        <schema:name>Manchester City</schema:name>
+        <schema:alternateName>The Citizens</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1880</schema:foundingDate>
+        <schema:homeLocation>Manchester</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EtihadStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>City Football Group</schema:owner>
+        <schema:coach>Pep Guardiola</schema:coach>
+        <schema:logo>https://example.com/logo/mancity.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Liverpool -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Liverpool">
+        <schema:name>Liverpool</schema:name>
+        <schema:alternateName>The Reds</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1892</schema:foundingDate>
+        <schema:homeLocation>Liverpool</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Anfield"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Fenway Sports Group</schema:owner>
+        <schema:coach>Jürgen Klopp</schema:coach>
+        <schema:logo>https://example.com/logo/liverpool.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Chelsea -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Chelsea">
+        <schema:name>Chelsea</schema:name>
+        <schema:alternateName>The Blues</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1905</schema:foundingDate>
+        <schema:homeLocation>London</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StamfordBridge"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Todd Boehly Clearlake Capital</schema:owner>
+        <schema:coach>Mauricio Pochettino</schema:coach>
+        <schema:logo>https://example.com/logo/chelsea.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Arsenal -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Arsenal">
+        <schema:name>Arsenal</schema:name>
+        <schema:alternateName>The Gunners</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1886</schema:foundingDate>
+        <schema:homeLocation>London</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EmiratesStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Kroenke Sports Entertainment</schema:owner>
+        <schema:coach>Mikel Arteta</schema:coach>
+        <schema:logo>https://example.com/logo/arsenal.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Tottenham Hotspur -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/TottenhamHotspur">
+        <schema:name>Tottenham Hotspur</schema:name>
+        <schema:alternateName>Spurs</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1882</schema:foundingDate>
+        <schema:homeLocation>London</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/TottenhamHotspurStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>ENIC Group</schema:owner>
+        <schema:coach>Ange Postecoglou</schema:coach>
+        <schema:logo>https://example.com/logo/tottenham.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Newcastle United -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/NewcastleUnited">
+        <schema:name>Newcastle United</schema:name>
+        <schema:alternateName>The Magpies</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1892</schema:foundingDate>
+        <schema:homeLocation>Newcastle upon Tyne</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StJamesPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Saudi PIF</schema:owner>
+        <schema:coach>Eddie Howe</schema:coach>
+        <schema:logo>https://example.com/logo/newcastle.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Aston Villa -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AstonVilla">
+        <schema:name>Aston Villa</schema:name>
+        <schema:alternateName>The Villans</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1874</schema:foundingDate>
+        <schema:homeLocation>Birmingham</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/VillaPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Nassef Sawiris  Wes Edens</schema:owner>
+        <schema:coach>Unai Emery</schema:coach>
+        <schema:logo>https://example.com/logo/astonvilla.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- West Ham United -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/WestHamUnited">
+        <schema:name>West Ham United</schema:name>
+        <schema:alternateName>The Hammers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1895</schema:foundingDate>
+        <schema:homeLocation>London</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/LondonStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>David Sullivan</schema:owner>
+        <schema:coach>David Moyes</schema:coach>
+        <schema:logo>https://example.com/logo/westham.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Brighton -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Brighton">
+        <schema:name>Brighton  Hove Albion</schema:name>
+        <schema:alternateName>The Seagulls</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1901</schema:foundingDate>
+        <schema:homeLocation>Brighton</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AmexStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Tony Bloom</schema:owner>
+        <schema:coach>Roberto De Zerbi</schema:coach>
+        <schema:logo>https://example.com/logo/brighton.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Brentford -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Brentford">
+        <schema:name>Brentford</schema:name>
+        <schema:alternateName>The Bees</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1889</schema:foundingDate>
+        <schema:homeLocation>London</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BrentfordCommunityStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Matthew Benham</schema:owner>
+        <schema:coach>Thomas Frank</schema:coach>
+        <schema:logo>https://example.com/logo/brentford.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Crystal Palace -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/CrystalPalace">
+        <schema:name>Crystal Palace</schema:name>
+        <schema:alternateName>The Eagles</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1905</schema:foundingDate>
+        <schema:homeLocation>London</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SelhurstPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Steve Parish</schema:owner>
+        <schema:coach>Roy Hodgson</schema:coach>
+        <schema:logo>https://example.com/logo/crystalpalace.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Everton -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Everton">
+        <schema:name>Everton</schema:name>
+        <schema:alternateName>The Toffees</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1878</schema:foundingDate>
+        <schema:homeLocation>Liverpool</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GoodisonPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Farhad Moshiri</schema:owner>
+        <schema:coach>Sean Dyche</schema:coach>
+        <schema:logo>https://example.com/logo/everton.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Bournemouth -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Bournemouth">
+        <schema:name>AFC Bournemouth</schema:name>
+        <schema:alternateName>The Cherries</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1899</schema:foundingDate>
+        <schema:homeLocation>Bournemouth</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/DeanCourt"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Bill Foley</schema:owner>
+        <schema:coach>Andoni Iraola</schema:coach>
+        <schema:logo>https://example.com/logo/bournemouth.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Fulham -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Fulham">
+        <schema:name>Fulham</schema:name>
+        <schema:alternateName>The Cottagers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1879</schema:foundingDate>
+        <schema:homeLocation>London</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/CravenCottage"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Shahid Khan</schema:owner>
+        <schema:coach>Marco Silva</schema:coach>
+        <schema:logo>https://example.com/logo/fulham.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Nottingham Forest -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/NottinghamForest">
+        <schema:name>Nottingham Forest</schema:name>
+        <schema:alternateName>The Reds</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1865</schema:foundingDate>
+        <schema:homeLocation>Nottingham</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/CityGround"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Evangelos Marinakis</schema:owner>
+        <schema:coach>Nuno Espírito Santo</schema:coach>
+        <schema:logo>https://example.com/logo/nottinghamforest.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Wolverhampton -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Wolverhampton">
+        <schema:name>Wolverhampton Wanderers</schema:name>
+        <schema:alternateName>Wolves</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1877</schema:foundingDate>
+        <schema:homeLocation>Wolverhampton</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/MolineuxStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Fosun International</schema:owner>
+        <schema:coach>Gary O'Neil</schema:coach>
+        <schema:logo>https://example.com/logo/wolves.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Burnley -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Burnley">
+        <schema:name>Burnley</schema:name>
+        <schema:alternateName>The Clarets</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1882</schema:foundingDate>
+        <schema:homeLocation>Burnley</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/TurfMoor"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>ALK Capital</schema:owner>
+        <schema:coach>Vincent Kompany</schema:coach>
+        <schema:logo>https://example.com/logo/burnley.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sheffield United -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SheffieldUnited">
+        <schema:name>Sheffield United</schema:name>
+        <schema:alternateName>The Blades</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1889</schema:foundingDate>
+        <schema:homeLocation>Sheffield</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BramallLane"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Prince Abdullah</schema:owner>
+        <schema:coach>Chris Wilder</schema:coach>
+        <schema:logo>https://example.com/logo/sheffieldunited.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Luton Town -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/LutonTown">
+        <schema:name>Luton Town</schema:name>
+        <schema:alternateName>The Hatters</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1885</schema:foundingDate>
+        <schema:homeLocation>Luton</schema:homeLocation>
+        <schema:addressCountry>England</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KenilworthRoad"/>
+        <ex:competition rdf:resource="http://example.com/resource/PremierLeague"/>
+        <schema:owner>Luton Town Football Club 2020 Ltd</schema:owner>
+        <schema:coach>Rob Edwards</schema:coach>
+        <schema:logo>https://example.com/logo/lutontown.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Real Madrid -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RealMadrid">
+        <schema:name>Real Madrid</schema:name>
+        <schema:alternateName>Los Blancos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1902</schema:foundingDate>
+        <schema:homeLocation>Madrid</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SantiagoBernabeu"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Socios del Real Madrid</schema:owner>
+        <schema:coach>Carlo Ancelotti</schema:coach>
+        <schema:logo>https://example.com/logo/realmadrid.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Barcelona -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Barcelona">
+        <schema:name>FC Barcelona</schema:name>
+        <schema:alternateName>Blaugrana</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1899</schema:foundingDate>
+        <schema:homeLocation>Barcelona</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/CampNou"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Socios del Barcelona</schema:owner>
+        <schema:coach>Xavi Hernández</schema:coach>
+        <schema:logo>https://example.com/logo/barcelona.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Atlético Madrid -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AtleticoMadrid">
+        <schema:name>Atlético Madrid</schema:name>
+        <schema:alternateName>Los Colchoneros</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1903</schema:foundingDate>
+        <schema:homeLocation>Madrid</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/WandaMetropolitano"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Miguel Ángel Gil</schema:owner>
+        <schema:coach>Diego Simeone</schema:coach>
+        <schema:logo>https://example.com/logo/atleticomadrid.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sevilla -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Sevilla">
+        <schema:name>Sevilla</schema:name>
+        <schema:alternateName>Los Nervionenses</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1890</schema:foundingDate>
+        <schema:homeLocation>Sevilla</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/RamonSanchezPizjuan"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Sevilla FC SAD</schema:owner>
+        <schema:coach>Diego Alonso</schema:coach>
+        <schema:logo>https://example.com/logo/sevilla.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Real Betis -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RealBetis">
+        <schema:name>Real Betis</schema:name>
+        <schema:alternateName>Los Verdiblancos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1907</schema:foundingDate>
+        <schema:homeLocation>Sevilla</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BenitoVillamarin"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Real Betis Balompié SAD</schema:owner>
+        <schema:coach>Manuel Pellegrini</schema:coach>
+        <schema:logo>https://example.com/logo/realbetis.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Real Sociedad -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RealSociedad">
+        <schema:name>Real Sociedad</schema:name>
+        <schema:alternateName>Txuri-Urdin</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1909</schema:foundingDate>
+        <schema:homeLocation>San Sebastián</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/RealeArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Real Sociedad SAD</schema:owner>
+        <schema:coach>Imanol Alguacil</schema:coach>
+        <schema:logo>https://example.com/logo/realsociedad.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Villarreal -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Villarreal">
+        <schema:name>Villarreal</schema:name>
+        <schema:alternateName>El Submarino Amarillo</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1923</schema:foundingDate>
+        <schema:homeLocation>Villarreal</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioCeramica"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Fernando Roig</schema:owner>
+        <schema:coach>Marcelino García Toral</schema:coach>
+        <schema:logo>https://example.com/logo/villarreal.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Valencia -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Valencia">
+        <schema:name>Valencia</schema:name>
+        <schema:alternateName>Los Che</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1919</schema:foundingDate>
+        <schema:homeLocation>Valencia</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Mestalla"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Peter Lim</schema:owner>
+        <schema:coach>Rubén Baraja</schema:coach>
+        <schema:logo>https://example.com/logo/valencia.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Athletic Bilbao -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AthleticBilbao">
+        <schema:name>Athletic Bilbao</schema:name>
+        <schema:alternateName>Los Leones</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1898</schema:foundingDate>
+        <schema:homeLocation>Bilbao</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SanMames"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Socios del Athletic</schema:owner>
+        <schema:coach>Ernesto Valverde</schema:coach>
+        <schema:logo>https://example.com/logo/athleticbilbao.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Getafe -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Getafe">
+        <schema:name>Getafe</schema:name>
+        <schema:alternateName>Azulones</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1983</schema:foundingDate>
+        <schema:homeLocation>Getafe</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/ColiseumAlfonsoPerez"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Ángel Torres</schema:owner>
+        <schema:coach>José Bordalás</schema:coach>
+        <schema:logo>https://example.com/logo/getafe.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Osasuna -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Osasuna">
+        <schema:name>Osasuna</schema:name>
+        <schema:alternateName>Los Rojillos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1920</schema:foundingDate>
+        <schema:homeLocation>Pamplona</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/ElSadar"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>CA Osasuna</schema:owner>
+        <schema:coach>Jagoba Arrasate</schema:coach>
+        <schema:logo>https://example.com/logo/osasuna.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Celta Vigo -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/CeltaVigo">
+        <schema:name>Celta Vigo</schema:name>
+        <schema:alternateName>Os Celestes</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1923</schema:foundingDate>
+        <schema:homeLocation>Vigo</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Balaidos"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Grupo Abanca</schema:owner>
+        <schema:coach>Rafa Benítez</schema:coach>
+        <schema:logo>https://example.com/logo/celtavigo.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Girona -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Girona">
+        <schema:name>Girona</schema:name>
+        <schema:alternateName>Blanquivermells</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1930</schema:foundingDate>
+        <schema:homeLocation>Girona</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Montilivi"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>City Football Group (part)</schema:owner>
+        <schema:coach>Míchel</schema:coach>
+        <schema:logo>https://example.com/logo/girona.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Granada -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Granada">
+        <schema:name>Granada</schema:name>
+        <schema:alternateName>Nazaríes</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1931</schema:foundingDate>
+        <schema:homeLocation>Granada</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/NuevoLosCarmenes"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>DDMC Group</schema:owner>
+        <schema:coach>Alexander Medina</schema:coach>
+        <schema:logo>https://example.com/logo/granada.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Mallorca -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Mallorca">
+        <schema:name>Mallorca</schema:name>
+        <schema:alternateName>Los Bermellones</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1916</schema:foundingDate>
+        <schema:homeLocation>Palma de Mallorca</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SonMoix"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Robert Sarver  Partners</schema:owner>
+        <schema:coach>Javier Aguirre</schema:coach>
+        <schema:logo>https://example.com/logo/mallorca.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Almería -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Almeria">
+        <schema:name>UD Almería</schema:name>
+        <schema:alternateName>Rojiblancos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1989</schema:foundingDate>
+        <schema:homeLocation>Almería</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/PowerHorseStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Turki Al-Sheikh</schema:owner>
+        <schema:coach>Gaizka Garitano</schema:coach>
+        <schema:logo>https://example.com/logo/almeria.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Rayo Vallecano -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RayoVallecano">
+        <schema:name>Rayo Vallecano</schema:name>
+        <schema:alternateName>Los Franjirrojos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1924</schema:foundingDate>
+        <schema:homeLocation>Madrid</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/VallecasStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Raúl Martín Presa</schema:owner>
+        <schema:coach>Francisco Rodríguez</schema:coach>
+        <schema:logo>https://example.com/logo/rayovallecano.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Las Palmas -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/LasPalmas">
+        <schema:name>UD Las Palmas</schema:name>
+        <schema:alternateName>La Unión Deportiva</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1949</schema:foundingDate>
+        <schema:homeLocation>Las Palmas</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GranCanariaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>UD Las Palmas SAD</schema:owner>
+        <schema:coach>García Pimienta</schema:coach>
+        <schema:logo>https://example.com/logo/laspalmas.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Cádiz -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Cadiz">
+        <schema:name>Cádiz</schema:name>
+        <schema:alternateName>Los Piratas</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1910</schema:foundingDate>
+        <schema:homeLocation>Cádiz</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/NuevoMirandilla"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Manuel Vizcaíno</schema:owner>
+        <schema:coach>Sergio González</schema:coach>
+        <schema:logo>https://example.com/logo/cadiz.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Deportivo Alavés -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/DeportivoAlaves">
+        <schema:name>Deportivo Alavés</schema:name>
+        <schema:alternateName>Babazorros</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1921</schema:foundingDate>
+        <schema:homeLocation>Vitoria-Gasteiz</schema:homeLocation>
+        <schema:addressCountry>Spain</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Mendizorroza"/>
+        <ex:competition rdf:resource="http://example.com/resource/LaLiga"/>
+        <schema:owner>Grupo Baskonia-Alavés</schema:owner>
+        <schema:coach>Luis García Plaza</schema:coach>
+        <schema:logo>https://example.com/logo/alaves.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Juventus -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Juventus">
+        <schema:name>Juventus</schema:name>
+        <schema:alternateName>La Vecchia Signora</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1897</schema:foundingDate>
+        <schema:homeLocation>Turin</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AllianzStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Exor N.V.</schema:owner>
+        <schema:coach>Massimiliano Allegri</schema:coach>
+        <schema:logo>https://example.com/logo/juventus.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Inter Milan -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/InterMilan">
+        <schema:name>Inter Milan</schema:name>
+        <schema:alternateName>Nerazzurri</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1908</schema:foundingDate>
+        <schema:homeLocation>Milan</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SanSiro"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Suning Holdings Group</schema:owner>
+        <schema:coach>Simone Inzaghi</schema:coach>
+        <schema:logo>https://example.com/logo/inter.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- AC Milan -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ACMilan">
+        <schema:name>AC Milan</schema:name>
+        <schema:alternateName>Rossoneri</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1899</schema:foundingDate>
+        <schema:homeLocation>Milan</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SanSiro"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>RedBird Capital Partners</schema:owner>
+        <schema:coach>Stefano Pioli</schema:coach>
+        <schema:logo>https://example.com/logo/acmilan.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- AS Roma -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ASRoma">
+        <schema:name>AS Roma</schema:name>
+        <schema:alternateName>Giallorossi</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1927</schema:foundingDate>
+        <schema:homeLocation>Rome</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioOlimpico"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Friedkin Group</schema:owner>
+        <schema:coach>José Mourinho</schema:coach>
+        <schema:logo>https://example.com/logo/asroma.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Lazio -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Lazio">
+        <schema:name>Lazio</schema:name>
+        <schema:alternateName>Biancocelesti</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1900</schema:foundingDate>
+        <schema:homeLocation>Rome</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioOlimpico"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Claudio Lotito</schema:owner>
+        <schema:coach>Maurizio Sarri</schema:coach>
+        <schema:logo>https://example.com/logo/lazio.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Napoli -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Napoli">
+        <schema:name>Napoli</schema:name>
+        <schema:alternateName>Partenopei</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1926</schema:foundingDate>
+        <schema:homeLocation>Naples</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioDiegoArmandoMaradona"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Aurelio De Laurentiis</schema:owner>
+        <schema:coach>Walter Mazzarri</schema:coach>
+        <schema:logo>https://example.com/logo/napoli.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Atalanta -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Atalanta">
+        <schema:name>Atalanta</schema:name>
+        <schema:alternateName>Nerazzurri</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1907</schema:foundingDate>
+        <schema:homeLocation>Bergamo</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GewissStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Stephen Pagliuca</schema:owner>
+        <schema:coach>Gian Piero Gasperini</schema:coach>
+        <schema:logo>https://example.com/logo/atalanta.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Fiorentina -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Fiorentina">
+        <schema:name>Fiorentina</schema:name>
+        <schema:alternateName>Viola</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1926</schema:foundingDate>
+        <schema:homeLocation>Florence</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/ArtemioFranchi"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Rocco Commisso</schema:owner>
+        <schema:coach>Vincenzo Italiano</schema:coach>
+        <schema:logo>https://example.com/logo/fiorentina.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Bologna -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Bologna">
+        <schema:name>Bologna</schema:name>
+        <schema:alternateName>Rossoblù</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1909</schema:foundingDate>
+        <schema:homeLocation>Bologna</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioRenatoDallAra"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Joey Saputo</schema:owner>
+        <schema:coach>Thiago Motta</schema:coach>
+        <schema:logo>https://example.com/logo/bologna.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Torino -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Torino">
+        <schema:name>Torino</schema:name>
+        <schema:alternateName>Il Toro</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1906</schema:foundingDate>
+        <schema:homeLocation>Turin</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioOlimpicoGrandeTorino"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Urbano Cairo</schema:owner>
+        <schema:coach>Ivan Jurić</schema:coach>
+        <schema:logo>https://example.com/logo/torino.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Genoa -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Genoa">
+        <schema:name>Genoa</schema:name>
+        <schema:alternateName>Il Grifone</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1893</schema:foundingDate>
+        <schema:homeLocation>Genoa</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioLuigiFerraris"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>777 Partners</schema:owner>
+        <schema:coach>Alberto Gilardino</schema:coach>
+        <schema:logo>https://example.com/logo/genoa.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sampdoria -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Sampdoria">
+        <schema:name>Sampdoria</schema:name>
+        <schema:alternateName>Blucerchiati</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1946</schema:foundingDate>
+        <schema:homeLocation>Genoa</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioLuigiFerraris"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Manfredi Group</schema:owner>
+        <schema:coach>Andrea Pirlo</schema:coach>
+        <schema:logo>https://example.com/logo/sampdoria.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Udinese -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Udinese">
+        <schema:name>Udinese</schema:name>
+        <schema:alternateName>Bianconeri</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1896</schema:foundingDate>
+        <schema:homeLocation>Udine</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioFriuli"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Giampaolo Pozzo</schema:owner>
+        <schema:coach>Gabriele Cioffi</schema:coach>
+        <schema:logo>https://example.com/logo/udinese.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sassuolo -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Sassuolo">
+        <schema:name>Sassuolo</schema:name>
+        <schema:alternateName>Neroverdi</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1922</schema:foundingDate>
+        <schema:homeLocation>Sassuolo</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/MAPEIStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>MAPEI Group</schema:owner>
+        <schema:coach>Alessio Dionisi</schema:coach>
+        <schema:logo>https://example.com/logo/sassuolo.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Verona -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Verona">
+        <schema:name>Hellas Verona</schema:name>
+        <schema:alternateName>Gialloblu</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1903</schema:foundingDate>
+        <schema:homeLocation>Verona</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioMarcAntonioBentegodi"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Maurizio Setti</schema:owner>
+        <schema:coach>Marco Baroni</schema:coach>
+        <schema:logo>https://example.com/logo/verona.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Lecce -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Lecce">
+        <schema:name>Lecce</schema:name>
+        <schema:alternateName>Giallorossi</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1908</schema:foundingDate>
+        <schema:homeLocation>Lecce</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioViaDelMare"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Sticchi Damiani Group</schema:owner>
+        <schema:coach>Roberto D'Aversa</schema:coach>
+        <schema:logo>https://example.com/logo/lecce.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Empoli -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Empoli">
+        <schema:name>Empoli</schema:name>
+        <schema:alternateName>Azzurri</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1920</schema:foundingDate>
+        <schema:homeLocation>Empoli</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioCarloCastellani"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Fabrizio Corsi</schema:owner>
+        <schema:coach>Aurelio Andreazzoli</schema:coach>
+        <schema:logo>https://example.com/logo/empoli.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Cagliari -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Cagliari">
+        <schema:name>Cagliari</schema:name>
+        <schema:alternateName>Rossoblu</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1920</schema:foundingDate>
+        <schema:homeLocation>Cagliari</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/UnipolDomus"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Tommaso Giulini</schema:owner>
+        <schema:coach>Claudio Ranieri</schema:coach>
+        <schema:logo>https://example.com/logo/cagliari.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Monza -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Monza">
+        <schema:name>Monza</schema:name>
+        <schema:alternateName>Brianzoli</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1912</schema:foundingDate>
+        <schema:homeLocation>Monza</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/U-PowerStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Silvio Berlusconi Family Estate</schema:owner>
+        <schema:coach>Raffaele Palladino</schema:coach>
+        <schema:logo>https://example.com/logo/monza.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Salernitana -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Salernitana">
+        <schema:name>Salernitana</schema:name>
+        <schema:alternateName>Granata</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1919</schema:foundingDate>
+        <schema:homeLocation>Salerno</schema:homeLocation>
+        <schema:addressCountry>Italy</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadioArechi"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA"/>
+        <schema:owner>Danilo Iervolino</schema:owner>
+        <schema:coach>Filippo Inzaghi</schema:coach>
+        <schema:logo>https://example.com/logo/salernitana.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Bayern München -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/BayernMunchen">
+        <schema:name>Bayern München</schema:name>
+        <schema:alternateName>Die Roten</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1900</schema:foundingDate>
+        <schema:homeLocation>Munich</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AllianzArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>FC Bayern München e.V.</schema:owner>
+        <schema:coach>Thomas Tuchel</schema:coach>
+        <schema:logo>https://example.com/logo/bayern.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Borussia Dortmund -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/BorussiaDortmund">
+        <schema:name>Borussia Dortmund</schema:name>
+        <schema:alternateName>BVB</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1909</schema:foundingDate>
+        <schema:homeLocation>Dortmund</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SignalIdunaPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>Borussia Dortmund GmbH  Co. KGaA</schema:owner>
+        <schema:coach>Edin Terzić</schema:coach>
+        <schema:logo>https://example.com/logo/dortmund.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- RB Leipzig -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RBLeipzig">
+        <schema:name>RB Leipzig</schema:name>
+        <schema:alternateName>Die Roten Bullen</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2009</schema:foundingDate>
+        <schema:homeLocation>Leipzig</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/RedBullArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>Red Bull GmbH</schema:owner>
+        <schema:coach>Marco Rose</schema:coach>
+        <schema:logo>https://example.com/logo/rbleipzig.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Bayer Leverkusen -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/BayerLeverkusen">
+        <schema:name>Bayer Leverkusen</schema:name>
+        <schema:alternateName>Die Werkself</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1904</schema:foundingDate>
+        <schema:homeLocation>Leverkusen</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BayArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>Bayer AG</schema:owner>
+        <schema:coach>Xabi Alonso</schema:coach>
+        <schema:logo>https://example.com/logo/leverkusen.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Borussia Mönchengladbach -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/BorussiaMonchengladbach">
+        <schema:name>Borussia Mönchengladbach</schema:name>
+        <schema:alternateName>Die Fohlen</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1900</schema:foundingDate>
+        <schema:homeLocation>Mönchengladbach</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BorussiaPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>Borussia VfL 1900 Mönchengladbach</schema:owner>
+        <schema:coach>Gerardo Seoane</schema:coach>
+        <schema:logo>https://example.com/logo/monchengladbach.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Eintracht Frankfurt -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/EintrachtFrankfurt">
+        <schema:name>Eintracht Frankfurt</schema:name>
+        <schema:alternateName>Die Adler</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1899</schema:foundingDate>
+        <schema:homeLocation>Frankfurt</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Waldstadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>Eintracht Frankfurt e.V.</schema:owner>
+        <schema:coach>Dino Toppmöller</schema:coach>
+        <schema:logo>https://example.com/logo/frankfurt.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- VfL Wolfsburg -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Wolfsburg">
+        <schema:name>VfL Wolfsburg</schema:name>
+        <schema:alternateName>Die Wölfe</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1945</schema:foundingDate>
+        <schema:homeLocation>Wolfsburg</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/VolkswagenArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>Volkswagen AG</schema:owner>
+        <schema:coach>Niko Kovač</schema:coach>
+        <schema:logo>https://example.com/logo/wolfsburg.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- SC Freiburg -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Freiburg">
+        <schema:name>SC Freiburg</schema:name>
+        <schema:alternateName>Breisgau-Brasilianer</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1904</schema:foundingDate>
+        <schema:homeLocation>Freiburg</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EuropaParkStadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>SC Freiburg e.V.</schema:owner>
+        <schema:coach>Christian Streich</schema:coach>
+        <schema:logo>https://example.com/logo/freiburg.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- VfB Stuttgart -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Stuttgart">
+        <schema:name>VfB Stuttgart</schema:name>
+        <schema:alternateName>Die Schwaben</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1893</schema:foundingDate>
+        <schema:homeLocation>Stuttgart</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/MercedesBenzArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>VfB Stuttgart AG</schema:owner>
+        <schema:coach>Sebastian Hoeneß</schema:coach>
+        <schema:logo>https://example.com/logo/stuttgart.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Werder Bremen -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/WerderBremen">
+        <schema:name>Werder Bremen</schema:name>
+        <schema:alternateName>Die Grün-Weißen</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1899</schema:foundingDate>
+        <schema:homeLocation>Bremen</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Weserstadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>Werder Bremen GmbH Co.</schema:owner>
+        <schema:coach>Ole Werner</schema:coach>
+        <schema:logo>https://example.com/logo/werderbremen.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Augsburg -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Augsburg">
+        <schema:name>FC Augsburg</schema:name>
+        <schema:alternateName>Fuggerstädter</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1907</schema:foundingDate>
+        <schema:homeLocation>Augsburg</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/WWK_Arena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>FC Augsburg 1907 GmbH</schema:owner>
+        <schema:coach>Jess Thorup</schema:coach>
+        <schema:logo>https://example.com/logo/augsburg.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Mainz -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Mainz">
+        <schema:name>Mainz 05</schema:name>
+        <schema:alternateName>Die Nullfünfer</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1905</schema:foundingDate>
+        <schema:homeLocation>Mainz</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/MEWAArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>1. FSV Mainz 05 e.V.</schema:owner>
+        <schema:coach>Jan Siewert</schema:coach>
+        <schema:logo>https://example.com/logo/mainz.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Hoffenheim -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Hoffenheim">
+        <schema:name>TSG Hoffenheim</schema:name>
+        <schema:alternateName>Die Kraichgauer</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1899</schema:foundingDate>
+        <schema:homeLocation>Hoffenheim</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/PreZeroArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>Dietmar Hopp</schema:owner>
+        <schema:coach>Pellegrino Matarazzo</schema:coach>
+        <schema:logo>https://example.com/logo/hoffenheim.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Union Berlin -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/UnionBerlin">
+        <schema:name>Union Berlin</schema:name>
+        <schema:alternateName>Eisern Union</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1966</schema:foundingDate>
+        <schema:homeLocation>Berlin</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AlteForsterei"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>1. FC Union Berlin e.V.</schema:owner>
+        <schema:coach>Urs Fischer</schema:coach>
+        <schema:logo>https://example.com/logo/unionberlin.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Hertha Berlin -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/HerthaBerlin">
+        <schema:name>Hertha Berlin</schema:name>
+        <schema:alternateName>Die Alte Dame</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1892</schema:foundingDate>
+        <schema:homeLocation>Berlin</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/OlympiastadionBerlin"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>Hertha BSC GmbH</schema:owner>
+        <schema:coach>Pal Dardai</schema:coach>
+        <schema:logo>https://example.com/logo/herthaberlin.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Köln -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Koln">
+        <schema:name>1. FC Köln</schema:name>
+        <schema:alternateName>Die Geißböcke</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1948</schema:foundingDate>
+        <schema:homeLocation>Cologne</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/RheinEnergieStadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>1. FC Köln e.V.</schema:owner>
+        <schema:coach>Steffen Baumgart</schema:coach>
+        <schema:logo>https://example.com/logo/koln.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Bochum -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Bochum">
+        <schema:name>VfL Bochum</schema:name>
+        <schema:alternateName>Die Unabsteigbaren</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1848</schema:foundingDate>
+        <schema:homeLocation>Bochum</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/VonoviaRuhrstadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>VfL Bochum 1848 GmbH</schema:owner>
+        <schema:coach>Thomas Letsch</schema:coach>
+        <schema:logo>https://example.com/logo/bochum.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Heidenheim -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Heidenheim">
+        <schema:name>1. FC Heidenheim</schema:name>
+        <schema:alternateName>FCH</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2007</schema:foundingDate>
+        <schema:homeLocation>Heidenheim</schema:homeLocation>
+        <schema:addressCountry>Germany</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/VoithArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Bundesliga"/>
+        <schema:owner>1. FC Heidenheim 1846 e.V.</schema:owner>
+        <schema:coach>Frank Schmidt</schema:coach>
+        <schema:logo>https://example.com/logo/heidenheim.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Paris Saint-Germain -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PSG">
+        <schema:name>Paris Saint-Germain</schema:name>
+        <schema:alternateName>Les Parisiens</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1970</schema:foundingDate>
+        <schema:homeLocation>Paris</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/ParcDesPrinces"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Qatar Sports Investments</schema:owner>
+        <schema:coach>Luis Enrique</schema:coach>
+        <schema:logo>https://example.com/logo/psg.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Olympique Marseille -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Marseille">
+        <schema:name>Olympique Marseille</schema:name>
+        <schema:alternateName>L'OM</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1899</schema:foundingDate>
+        <schema:homeLocation>Marseille</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Velodrome"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Frank McCourt</schema:owner>
+        <schema:coach>Gennaro Gattuso</schema:coach>
+        <schema:logo>https://example.com/logo/marseille.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Olympique Lyon -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Lyon">
+        <schema:name>Olympique Lyonnais</schema:name>
+        <schema:alternateName>Les Gones</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1950</schema:foundingDate>
+        <schema:homeLocation>Lyon</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GroupamaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>John Textor (Eagle Football)</schema:owner>
+        <schema:coach>Fabio Grosso</schema:coach>
+        <schema:logo>https://example.com/logo/lyon.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- AS Monaco -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Monaco">
+        <schema:name>AS Monaco</schema:name>
+        <schema:alternateName>Les Monégasques</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1924</schema:foundingDate>
+        <schema:homeLocation>Monaco</schema:homeLocation>
+        <schema:addressCountry>Monaco</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeLouisII"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Rybolovlev Family</schema:owner>
+        <schema:coach>Adi Hütter</schema:coach>
+        <schema:logo>https://example.com/logo/monaco.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Lille -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Lille">
+        <schema:name>Lille OSC</schema:name>
+        <schema:alternateName>Les Dogues</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1944</schema:foundingDate>
+        <schema:homeLocation>Lille</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadePierreMauroy"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Merlyn Partners</schema:owner>
+        <schema:coach>Paulo Fonseca</schema:coach>
+        <schema:logo>https://example.com/logo/lille.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Nice -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Nice">
+        <schema:name>OGC Nice</schema:name>
+        <schema:alternateName>Les Aiglons</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1904</schema:foundingDate>
+        <schema:homeLocation>Nice</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AllianzRiviera"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Ineos</schema:owner>
+        <schema:coach>Francesco Farioli</schema:coach>
+        <schema:logo>https://example.com/logo/nice.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Lens -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Lens">
+        <schema:name>RC Lens</schema:name>
+        <schema:alternateName>Sang et Or</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1906</schema:foundingDate>
+        <schema:homeLocation>Lens</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeBollaertDelelis"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Joseph Oughourlian</schema:owner>
+        <schema:coach>Franck Haise</schema:coach>
+        <schema:logo>https://example.com/logo/lens.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Toulouse -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Toulouse">
+        <schema:name>Toulouse FC</schema:name>
+        <schema:alternateName>Le Téfécé</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1970</schema:foundingDate>
+        <schema:homeLocation>Toulouse</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadiumToulouse"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>RedBird Capital Partners</schema:owner>
+        <schema:coach>Carles Martínez</schema:coach>
+        <schema:logo>https://example.com/logo/toulouse.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Rennes -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Rennes">
+        <schema:name>Stade Rennais</schema:name>
+        <schema:alternateName>Les Rouge et Noir</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1901</schema:foundingDate>
+        <schema:homeLocation>Rennes</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/RoazhonPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Pinais Family</schema:owner>
+        <schema:coach>Bruno Génésio</schema:coach>
+        <schema:logo>https://example.com/logo/rennes.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Nantes -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Nantes">
+        <schema:name>FC Nantes</schema:name>
+        <schema:alternateName>Les Canaris</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1943</schema:foundingDate>
+        <schema:homeLocation>Nantes</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeDeLaBeaujoire"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Waldemar Kita</schema:owner>
+        <schema:coach>Pierre Aristouy</schema:coach>
+        <schema:logo>https://example.com/logo/nantes.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Montpellier -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Montpellier">
+        <schema:name>Montpellier</schema:name>
+        <schema:alternateName>La Paillade</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1974</schema:foundingDate>
+        <schema:homeLocation>Montpellier</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeDeLaMosson"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Nicolin Family</schema:owner>
+        <schema:coach>Michel Der Zakarian</schema:coach>
+        <schema:logo>https://example.com/logo/montpellier.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Brest -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Brest">
+        <schema:name>Stade Brestois</schema:name>
+        <schema:alternateName>Les Ty-Zefs</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1950</schema:foundingDate>
+        <schema:homeLocation>Brest</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeFrancisLeBle"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Brestois Association</schema:owner>
+        <schema:coach>Eric Roy</schema:coach>
+        <schema:logo>https://example.com/logo/brest.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Strasbourg -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Strasbourg">
+        <schema:name>Strasbourg</schema:name>
+        <schema:alternateName>Le Racing</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1906</schema:foundingDate>
+        <schema:homeLocation>Strasbourg</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeDeLaMeinau"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>BlueCo Group</schema:owner>
+        <schema:coach>Patrick Vieira</schema:coach>
+        <schema:logo>https://example.com/logo/strasbourg.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Reims -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Reims">
+        <schema:name>Stade de Reims</schema:name>
+        <schema:alternateName>Les Rouges et Blancs</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1931</schema:foundingDate>
+        <schema:homeLocation>Reims</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeAugusteDelaune"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Jean-Pierre Caillot</schema:owner>
+        <schema:coach>Will Still</schema:coach>
+        <schema:logo>https://example.com/logo/reims.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Lorient -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Lorient">
+        <schema:name>FC Lorient</schema:name>
+        <schema:alternateName>Les Merlus</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1926</schema:foundingDate>
+        <schema:homeLocation>Lorient</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeDuMoustoir"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Loïc Féry</schema:owner>
+        <schema:coach>Régis Le Bris</schema:coach>
+        <schema:logo>https://example.com/logo/lorient.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Clermont Foot -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ClermontFoot">
+        <schema:name>Clermont Foot</schema:name>
+        <schema:alternateName>Les Lanciers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1911</schema:foundingDate>
+        <schema:homeLocation>Clermont-Ferrand</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeGabrielMontpied"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Ahmet Schaefer</schema:owner>
+        <schema:coach>Pascal Gastien</schema:coach>
+        <schema:logo>https://example.com/logo/clermont.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Auxerre -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Auxerre">
+        <schema:name>AJ Auxerre</schema:name>
+        <schema:alternateName>AJA</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1905</schema:foundingDate>
+        <schema:homeLocation>Auxerre</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeAbbeDeschamps"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>James Zhou</schema:owner>
+        <schema:coach>Christophe Pélissier</schema:coach>
+        <schema:logo>https://example.com/logo/auxerre.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Le Havre -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/LeHavre">
+        <schema:name>Le Havre AC</schema:name>
+        <schema:alternateName>Les Ciel et Marine</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1872</schema:foundingDate>
+        <schema:homeLocation>Le Havre</schema:homeLocation>
+        <schema:addressCountry>France</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeOceane"/>
+        <ex:competition rdf:resource="http://example.com/resource/Ligue1"/>
+        <schema:owner>Vincent Volpe</schema:owner>
+        <schema:coach>Luka Elsner</schema:coach>
+        <schema:logo>https://example.com/logo/lehavre.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Ajax -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Ajax">
+        <schema:name>AFC Ajax</schema:name>
+        <schema:alternateName>De Godenzonen</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1900</schema:foundingDate>
+        <schema:homeLocation>Amsterdam</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/JohanCruyffArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>AFC Ajax NV</schema:owner>
+        <schema:coach>John van 't Schip</schema:coach>
+        <schema:logo>https://example.com/logo/ajax.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- PSV Eindhoven -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PSV">
+        <schema:name>PSV Eindhoven</schema:name>
+        <schema:alternateName>Boeren</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1913</schema:foundingDate>
+        <schema:homeLocation>Eindhoven</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/PhilipsStadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>PSV NV</schema:owner>
+        <schema:coach>Peter Bosz</schema:coach>
+        <schema:logo>https://example.com/logo/psv.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Feyenoord -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Feyenoord">
+        <schema:name>Feyenoord</schema:name>
+        <schema:alternateName>De Stadionclub</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1908</schema:foundingDate>
+        <schema:homeLocation>Rotterdam</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/DeKuip"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>Feyenoord Rotterdam NV</schema:owner>
+        <schema:coach>Arne Slot</schema:coach>
+        <schema:logo>https://example.com/logo/feyenoord.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- AZ Alkmaar -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AZAlkmaar">
+        <schema:name>AZ Alkmaar</schema:name>
+        <schema:alternateName>Kaaskoppen</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1967</schema:foundingDate>
+        <schema:homeLocation>Alkmaar</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AFASStadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>AZ NV</schema:owner>
+        <schema:coach>Pascal Jansen</schema:coach>
+        <schema:logo>https://example.com/logo/azalkmaar.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Twente -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Twente">
+        <schema:name>FC Twente</schema:name>
+        <schema:alternateName>De Tukkers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1965</schema:foundingDate>
+        <schema:homeLocation>Enschede</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/DeGrolschVeste"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>FC Twente NV</schema:owner>
+        <schema:coach>Joseph Oosting</schema:coach>
+        <schema:logo>https://example.com/logo/twente.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Utrecht -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Utrecht">
+        <schema:name>FC Utrecht</schema:name>
+        <schema:alternateName>Domstedelingen</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1970</schema:foundingDate>
+        <schema:homeLocation>Utrecht</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GalgenwaardStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>FC Utrecht Holding</schema:owner>
+        <schema:coach>Ron Jans</schema:coach>
+        <schema:logo>https://example.com/logo/utrecht.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Heerenveen -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Heerenveen">
+        <schema:name>SC Heerenveen</schema:name>
+        <schema:alternateName>De Superfriezen</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1920</schema:foundingDate>
+        <schema:homeLocation>Heerenveen</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AbeLenstraStadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>SC Heerenveen NV</schema:owner>
+        <schema:coach>Kees van Wonderen</schema:coach>
+        <schema:logo>https://example.com/logo/heerenveen.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Vitesse -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Vitesse">
+        <schema:name>Vitesse</schema:name>
+        <schema:alternateName>Vitas</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1892</schema:foundingDate>
+        <schema:homeLocation>Arnhem</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GelreDome"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>Valeriy Oyf</schema:owner>
+        <schema:coach>Edward Sturing</schema:coach>
+        <schema:logo>https://example.com/logo/vitesse.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- NEC Nijmegen -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/NECNijmegen">
+        <schema:name>NEC Nijmegen</schema:name>
+        <schema:alternateName>Eniesee</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1900</schema:foundingDate>
+        <schema:homeLocation>Nijmegen</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Goffertstadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>NEC BV</schema:owner>
+        <schema:coach>Rogier Meijer</schema:coach>
+        <schema:logo>https://example.com/logo/nec.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Groningen -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Groningen">
+        <schema:name>FC Groningen</schema:name>
+        <schema:alternateName>Pride of the North</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1971</schema:foundingDate>
+        <schema:homeLocation>Groningen</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Euroborg"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>FC Groningen NV</schema:owner>
+        <schema:coach>Dick Lukkien</schema:coach>
+        <schema:logo>https://example.com/logo/groningen.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- RKC Waalwijk -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RKCWaalwijk">
+        <schema:name>RKC Waalwijk</schema:name>
+        <schema:alternateName>Waalwijkers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1940</schema:foundingDate>
+        <schema:homeLocation>Waalwijk</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/MandalineStadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>RKC Waalwijk BV</schema:owner>
+        <schema:coach>Henk Fraser</schema:coach>
+        <schema:logo>https://example.com/logo/rkc.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sparta Rotterdam -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SpartaRotterdam">
+        <schema:name>Sparta Rotterdam</schema:name>
+        <schema:alternateName>De Kasteelheren</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1888</schema:foundingDate>
+        <schema:homeLocation>Rotterdam</schema:homeLocation>
+        <schema:addressCountry>Netherlands</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/HetKasteel"/>
+        <ex:competition rdf:resource="http://example.com/resource/Eredivisie"/>
+        <schema:owner>Sparta Rotterdam NV</schema:owner>
+        <schema:coach>Maurice Steijn</schema:coach>
+        <schema:logo>https://example.com/logo/sparta.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Benfica -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Benfica">
+        <schema:name>SL Benfica</schema:name>
+        <schema:alternateName>Águias</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1904</schema:foundingDate>
+        <schema:homeLocation>Lisbon</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioDaLuz"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>Sport Lisboa e Benfica</schema:owner>
+        <schema:coach>Roger Schmidt</schema:coach>
+        <schema:logo>https://example.com/logo/benfica.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- FC Porto -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Porto">
+        <schema:name>FC Porto</schema:name>
+        <schema:alternateName>Dragões</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1893</schema:foundingDate>
+        <schema:homeLocation>Porto</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioDoDragao"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>Futebol Clube do Porto</schema:owner>
+        <schema:coach>Sérgio Conceição</schema:coach>
+        <schema:logo>https://example.com/logo/porto.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sporting CP -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SportingCP">
+        <schema:name>Sporting CP</schema:name>
+        <schema:alternateName>Leões</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1906</schema:foundingDate>
+        <schema:homeLocation>Lisbon</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioJoseAlvalade"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>Sporting Clube de Portugal</schema:owner>
+        <schema:coach>Rúben Amorim</schema:coach>
+        <schema:logo>https://example.com/logo/sporting.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Braga -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Braga">
+        <schema:name>SC Braga</schema:name>
+        <schema:alternateName>Arsenalistas</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1921</schema:foundingDate>
+        <schema:homeLocation>Braga</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioMunicipalDeBraga"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>SC Braga SAD</schema:owner>
+        <schema:coach>Artur Jorge</schema:coach>
+        <schema:logo>https://example.com/logo/braga.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Vitória Guimarães -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/VitoriaGuimaraes">
+        <schema:name>Vitória SC</schema:name>
+        <schema:alternateName>Os Conquistadores</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1922</schema:foundingDate>
+        <schema:homeLocation>Guimarães</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioDomAfonsoHenriques"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>Vitória Sport Clube</schema:owner>
+        <schema:coach>Álvaro Pacheco</schema:coach>
+        <schema:logo>https://example.com/logo/vitoria.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Boavista -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Boavista">
+        <schema:name>Boavista FC</schema:name>
+        <schema:alternateName>Os Axadrezados</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1903</schema:foundingDate>
+        <schema:homeLocation>Porto</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioDoBessa"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>Boavista Futebol Clube</schema:owner>
+        <schema:coach>Petit</schema:coach>
+        <schema:logo>https://example.com/logo/boavista.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Rio Ave -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RioAve">
+        <schema:name>Rio Ave</schema:name>
+        <schema:alternateName>Rioavistas</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1939</schema:foundingDate>
+        <schema:homeLocation>Vila do Conde</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioDoRioAve"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>Rio Ave Futebol Clube</schema:owner>
+        <schema:coach>Luís Freire</schema:coach>
+        <schema:logo>https://example.com/logo/rioave.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Estoril Praia -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/EstorilPraia">
+        <schema:name>Estoril Praia</schema:name>
+        <schema:alternateName>Canarinhos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1939</schema:foundingDate>
+        <schema:homeLocation>Estoril</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioAntonioCoimbraDaMota"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>Global Holdings</schema:owner>
+        <schema:coach>Álvaro Pacheco</schema:coach>
+        <schema:logo>https://example.com/logo/estoril.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Casa Pia -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/CasaPia">
+        <schema:name>Casa Pia</schema:name>
+        <schema:alternateName>Os Gansos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1920</schema:foundingDate>
+        <schema:homeLocation>Lisbon</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioPinaManique"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>Casa Pia AC</schema:owner>
+        <schema:coach>Filipe Martins</schema:coach>
+        <schema:logo>https://example.com/logo/casapia.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Famalicão -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Famalicao">
+        <schema:name>Famalicão</schema:name>
+        <schema:alternateName>Vila Nova</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1931</schema:foundingDate>
+        <schema:homeLocation>Vila Nova de Famalicão</schema:homeLocation>
+        <schema:addressCountry>Portugal</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioMunicipal22DeJunho"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeiraLiga"/>
+        <schema:owner>Quantum Pacific Group</schema:owner>
+        <schema:coach>João Pedro Sousa</schema:coach>
+        <schema:logo>https://example.com/logo/famalicao.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Galatasaray -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Galatasaray">
+        <schema:name>Galatasaray</schema:name>
+        <schema:alternateName>Cim Bom</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1905</schema:foundingDate>
+        <schema:homeLocation>Istanbul</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/RamsPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Galatasaray SK</schema:owner>
+        <schema:coach>Okan Buruk</schema:coach>
+        <schema:logo>https://example.com/logo/galatasaray.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Fenerbahçe -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Fenerbahce">
+        <schema:name>Fenerbahçe</schema:name>
+        <schema:alternateName>Sarı Kanaryalar</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1907</schema:foundingDate>
+        <schema:homeLocation>Istanbul</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SukruSaracogluStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Fenerbahçe SK</schema:owner>
+        <schema:coach>İsmail Kartal</schema:coach>
+        <schema:logo>https://example.com/logo/fenerbahce.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Beşiktaş -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Besiktas">
+        <schema:name>Beşiktaş</schema:name>
+        <schema:alternateName>Kara Kartallar</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1903</schema:foundingDate>
+        <schema:homeLocation>Istanbul</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/VodafonePark"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Beşiktaş JK</schema:owner>
+        <schema:coach>Rıza Çalımbay</schema:coach>
+        <schema:logo>https://example.com/logo/besiktas.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Trabzonspor -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Trabzonspor">
+        <schema:name>Trabzonspor</schema:name>
+        <schema:alternateName>Bordo-Mavililer</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1967</schema:foundingDate>
+        <schema:homeLocation>Trabzon</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SenolGunesSportsComplex"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Trabzonspor Kulübü</schema:owner>
+        <schema:coach>Abdullah Avcı</schema:coach>
+        <schema:logo>https://example.com/logo/trabzonspor.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- İstanbul Başakşehir -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/IstanbulBasaksehir">
+        <schema:name>İstanbul Başakşehir</schema:name>
+        <schema:alternateName>Turuncular</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1990</schema:foundingDate>
+        <schema:homeLocation>Istanbul</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BasaksehirFatihTerimStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Istanbul Başakşehir FK</schema:owner>
+        <schema:coach>Çağdaş Atan</schema:coach>
+        <schema:logo>https://example.com/logo/basaksehir.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sivasspor -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Sivasspor">
+        <schema:name>Sivasspor</schema:name>
+        <schema:alternateName>Yiğidolar</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1967</schema:foundingDate>
+        <schema:homeLocation>Sivas</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/4EylulStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Sivasspor Kulübü</schema:owner>
+        <schema:coach>Servet Çetin</schema:coach>
+        <schema:logo>https://example.com/logo/sivasspor.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Antalyaspor -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Antalyaspor">
+        <schema:name>Antalyaspor</schema:name>
+        <schema:alternateName>Akrep</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1966</schema:foundingDate>
+        <schema:homeLocation>Antalya</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AntalyaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Antalyaspor A.Ş.</schema:owner>
+        <schema:coach>Nuri Şahin</schema:coach>
+        <schema:logo>https://example.com/logo/antalyaspor.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Alanyaspor -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Alanyaspor">
+        <schema:name>Alanyaspor</schema:name>
+        <schema:alternateName>Turuncu Yeşilliler</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1948</schema:foundingDate>
+        <schema:homeLocation>Alanya</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BahcesehirOkullariStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Alanyaspor Kulübü</schema:owner>
+        <schema:coach>Ömer Erdoğan</schema:coach>
+        <schema:logo>https://example.com/logo/alanyaspor.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Konyaspor -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Konyaspor">
+        <schema:name>Konyaspor</schema:name>
+        <schema:alternateName>Anadolu Kartalı</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1922</schema:foundingDate>
+        <schema:homeLocation>Konya</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KonyaBuyuksehirStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Konyaspor Kulübü</schema:owner>
+        <schema:coach>Aleksandar Stanojevic</schema:coach>
+        <schema:logo>https://example.com/logo/konyaspor.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Adana Demirspor -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AdanaDemirspor">
+        <schema:name>Adana Demirspor</schema:name>
+        <schema:alternateName>Mavi Şimşekler</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1940</schema:foundingDate>
+        <schema:homeLocation>Adana</schema:homeLocation>
+        <schema:addressCountry>Turkey</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/NewAdanaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SuperLig"/>
+        <schema:owner>Adana Demirspor Kulübü</schema:owner>
+        <schema:coach>Patrick Kluivert</schema:coach>
+        <schema:logo>https://example.com/logo/adanademirspor.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Club Brugge -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ClubBrugge">
+        <schema:name>Club Brugge</schema:name>
+        <schema:alternateName>Blauw-Zwart</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1891</schema:foundingDate>
+        <schema:homeLocation>Bruges</schema:homeLocation>
+        <schema:addressCountry>Belgium</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/JanBreydelStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/JupilerProLeague"/>
+        <schema:owner>Orkila Capital</schema:owner>
+        <schema:coach>Ronny Deila</schema:coach>
+        <schema:logo>https://example.com/logo/clubbrugge.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Anderlecht -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Anderlecht">
+        <schema:name>Anderlecht</schema:name>
+        <schema:alternateName>Paars-Wit</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1908</schema:foundingDate>
+        <schema:homeLocation>Brussels</schema:homeLocation>
+        <schema:addressCountry>Belgium</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/LottoPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/JupilerProLeague"/>
+        <schema:owner>Marc Coucke</schema:owner>
+        <schema:coach>Brian Riemer</schema:coach>
+        <schema:logo>https://example.com/logo/anderlecht.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Genk -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Genk">
+        <schema:name>KRC Genk</schema:name>
+        <schema:alternateName>De Smurfen</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1988</schema:foundingDate>
+        <schema:homeLocation>Genk</schema:homeLocation>
+        <schema:addressCountry>Belgium</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/LuminusArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/JupilerProLeague"/>
+        <schema:owner>KRC Genk NV</schema:owner>
+        <schema:coach>Wouter Vrancken</schema:coach>
+        <schema:logo>https://example.com/logo/genk.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Gent -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Gent">
+        <schema:name>KAA Gent</schema:name>
+        <schema:alternateName>Buffalo's</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1900</schema:foundingDate>
+        <schema:homeLocation>Ghent</schema:homeLocation>
+        <schema:addressCountry>Belgium</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GhelamcoArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/JupilerProLeague"/>
+        <schema:owner>KAA Gent NV</schema:owner>
+        <schema:coach>Hein Vanhaezebrouck</schema:coach>
+        <schema:logo>https://example.com/logo/gent.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Standard Liège -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/StandardLiege">
+        <schema:name>Standard Liège</schema:name>
+        <schema:alternateName>Les Rouches</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1898</schema:foundingDate>
+        <schema:homeLocation>Liège</schema:homeLocation>
+        <schema:addressCountry>Belgium</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/StadeMauriceDufrasne"/>
+        <ex:competition rdf:resource="http://example.com/resource/JupilerProLeague"/>
+        <schema:owner>777 Partners</schema:owner>
+        <schema:coach>Carl Hoefkens</schema:coach>
+        <schema:logo>https://example.com/logo/standardliege.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Royal Antwerp -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RoyalAntwerp">
+        <schema:name>Royal Antwerp</schema:name>
+        <schema:alternateName>The Great Old</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1880</schema:foundingDate>
+        <schema:homeLocation>Antwerp</schema:homeLocation>
+        <schema:addressCountry>Belgium</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Bosuilstadion"/>
+        <ex:competition rdf:resource="http://example.com/resource/JupilerProLeague"/>
+        <schema:owner>Paul Gheysens</schema:owner>
+        <schema:coach>Mark van Bommel</schema:coach>
+        <schema:logo>https://example.com/logo/antwerp.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- KV Mechelen -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/KVMechelen">
+        <schema:name>KV Mechelen</schema:name>
+        <schema:alternateName>De Kakkers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1904</schema:foundingDate>
+        <schema:homeLocation>Mechelen</schema:homeLocation>
+        <schema:addressCountry>Belgium</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AchterDeKazerne"/>
+        <ex:competition rdf:resource="http://example.com/resource/JupilerProLeague"/>
+        <schema:owner>KV Mechelen NV</schema:owner>
+        <schema:coach>Besnik Hasi</schema:coach>
+        <schema:logo>https://example.com/logo/kvmechelen.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Kortrijk -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Kortrijk">
+        <schema:name>KV Kortrijk</schema:name>
+        <schema:alternateName>De Kerels</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1901</schema:foundingDate>
+        <schema:homeLocation>Kortrijk</schema:homeLocation>
+        <schema:addressCountry>Belgium</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GuldensporenStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/JupilerProLeague"/>
+        <schema:owner>Vincent Tan</schema:owner>
+        <schema:coach>Glen De Boeck</schema:coach>
+        <schema:logo>https://example.com/logo/kortrijk.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Zenit -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Zenit">
+        <schema:name>Zenit Saint Petersburg</schema:name>
+        <schema:alternateName>Sine-Belo-Golubye</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1925</schema:foundingDate>
+        <schema:homeLocation>Saint Petersburg</schema:homeLocation>
+        <schema:addressCountry>Russia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/GazpromArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/RussianPremierLeague"/>
+        <schema:owner>Gazprom</schema:owner>
+        <schema:coach>Sergei Semak</schema:coach>
+        <schema:logo>https://example.com/logo/zenit.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- CSKA Moscow -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/CSKAMoscow">
+        <schema:name>CSKA Moscow</schema:name>
+        <schema:alternateName>Armeitsy</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1911</schema:foundingDate>
+        <schema:homeLocation>Moscow</schema:homeLocation>
+        <schema:addressCountry>Russia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/VTBArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/RussianPremierLeague"/>
+        <schema:owner>Rosneft</schema:owner>
+        <schema:coach>Vladimir Fedotov</schema:coach>
+        <schema:logo>https://example.com/logo/cska.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Spartak Moscow -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SpartakMoscow">
+        <schema:name>Spartak Moscow</schema:name>
+        <schema:alternateName>Narodnaya Komanda</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1922</schema:foundingDate>
+        <schema:homeLocation>Moscow</schema:homeLocation>
+        <schema:addressCountry>Russia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/OtkritieBankArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/RussianPremierLeague"/>
+        <schema:owner>Leonid Fedun</schema:owner>
+        <schema:coach>Guillermo Abascal</schema:coach>
+        <schema:logo>https://example.com/logo/spartak.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Lokomotiv Moscow -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/LokomotivMoscow">
+        <schema:name>Lokomotiv Moscow</schema:name>
+        <schema:alternateName>Parovozy</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1922</schema:foundingDate>
+        <schema:homeLocation>Moscow</schema:homeLocation>
+        <schema:addressCountry>Russia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/RZD_Arena"/>
+        <ex:competition rdf:resource="http://example.com/resource/RussianPremierLeague"/>
+        <schema:owner>Russian Railways</schema:owner>
+        <schema:coach>Mikhail Galaktionov</schema:coach>
+        <schema:logo>https://example.com/logo/lokomotiv.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Krasnodar -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Krasnodar">
+        <schema:name>FC Krasnodar</schema:name>
+        <schema:alternateName>Byki</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2008</schema:foundingDate>
+        <schema:homeLocation>Krasnodar</schema:homeLocation>
+        <schema:addressCountry>Russia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KrasnodarStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/RussianPremierLeague"/>
+        <schema:owner>Sergei Galitsky</schema:owner>
+        <schema:coach>Vladimir Ivic</schema:coach>
+        <schema:logo>https://example.com/logo/krasnodar.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Dynamo Moscow -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/DynamoMoscow">
+        <schema:name>Dynamo Moscow</schema:name>
+        <schema:alternateName>Dinamit</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1923</schema:foundingDate>
+        <schema:homeLocation>Moscow</schema:homeLocation>
+        <schema:addressCountry>Russia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/VTB_Arena"/>
+        <ex:competition rdf:resource="http://example.com/resource/RussianPremierLeague"/>
+        <schema:owner>VTB Bank</schema:owner>
+        <schema:coach>Marcel Lička</schema:coach>
+        <schema:logo>https://example.com/logo/dynamo.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Rubin Kazan -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RubinKazan">
+        <schema:name>Rubin Kazan</schema:name>
+        <schema:alternateName>Tatars</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1958</schema:foundingDate>
+        <schema:homeLocation>Kazan</schema:homeLocation>
+        <schema:addressCountry>Russia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KazanArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/RussianPremierLeague"/>
+        <schema:owner>Republic of Tatarstan</schema:owner>
+        <schema:coach>Rashid Rakhimov</schema:coach>
+        <schema:logo>https://example.com/logo/rubin.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sochi -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Sochi">
+        <schema:name>PFC Sochi</schema:name>
+        <schema:alternateName>Barsy</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2018</schema:foundingDate>
+        <schema:homeLocation>Sochi</schema:homeLocation>
+        <schema:addressCountry>Russia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/FishtStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/RussianPremierLeague"/>
+        <schema:owner>Private Management Group</schema:owner>
+        <schema:coach>Kurban Berdyev</schema:coach>
+        <schema:logo>https://example.com/logo/sochi.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Shakhtar Donetsk -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ShakhtarDonetsk">
+        <schema:name>Shakhtar Donetsk</schema:name>
+        <schema:alternateName>Hirnyky</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1936</schema:foundingDate>
+        <schema:homeLocation>Donetsk (currently Kyiv/Lviv)</schema:homeLocation>
+        <schema:addressCountry>Ukraine</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/DonbassArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/UkrainianPremierLeague"/>
+        <schema:owner>Rinat Akhmetov</schema:owner>
+        <schema:coach>Marino Pušić</schema:coach>
+        <schema:logo>https://example.com/logo/shakhtar.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Dynamo Kyiv -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/DynamoKyiv">
+        <schema:name>Dynamo Kyiv</schema:name>
+        <schema:alternateName>Bilo-Syni</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1927</schema:foundingDate>
+        <schema:homeLocation>Kyiv</schema:homeLocation>
+        <schema:addressCountry>Ukraine</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/OlimpiyskiyStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/UkrainianPremierLeague"/>
+        <schema:owner>Surkis Family</schema:owner>
+        <schema:coach>Mircea Lucescu</schema:coach>
+        <schema:logo>https://example.com/logo/dynamo.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Dnipro-1 -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Dnipro1">
+        <schema:name>SC Dnipro-1</schema:name>
+        <schema:alternateName>Dnipro Army</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2017</schema:foundingDate>
+        <schema:homeLocation>Dnipro</schema:homeLocation>
+        <schema:addressCountry>Ukraine</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/DFCMArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/UkrainianPremierLeague"/>
+        <schema:owner>State-backed</schema:owner>
+        <schema:coach>Oleksandr Kucher</schema:coach>
+        <schema:logo>https://example.com/logo/dnipro1.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Zorya Luhansk -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ZoryaLuhansk">
+        <schema:name>Zorya Luhansk</schema:name>
+        <schema:alternateName>Chorno-Bili</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1923</schema:foundingDate>
+        <schema:homeLocation>Luhansk (currently Zaporizhzhia)</schema:homeLocation>
+        <schema:addressCountry>Ukraine</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SlavutychArena"/>
+        <ex:competition rdf:resource="http://example.com/resource/UkrainianPremierLeague"/>
+        <schema:owner>Zorya FC</schema:owner>
+        <schema:coach>Valeriy Kriventsov</schema:coach>
+        <schema:logo>https://example.com/logo/zorya.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Chornomorets Odesa -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Chornomorets">
+        <schema:name>Chornomorets Odesa</schema:name>
+        <schema:alternateName>Moryaky</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1936</schema:foundingDate>
+        <schema:homeLocation>Odesa</schema:homeLocation>
+        <schema:addressCountry>Ukraine</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/ChornomoretsStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/UkrainianPremierLeague"/>
+        <schema:owner>Chornomorets FC</schema:owner>
+        <schema:coach>Roman Hryhorchuk</schema:coach>
+        <schema:logo>https://example.com/logo/chornomorets.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- River Plate -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RiverPlate">
+        <schema:name>River Plate</schema:name>
+        <schema:alternateName>Los Millonarios</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1901</schema:foundingDate>
+        <schema:homeLocation>Buenos Aires</schema:homeLocation>
+        <schema:addressCountry>Argentina</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioMonumental"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeraDivisionArgentina"/>
+        <schema:owner>Club Atlético River Plate</schema:owner>
+        <schema:coach>Martín Demichelis</schema:coach>
+        <schema:logo>https://example.com/logo/riverplate.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Boca Juniors -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/BocaJuniors">
+        <schema:name>Boca Juniors</schema:name>
+        <schema:alternateName>Xeneizes</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1905</schema:foundingDate>
+        <schema:homeLocation>Buenos Aires</schema:homeLocation>
+        <schema:addressCountry>Argentina</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/LaBombonera"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeraDivisionArgentina"/>
+        <schema:owner>Club Atlético Boca Juniors</schema:owner>
+        <schema:coach>Jorge Almirón</schema:coach>
+        <schema:logo>https://example.com/logo/bocajuniors.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Racing Club -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/RacingClub">
+        <schema:name>Racing Club</schema:name>
+        <schema:alternateName>La Academia</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1903</schema:foundingDate>
+        <schema:homeLocation>Avellaneda</schema:homeLocation>
+        <schema:addressCountry>Argentina</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioPresidentPeron"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeraDivisionArgentina"/>
+        <schema:owner>Racing Club Asociación Civil</schema:owner>
+        <schema:coach>Fernando Gago</schema:coach>
+        <schema:logo>https://example.com/logo/racing.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Independiente -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Independiente">
+        <schema:name>Independiente</schema:name>
+        <schema:alternateName>El Rojo</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1904</schema:foundingDate>
+        <schema:homeLocation>Avellaneda</schema:homeLocation>
+        <schema:addressCountry>Argentina</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioLibertadoresDeAmerica"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeraDivisionArgentina"/>
+        <schema:owner>Club Atlético Independiente</schema:owner>
+        <schema:coach>Carlos Tévez</schema:coach>
+        <schema:logo>https://example.com/logo/independiente.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- San Lorenzo -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SanLorenzo">
+        <schema:name>San Lorenzo</schema:name>
+        <schema:alternateName>Los Cuervos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1908</schema:foundingDate>
+        <schema:homeLocation>Buenos Aires</schema:homeLocation>
+        <schema:addressCountry>Argentina</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioPedroBidegain"/>
+        <ex:competition rdf:resource="http://example.com/resource/PrimeraDivisionArgentina"/>
+        <schema:owner>Club Atlético San Lorenzo</schema:owner>
+        <schema:coach>Rubén Darío Insúa</schema:coach>
+        <schema:logo>https://example.com/logo/sanlorenzo.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Flamengo -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Flamengo">
+        <schema:name>Flamengo</schema:name>
+        <schema:alternateName>Mengão</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1895</schema:foundingDate>
+        <schema:homeLocation>Rio de Janeiro</schema:homeLocation>
+        <schema:addressCountry>Brazil</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Maracana"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA_Brasileirao"/>
+        <schema:owner>Clube de Regatas do Flamengo</schema:owner>
+        <schema:coach>Tite</schema:coach>
+        <schema:logo>https://example.com/logo/flamengo.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Palmeiras -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Palmeiras">
+        <schema:name>Palmeiras</schema:name>
+        <schema:alternateName>Verdão</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1914</schema:foundingDate>
+        <schema:homeLocation>São Paulo</schema:homeLocation>
+        <schema:addressCountry>Brazil</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AllianzParque"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA_Brasileirao"/>
+        <schema:owner>Sociedade Esportiva Palmeiras</schema:owner>
+        <schema:coach>Abel Ferreira</schema:coach>
+        <schema:logo>https://example.com/logo/palmeiras.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Corinthians -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Corinthians">
+        <schema:name>Corinthians</schema:name>
+        <schema:alternateName>Timão</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1910</schema:foundingDate>
+        <schema:homeLocation>São Paulo</schema:homeLocation>
+        <schema:addressCountry>Brazil</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/ArenaCorinthians"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA_Brasileirao"/>
+        <schema:owner>Sport Club Corinthians Paulista</schema:owner>
+        <schema:coach>Mano Menezes</schema:coach>
+        <schema:logo>https://example.com/logo/corinthians.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Santos -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Santos">
+        <schema:name>Santos FC</schema:name>
+        <schema:alternateName>Peixe</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1912</schema:foundingDate>
+        <schema:homeLocation>Santos</schema:homeLocation>
+        <schema:addressCountry>Brazil</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/VilaBelmiro"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA_Brasileirao"/>
+        <schema:owner>Santos Futebol Clube</schema:owner>
+        <schema:coach>Paulo Turra</schema:coach>
+        <schema:logo>https://example.com/logo/santos.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- São Paulo -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SaoPaulo">
+        <schema:name>São Paulo</schema:name>
+        <schema:alternateName>Tricolor Paulista</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1930</schema:foundingDate>
+        <schema:homeLocation>São Paulo</schema:homeLocation>
+        <schema:addressCountry>Brazil</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Morumbi"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA_Brasileirao"/>
+        <schema:owner>São Paulo Futebol Clube</schema:owner>
+        <schema:coach>Dorival Júnior</schema:coach>
+        <schema:logo>https://example.com/logo/saopaulo.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Fluminense -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Fluminense">
+        <schema:name>Fluminense</schema:name>
+        <schema:alternateName>Fluzão</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1902</schema:foundingDate>
+        <schema:homeLocation>Rio de Janeiro</schema:homeLocation>
+        <schema:addressCountry>Brazil</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/Maracana"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA_Brasileirao"/>
+        <schema:owner>Fluminense Football Club</schema:owner>
+        <schema:coach>Fernando Diniz</schema:coach>
+        <schema:logo>https://example.com/logo/fluminense.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Grêmio -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Gremio">
+        <schema:name>Grêmio</schema:name>
+        <schema:alternateName>Imortal Tricolor</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1903</schema:foundingDate>
+        <schema:homeLocation>Porto Alegre</schema:homeLocation>
+        <schema:addressCountry>Brazil</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/ArenaDoGremio"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA_Brasileirao"/>
+        <schema:owner>Grêmio FBPA</schema:owner>
+        <schema:coach>Renato Gaúcho</schema:coach>
+        <schema:logo>https://example.com/logo/gremio.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Internacional -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Internacional">
+        <schema:name>Internacional</schema:name>
+        <schema:alternateName>Colorado</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1909</schema:foundingDate>
+        <schema:homeLocation>Porto Alegre</schema:homeLocation>
+        <schema:addressCountry>Brazil</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/BeiraRio"/>
+        <ex:competition rdf:resource="http://example.com/resource/SerieA_Brasileirao"/>
+        <schema:owner>Sport Club Internacional</schema:owner>
+        <schema:coach>Eduardo Coudet</schema:coach>
+        <schema:logo>https://example.com/logo/internacional.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Club América -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ClubAmerica">
+        <schema:name>Club América</schema:name>
+        <schema:alternateName>Las Águilas</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1916</schema:foundingDate>
+        <schema:homeLocation>Mexico City</schema:homeLocation>
+        <schema:addressCountry>Mexico</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioAzteca"/>
+        <ex:competition rdf:resource="http://example.com/resource/LigaMX"/>
+        <schema:owner>Televisa</schema:owner>
+        <schema:coach>André Jardine</schema:coach>
+        <schema:logo>https://example.com/logo/america.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Chivas Guadalajara -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Chivas">
+        <schema:name>Chivas Guadalajara</schema:name>
+        <schema:alternateName>El Rebaño Sagrado</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1906</schema:foundingDate>
+        <schema:homeLocation>Guadalajara</schema:homeLocation>
+        <schema:addressCountry>Mexico</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AkronStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/LigaMX"/>
+        <schema:owner>Grupo Omnilife</schema:owner>
+        <schema:coach>Veljko Paunović</schema:coach>
+        <schema:logo>https://example.com/logo/chivas.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Monterrey -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Monterrey">
+        <schema:name>CF Monterrey</schema:name>
+        <schema:alternateName>Rayados</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1945</schema:foundingDate>
+        <schema:homeLocation>Monterrey</schema:homeLocation>
+        <schema:addressCountry>Mexico</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioBBVA"/>
+        <ex:competition rdf:resource="http://example.com/resource/LigaMX"/>
+        <schema:owner>FEMSA</schema:owner>
+        <schema:coach>Fernando Ortiz</schema:coach>
+        <schema:logo>https://example.com/logo/monterrey.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Tigres UANL -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/Tigres">
+        <schema:name>Tigres UANL</schema:name>
+        <schema:alternateName>Los Felinos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1960</schema:foundingDate>
+        <schema:homeLocation>San Nicolás</schema:homeLocation>
+        <schema:addressCountry>Mexico</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/EstadioUniversitario"/>
+        <ex:competition rdf:resource="http://example.com/resource/LigaMX"/>
+        <schema:owner>UANL / Sinergia Deportiva</schema:owner>
+        <schema:coach>Robert Dante Siboldi</schema:coach>
+        <schema:logo>https://example.com/logo/tigres.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Kawasaki Frontale -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/KawasakiFrontale">
+        <schema:name>Kawasaki Frontale</schema:name>
+        <schema:alternateName>Frontale</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1955</schema:foundingDate>
+        <schema:homeLocation>Kawasaki</schema:homeLocation>
+        <schema:addressCountry>Japan</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/TododokiStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/J1League"/>
+        <schema:owner>Kawasaki Frontale Co.</schema:owner>
+        <schema:coach>Toru Oniki</schema:coach>
+        <schema:logo>https://example.com/logo/frontale.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Yokohama F. Marinos -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/YokohamaMarinos">
+        <schema:name>Yokohama F. Marinos</schema:name>
+        <schema:alternateName>Marinos</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1972</schema:foundingDate>
+        <schema:homeLocation>Yokohama</schema:homeLocation>
+        <schema:addressCountry>Japan</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/NissanStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/J1League"/>
+        <schema:owner>Nissan / City Football Group</schema:owner>
+        <schema:coach>Kevin Muscat</schema:coach>
+        <schema:logo>https://example.com/logo/marinos.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Urawa Red Diamonds -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/UrawaReds">
+        <schema:name>Urawa Red Diamonds</schema:name>
+        <schema:alternateName>Reds</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1950</schema:foundingDate>
+        <schema:homeLocation>Saitama</schema:homeLocation>
+        <schema:addressCountry>Japan</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SaitamaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/J1League"/>
+        <schema:owner>Mitsubishi Motors</schema:owner>
+        <schema:coach>Maciej Skorża</schema:coach>
+        <schema:logo>https://example.com/logo/urawa.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Kashima Antlers -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/KashimaAntlers">
+        <schema:name>Kashima Antlers</schema:name>
+        <schema:alternateName>Antlers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1947</schema:foundingDate>
+        <schema:homeLocation>Kashima</schema:homeLocation>
+        <schema:addressCountry>Japan</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KashimaSoccerStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/J1League"/>
+        <schema:owner>Nippon Steel</schema:owner>
+        <schema:coach>Daiki Iwamasa</schema:coach>
+        <schema:logo>https://example.com/logo/antlers.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Gamba Osaka -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/GambaOsaka">
+        <schema:name>Gamba Osaka</schema:name>
+        <schema:alternateName>Gamba</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1991</schema:foundingDate>
+        <schema:homeLocation>Osaka</schema:homeLocation>
+        <schema:addressCountry>Japan</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SuitaCityStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/J1League"/>
+        <schema:owner>Panasonic</schema:owner>
+        <schema:coach>Danny Milosevic</schema:coach>
+        <schema:logo>https://example.com/logo/gamba.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Ulsan Hyundai -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/UlsanHyundai">
+        <schema:name>Ulsan Hyundai</schema:name>
+        <schema:alternateName>Tigers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1983</schema:foundingDate>
+        <schema:homeLocation>Ulsan</schema:homeLocation>
+        <schema:addressCountry>South Korea</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/UlsanMunsuStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/KLeague1"/>
+        <schema:owner>Hyundai Heavy Industries</schema:owner>
+        <schema:coach>Hong Myung-bo</schema:coach>
+        <schema:logo>https://example.com/logo/ulsan.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Jeonbuk Hyundai Motors -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/JeonbukHyundai">
+        <schema:name>Jeonbuk Hyundai Motors</schema:name>
+        <schema:alternateName>Green Warriors</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1994</schema:foundingDate>
+        <schema:homeLocation>Jeonju</schema:homeLocation>
+        <schema:addressCountry>South Korea</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/JeonjuWorldCupStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/KLeague1"/>
+        <schema:owner>Hyundai Motors</schema:owner>
+        <schema:coach>Dan Petrescu</schema:coach>
+        <schema:logo>https://example.com/logo/jeonbuk.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- FC Seoul -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/FCSeoul">
+        <schema:name>FC Seoul</schema:name>
+        <schema:alternateName>Seoul</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1983</schema:foundingDate>
+        <schema:homeLocation>Seoul</schema:homeLocation>
+        <schema:addressCountry>South Korea</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/SeoulWorldCupStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/KLeague1"/>
+        <schema:owner>GS Group</schema:owner>
+        <schema:coach>An Ik-soo</schema:coach>
+        <schema:logo>https://example.com/logo/fcseoul.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Pohang Steelers -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/PohangSteelers">
+        <schema:name>Pohang Steelers</schema:name>
+        <schema:alternateName>Steelers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1973</schema:foundingDate>
+        <schema:homeLocation>Pohang</schema:homeLocation>
+        <schema:addressCountry>South Korea</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/PohangSteelYard"/>
+        <ex:competition rdf:resource="http://example.com/resource/KLeague1"/>
+        <schema:owner>POSCO</schema:owner>
+        <schema:coach>Kim Gi-dong</schema:coach>
+        <schema:logo>https://example.com/logo/pohang.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Al-Nassr -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AlNassr">
+        <schema:name>Al-Nassr</schema:name>
+        <schema:alternateName>Al Aalami</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1955</schema:foundingDate>
+        <schema:homeLocation>Riyadh</schema:homeLocation>
+        <schema:addressCountry>Saudi Arabia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AlAwalPark"/>
+        <ex:competition rdf:resource="http://example.com/resource/SaudiProLeague"/>
+        <schema:owner>PIF</schema:owner>
+        <schema:coach>Luís Castro</schema:coach>
+        <schema:logo>https://example.com/logo/alnassr.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Al-Hilal -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AlHilal">
+        <schema:name>Al-Hilal</schema:name>
+        <schema:alternateName>Blue Wave</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1957</schema:foundingDate>
+        <schema:homeLocation>Riyadh</schema:homeLocation>
+        <schema:addressCountry>Saudi Arabia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KingFahdStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/SaudiProLeague"/>
+        <schema:owner>PIF</schema:owner>
+        <schema:coach>Jorge Jesus</schema:coach>
+        <schema:logo>https://example.com/logo/alhilal.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Al-Ittihad -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AlIttihad">
+        <schema:name>Al-Ittihad</schema:name>
+        <schema:alternateName>Tigers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1927</schema:foundingDate>
+        <schema:homeLocation>Jeddah</schema:homeLocation>
+        <schema:addressCountry>Saudi Arabia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KingAbdullahSportsCity"/>
+        <ex:competition rdf:resource="http://example.com/resource/SaudiProLeague"/>
+        <schema:owner>PIF</schema:owner>
+        <schema:coach>Nuno Espírito Santo</schema:coach>
+        <schema:logo>https://example.com/logo/alittihad.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Al-Ahli -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AlAhli">
+        <schema:name>Al-Ahli</schema:name>
+        <schema:alternateName>Royal Club</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1937</schema:foundingDate>
+        <schema:homeLocation>Jeddah</schema:homeLocation>
+        <schema:addressCountry>Saudi Arabia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/KingAbdullahSportsCity"/>
+        <ex:competition rdf:resource="http://example.com/resource/SaudiProLeague"/>
+        <schema:owner>PIF</schema:owner>
+        <schema:coach>Matthias Jaissle</schema:coach>
+        <schema:logo>https://example.com/logo/alahli.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Al-Sadd -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AlSadd">
+        <schema:name>Al-Sadd</schema:name>
+        <schema:alternateName>Wolves</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1969</schema:foundingDate>
+        <schema:homeLocation>Doha</schema:homeLocation>
+        <schema:addressCountry>Qatar</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/JassimBinHamadStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/QatarStarsLeague"/>
+        <schema:owner>Qatar Sports Club</schema:owner>
+        <schema:coach>Bruno Pinheiro</schema:coach>
+        <schema:logo>https://example.com/logo/alsadd.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Al-Duhail -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AlDuhail">
+        <schema:name>Al-Duhail</schema:name>
+        <schema:alternateName>The Red Knights</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1938</schema:foundingDate>
+        <schema:homeLocation>Doha</schema:homeLocation>
+        <schema:addressCountry>Qatar</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AbdullahBinKhalifaStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/QatarStarsLeague"/>
+        <schema:owner>Qatar Army</schema:owner>
+        <schema:coach>Hernán Crespo</schema:coach>
+        <schema:logo>https://example.com/logo/alduhail.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Al-Ain -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/AlAin">
+        <schema:name>Al-Ain</schema:name>
+        <schema:alternateName>The Boss</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1968</schema:foundingDate>
+        <schema:homeLocation>Al Ain</schema:homeLocation>
+        <schema:addressCountry>UAE</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/HazzaBinZayedStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/UAEProLeague"/>
+        <schema:owner>Sheikh Mohammed bin Zayed</schema:owner>
+        <schema:coach>Serhiy Rebrov</schema:coach>
+        <schema:logo>https://example.com/logo/alain.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Shabab Al-Ahli -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/ShababAlAhli">
+        <schema:name>Shabab Al-Ahli</schema:name>
+        <schema:alternateName>Red Knights</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1958</schema:foundingDate>
+        <schema:homeLocation>Dubai</schema:homeLocation>
+        <schema:addressCountry>UAE</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/RashidStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/UAEProLeague"/>
+        <schema:owner>Dubai Government</schema:owner>
+        <schema:coach>Leonardo Jardim</schema:coach>
+        <schema:logo>https://example.com/logo/shababalahli.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Sydney FC -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/SydneyFC">
+        <schema:name>Sydney FC</schema:name>
+        <schema:alternateName>Sydney</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2004</schema:foundingDate>
+        <schema:homeLocation>Sydney</schema:homeLocation>
+        <schema:addressCountry>Australia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AllianzStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/ALeague"/>
+        <schema:owner>Sydney FC Pty Ltd</schema:owner>
+        <schema:coach>Steve Corica</schema:coach>
+        <schema:logo>https://example.com/logo/sydneyfc.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Melbourne Victory -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/MelbourneVictory">
+        <schema:name>Melbourne Victory</schema:name>
+        <schema:alternateName>Victory</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2004</schema:foundingDate>
+        <schema:homeLocation>Melbourne</schema:homeLocation>
+        <schema:addressCountry>Australia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AAMI_Park"/>
+        <ex:competition rdf:resource="http://example.com/resource/ALeague"/>
+        <schema:owner>Victory Group</schema:owner>
+        <schema:coach>Tony Popovic</schema:coach>
+        <schema:logo>https://example.com/logo/melbournevictory.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Melbourne City -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/MelbourneCity">
+        <schema:name>Melbourne City</schema:name>
+        <schema:alternateName>City</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2009</schema:foundingDate>
+        <schema:homeLocation>Melbourne</schema:homeLocation>
+        <schema:addressCountry>Australia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/AAMI_Park"/>
+        <ex:competition rdf:resource="http://example.com/resource/ALeague"/>
+        <schema:owner>City Football Group</schema:owner>
+        <schema:coach>Rado Vidošić</schema:coach>
+        <schema:logo>https://example.com/logo/melbournecity.png</schema:logo>
+    </schema:SportsTeam>
+
+    <!-- Western Sydney Wanderers -->
+    <schema:SportsTeam rdf:about="http://example.com/resource/WesternSydneyWanderers">
+        <schema:name>Western Sydney Wanderers</schema:name>
+        <schema:alternateName>Wanderers</schema:alternateName>
+        <schema:foundingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2012</schema:foundingDate>
+        <schema:homeLocation>Sydney</schema:homeLocation>
+        <schema:addressCountry>Australia</schema:addressCountry>
+        <schema:homeStadium rdf:resource="http://example.com/resource/CommBankStadium"/>
+        <ex:competition rdf:resource="http://example.com/resource/ALeague"/>
+        <schema:owner>Western Sydney Wanderers FC</schema:owner>
+        <schema:coach>Marko Rudan</schema:coach>
+        <schema:logo>https://example.com/logo/wanderers.png</schema:logo>
+    </schema:SportsTeam>
+
+
+
+</rdf:RDF>

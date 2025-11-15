@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ $club['team']['value'] ?? 'Club Detail' }}</title>
+    <title>{{ $club['name']['value'] ?? 'Club Detail' }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
             background: radial-gradient(circle at top, #0b132b, #1c2541);
@@ -26,46 +27,65 @@
             text-decoration: none;
         }
         a.back:hover {
+            color: #4ba3a1;
             text-decoration: underline;
+        }
+        .logo-box {
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
+
 <div class="container mt-5">
+
     <a href="{{ url('/football') }}" class="back">← Back</a>
 
     @if(isset($error))
         <div class="alert alert-danger mt-4">{{ $error }}</div>
+
     @elseif(!$club)
         <div class="alert alert-warning mt-4">⚠️ Club data not found.</div>
+
     @else
+
         <div class="info-card mt-3">
-            <h1>{{ $club['team']['value'] ?? 'Unknown Club' }}</h1>
+
+            {{-- Logo --}}
+            @if(isset($club['logo']['value']))
+                <div class="logo-box">
+                    <img src="{{ $club['logo']['value'] }}" alt="logo" height="90">
+                </div>
+            @endif
+
+            <h1>
+                {{ $club['name']['value'] ?? 'Unknown Club' }}
+            </h1>
+            <p class="text-info">{{ $club['nickname']['value'] ?? '' }}</p>
+
             <p><strong>🏟️ Stadium:</strong> {{ $club['stadium']['value'] ?? '-' }}</p>
             <p><strong>🌍 Country:</strong> {{ $club['country']['value'] ?? '-' }}</p>
-            <p><strong>👔 Manager:</strong> {{ $club['manager']['value'] ?? '-' }}</p>
-            <p><strong>📅 Founded:</strong> {{ $club['year']['value'] ?? '-' }}</p>
+            <p><strong>📍 Location:</strong> {{ $club['location']['value'] ?? '-' }}</p>
+            <p><strong>👔 Coach:</strong> {{ $club['coach']['value'] ?? '-' }}</p>
+            <p><strong>🏢 Owner:</strong> {{ $club['owner']['value'] ?? '-' }}</p>
+            <p><strong>🏆 Competition:</strong> {{ basename($club['competition']['value'] ?? '-') }}</p>
+            <p><strong>📅 Founded:</strong> {{ $club['founded']['value'] ?? '-' }}</p>
 
             <hr class="text-secondary">
 
-            <p><strong>📝 Description:</strong></p>
-            <p style="white-space: pre-line;">{{ $club['desc']['value'] ?? 'No description available.' }}</p>
-
-            <hr class="text-secondary">
-
-            <p><strong>🔗 Website:</strong>
-                <a href="https://{{ $club['website']['value'] ?? '#' }}" target="_blank" class="text-info">
-                    {{ $club['website']['value'] ?? '—' }}
-                </a>
+            <p><strong>Club URI:</strong>  
+                <span class="text-info">{{ $clubUri ?? '' }}</span>
             </p>
 
-            <p><strong>📱 Social Media:</strong>
-                <a href="https://{{ $club['facebook']['value'] ?? '' }}" target="_blank" class="text-info">Facebook</a> |
-                <a href="https://{{ $club['twitter']['value'] ?? '' }}" target="_blank" class="text-info">Twitter</a> |
-                <a href="https://{{ $club['instagram']['value'] ?? '' }}" target="_blank" class="text-info">Instagram</a>
-            </p>
         </div>
+
     @endif
+
 </div>
+
 </body>
 </html>

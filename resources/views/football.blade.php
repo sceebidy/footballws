@@ -35,13 +35,6 @@
             font-size: 1.2rem;
             margin-bottom: 8px;
         }
-        .desc {
-            color: #ddd;
-            font-size: 0.9rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 70px;
-        }
         .search-bar {
             max-width: 480px;
             margin: 25px auto;
@@ -53,17 +46,19 @@
 
     <h1 class="text-center mt-4 mb-3">🏆 RDF Football Club Explorer</h1>
 
-    <!-- SEARCH + CARI LIGA -->
-    <form method="GET" action="{{ url('/football') }}" class="d-flex search-bar justify-content-center gap-2">
+    <!-- SEARCH + FILTER LIGA -->
+    <form method="GET" action="{{ url('football') }}" class="d-flex search-bar justify-content-center gap-2">
         <input type="text" name="q" class="form-control" style="max-width:300px"
                placeholder="Search club..." value="{{ $search ?? '' }}">
         <button class="btn btn-primary">Search</button>
+
         <button type="button" class="btn btn-outline-info"
-                onclick="window.location='?mode=league'">
+                onclick="window.location='{{ url('football') }}?mode=league'">
             Cari Liga
         </button>
+
         <button type="button" class="btn btn-outline-light"
-                onclick="window.location='/football'">
+                onclick="window.location='{{ url('football') }}'">
             Mode Klub
         </button>
     </form>
@@ -73,28 +68,30 @@
     @endisset
 
 
-    <!-- ===========================
-         MODE 1: TAMPILKAN DAFTAR LIGA
-    ============================ -->
+    <!-- ===================================================
+         MODE: PILIH LIGA
+    ===================================================== -->
     @if(request('mode') === 'league')
+
         <h3 class="text-center mb-3">📚 Pilih Liga</h3>
 
         <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
-            @foreach($leagues as $lg)
+
+            @foreach($leagueNames as $id => $name)
                 <div class="col">
                     <div class="club-card text-center"
-                         onclick="window.location='?league={{ $lg }}'">
+                         onclick="window.location='{{ url("football?league=$id") }}'">
 
-                        <!-- jika kamu punya logo liga, letakkan di /public/img/leagues -->
-                        <img src="/img/leagues/{{ $lg }}.png"
+                        <img src="/img/leagues/{{ $id }}.png"
                              onerror="this.style.display='none'"
                              class="img-fluid mb-3 rounded"
                              style="max-height:90px; background:#fff; padding:10px">
 
-                        <h3>{{ $lg }}</h3>
+                        <h3>{{ $name }}</h3>
                     </div>
                 </div>
             @endforeach
+
         </div>
 
         <footer class="text-center mt-5 mb-3 text-secondary">
@@ -105,20 +102,29 @@
     @endif
 
 
-    <!-- ===========================
-         MODE 2: TAMPIL KLUB BERDASAR LIGA
-    ============================ -->
+    <!-- ===================================================
+         MODE: LIST KLUB BY LIGA
+    ===================================================== -->
     @if(request('league'))
-        <h3 class="text-center mb-3">🏆 Liga: {{ request('league') }}</h3>
+        <h3 class="text-center mb-4">
+            🏆 Liga: {{ $leagueNames[request('league')] ?? request('league') }}
+        </h3>
     @endif
 
 
-    <!-- ===========================
-         MODE 3: TAMPIL LIST KLUB (DEFAULT)
-    ============================ -->
+    <!-- ===================================================
+         MODE: LIST SEMUA KLUB
+    ===================================================== -->
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
         @forelse($results as $r)
+
+            @php
+                $clubId = basename($r['club']['value']);
+                $compId = basename($r['competition']['value']);
+                $leagueName = $leagueNames[$compId] ?? $compId;
+            @endphp
+
             <div class="col">
                 <div class="club-card h-100">
 
@@ -128,7 +134,7 @@
                     @endif
 
                     <h3>
-                        <a href="{{ route('football.show', basename($r['club']['value'])) }}"
+                        <a href="{{ route('football.show', $clubId) }}"
                            class="text-decoration-none text-info">
                             {{ $r['name']['value'] }}
                         </a>
@@ -140,15 +146,17 @@
                     <p><strong>📅 Founded:</strong> {{ $r['founded']['value'] }}</p>
 
                     <p><strong>🏆 Competition:</strong>
-                        <a href="?league={{ basename($r['competition']['value']) }}"
-                           class="text-info">{{ basename($r['competition']['value']) }}</a>
+                        <a href="{{ url("football?league=$compId") }}" class="text-info">
+                            {{ $leagueName }}
+                        </a>
                     </p>
 
                     <p><strong>📍 Location:</strong> {{ $r['location']['value'] }}</p>
-                    <p><strong>🏢 Owner:</strong> {{ $r['owner']['value'] }}</p>
+                    <p><strong>🏢 Owner:</strong> {{ $r['owner']['value'] ?? '-' }}</p>
 
                 </div>
             </div>
+
         @empty
             <p class="text-center mt-5">⚠️ No data found or Fuseki not running.</p>
         @endforelse

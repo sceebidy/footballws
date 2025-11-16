@@ -7,211 +7,193 @@ use GuzzleHttp\Client;
 
 class FootballController extends Controller
 {
-    public function league($id)
-{
-    $sparqlEndpoint = 'http://localhost:3030/football/query';
-
-    $query = "
-        PREFIX schema: <http://schema.org/>
-        PREFIX ex: <http://example.com/resource/>
-
-        SELECT ?club ?name ?nickname ?founded ?location ?country ?stadium ?owner ?coach ?logo
-        WHERE {
-            BIND(IRI(CONCAT('http://example.com/resource/', '$id')) AS ?league)
-
-            ?club a schema:SportsTeam ;
-                  schema:name ?name ;
-                  schema:alternateName ?nickname ;
-                  schema:foundingDate ?founded ;
-                  schema:homeLocation ?location ;
-                  schema:addressCountry ?country ;
-                  schema:homeStadium ?stadium ;
-                  schema:owner ?owner ;
-                  schema:coach ?coach ;
-                  schema:logo ?logo ;
-                  ex:competition ?league .
-        }
-        LIMIT 300
-    ";
-
-    try {
-        $client = new Client(['timeout' => 20]);
-        $res = $client->post($sparqlEndpoint, [
-            'form_params' => ['query' => $query],
-            'headers' => ['Accept' => 'application/sparql-results+json']
-        ]);
-
-        $json = json_decode($res->getBody(), true);
-        $results = $json['results']['bindings'] ?? [];
-    } catch (\Exception $e) {
-        return view('league', [
-            'results' => [],
-            'leagueName' => $id,
-            'error' => $e->getMessage()
-        ]);
-    }
-
-    return view('league', [
-        'results' => $results,
-        'leagueName' => $id
-    ]);
-}
+    private $endpoint = "http://localhost:3030/bola/query";
 
     public function index(Request $request)
-{
-    $sparqlEndpoint = 'http://localhost:3030/football/query';
-    $search = strtolower(trim($request->q ?? ''));
-    $mode = $request->mode ?? 'club';   // default tampil klub
-    $selectedLeague = $request->league ?? '';
+    {
+        $search = strtolower(trim($request->q ?? ''));
+        $selectedLeague = $request->league ?? '';
 
-    $client = new Client(['timeout' => 20]);
+        $client = new Client(['timeout' => 20]);
 
-    // =======================
-    // 1️⃣ Ambil daftar liga
-    // =======================
-    $leagueQuery = "
-        PREFIX schema: <http://schema.org/>
-        PREFIX ex: <http://example.com/resource/>
+        // ==============================
+        // Manual League Names Mapping
+        // ==============================
+        $leagueNames = [
+            "39" => "Premier League",
+            "140" => "La Liga",
+            "135" => "Serie A",
+            "78" => "Bundesliga",
+            "61" => "Ligue 1",
+            "253" => "MLS",
+            "88" => "Eredivisie",
+            "182" => "Liga Portugal",
+            "144" => "Belgian Pro League",
+            "1001" => "Liga 1 Indonesia",
+            "2001" => "Liga 2 Indonesia",
+        ];
 
-        SELECT DISTINCT (STRAFTER(STR(?league), '/resource/') AS ?lg)
-        WHERE {
-            ?club a schema:SportsTeam ;
-                  ex:competition ?league .
-        }
-    ";
+        // ==============================
+        // Ambil daftar liga dari RDF
+        // ==============================
+        $leagueQuery = "
+            PREFIX schema: <http://schema.org/>
+            PREFIX ex: <http://example.com/resource/>
 
-    $resLeague = $client->post($sparqlEndpoint, [
-        'form_params' => ['query' => $leagueQuery],
-        'headers' => ['Accept' => 'application/sparql-results+json']
-    ]);
-
-    $jsonLeague = json_decode($resLeague->getBody(), true);
-    $leagues = array_map(fn($r) => $r['lg']['value'], $jsonLeague['results']['bindings']);
-
-
-    // =======================
-    // 2️⃣ Filter search
-    // =======================
-    $filter = '';
-    if ($search) {
-        $safe = preg_quote($search, '/');
-        $filter .= "FILTER(REGEX(LCASE(?name), '.*$safe.*'))";
-    }
-
-    // =======================
-    // 3️⃣ Filter liga jika dipilih
-    // =======================
-    $filterLeague = "";
-    if ($selectedLeague) {
-        $filterLeague = "
-            BIND(IRI(CONCAT('http://example.com/resource/', '$selectedLeague')) AS ?targetLeague)
-            FILTER(?competition = ?targetLeague)
+            SELECT DISTINCT (STRAFTER(STR(?league), '/league/') AS ?lg)
+            WHERE {
+                ?club a schema:SportsTeam ;
+                      ex:competition ?league .
+            }
         ";
-    }
 
-    // =======================
-    // 4️⃣ Query klub (normal)
-    // =======================
-    $query = "
-        PREFIX schema: <http://schema.org/>
-        PREFIX ex: <http://example.com/resource/>
-
-        SELECT ?club ?name ?nickname ?founded ?location ?country ?stadium ?competition ?owner ?coach ?logo
-        WHERE {
-            ?club a schema:SportsTeam ;
-                  schema:name ?name ;
-                  schema:alternateName ?nickname ;
-                  schema:foundingDate ?founded ;
-                  schema:homeLocation ?location ;
-                  schema:addressCountry ?country ;
-                  schema:homeStadium ?stadium ;
-                  ex:competition ?competition ;
-                  schema:owner ?owner ;
-                  schema:coach ?coach ;
-                  schema:logo ?logo .
-
-            $filter
-            $filterLeague
-        }
-        LIMIT 300
-    ";
-
-    try {
-        $res = $client->post($sparqlEndpoint, [
-            'form_params' => ['query' => $query],
+        $respLeague = $client->post($this->endpoint, [
+            'form_params' => ['query' => $leagueQuery],
             'headers' => ['Accept' => 'application/sparql-results+json']
         ]);
 
-        $json = json_decode($res->getBody(), true);
-        $results = $json['results']['bindings'] ?? [];
+        $jsonLeague = json_decode($respLeague->getBody(), true);
+        $leagues = array_map(fn($r) => $r['lg']['value'], $jsonLeague['results']['bindings']);
 
-    } catch (\Exception $e) {
-        return view('football', [
-            'results' => [],
-            'search' => $search,
-            'mode' => $mode,
-            'leagues' => $leagues,
-            'error' => $e->getMessage()
-        ]);
-    }
+        // ==============================
+        // Filters
+        // ==============================
+        $filter = '';
+        if ($search) {
+            $safe = preg_quote($search, '/');
+            $filter .= "FILTER(REGEX(LCASE(?name), '.*$safe.*'))";
+        }
 
-    return view('football', [
-        'results' => $results,
-        'search' => $search,
-        'mode' => $mode,
-        'leagues' => $leagues
-    ]);
-}
+        $filterLeague = '';
+        if ($selectedLeague) {
+            $filterLeague = "
+                BIND(IRI(CONCAT('http://example.com/league/', '$selectedLeague')) AS ?targetLeague)
+                FILTER(?competition = ?targetLeague)
+            ";
+        }
 
-
-    // ================================
-    // 🔥 DETAIL CLUB
-    // ================================
-    public function show($id)
-    {
-        $sparqlEndpoint = 'http://localhost:3030/football/query';
-
+        // ==============================
+        // Query Klub
+        // ==============================
         $query = "
             PREFIX schema: <http://schema.org/>
             PREFIX ex: <http://example.com/resource/>
 
-            SELECT ?name ?nickname ?founded ?location ?country ?stadium ?competition ?owner ?coach ?logo
+            SELECT DISTINCT ?club ?name ?founded ?location ?country ?stadium ?competition ?coach ?logo
             WHERE {
-                BIND(IRI(CONCAT('http://example.com/resource/', '$id')) AS ?club)
-
                 ?club a schema:SportsTeam ;
                       schema:name ?name ;
-                      schema:alternateName ?nickname ;
+                      schema:addressCountry ?country ;
                       schema:foundingDate ?founded ;
                       schema:homeLocation ?location ;
-                      schema:addressCountry ?country ;
                       schema:homeStadium ?stadium ;
-                      ex:competition ?competition ;
-                      schema:owner ?owner ;
                       schema:coach ?coach ;
-                      schema:logo ?logo .
+                      schema:logo ?logo ;
+                      ex:competition ?competition .
+                $filter
+                $filterLeague
             }
-            LIMIT 1
+            LIMIT 500
         ";
 
         try {
-            $client = new Client(['timeout' => 20]);
-            $res = $client->post($sparqlEndpoint, [
+            $resp = $client->post($this->endpoint, [
                 'form_params' => ['query' => $query],
                 'headers' => ['Accept' => 'application/sparql-results+json']
             ]);
 
-            $json = json_decode($res->getBody(), true);
-            $club = $json['results']['bindings'][0] ?? null;
+            $json = json_decode($resp->getBody(), true);
+            $results = $json['results']['bindings'] ?? [];
+
+        } catch (\Exception $e) {
+            return view('football', [
+                'results' => [],
+                'search' => $search,
+                'leagues' => $leagues,
+                'leagueNames' => $leagueNames,
+                'error' => $e->getMessage()
+            ]);
+        }
+
+        // ==============================
+        // RETURN VIEW (BENAR)
+        // ==============================
+        return view('football', [
+            'results' => $results,
+            'search' => $search,
+            'leagues' => $leagues,
+            'leagueNames' => $leagueNames
+        ]);
+    }
+
+    // ==============================
+    // DETAIL CLUB
+    // ==============================
+    public function show($id)
+    {
+        $client = new Client(['timeout' => 20]);
+
+        $clubQuery = "
+            PREFIX schema: <http://schema.org/>
+            PREFIX ex: <http://example.com/resource/>
+
+            SELECT ?name ?founded ?location ?country ?stadium ?competition ?coach ?logo
+            WHERE {
+                BIND(IRI(CONCAT('http://example.com/team/', '$id')) AS ?club)
+
+                ?club a schema:SportsTeam ;
+                      schema:name ?name ;
+                      schema:addressCountry ?country ;
+                      schema:foundingDate ?founded ;
+                      schema:homeLocation ?location ;
+                      schema:homeStadium ?stadium ;
+                      schema:coach ?coach ;
+                      schema:logo ?logo ;
+                      ex:competition ?competition .
+            }
+            LIMIT 1
+        ";
+
+        $playerQuery = "
+            PREFIX ex: <http://example.com/resource/>
+
+            SELECT ?player
+            WHERE {
+                BIND(IRI(CONCAT('http://example.com/team/', '$id')) AS ?club)
+                ?club ex:player ?player .
+            }
+        ";
+
+        try {
+            $resClub = $client->post($this->endpoint, [
+                'form_params' => ['query' => $clubQuery],
+                'headers' => ['Accept' => 'application/sparql-results+json']
+            ]);
+
+            $clubJson = json_decode($resClub->getBody(), true);
+            $club = $clubJson['results']['bindings'][0] ?? null;
+
+            $resPlayer = $client->post($this->endpoint, [
+                'form_params' => ['query' => $playerQuery],
+                'headers' => ['Accept' => 'application/sparql-results+json']
+            ]);
+
+            $jsonPlayer = json_decode($resPlayer->getBody(), true);
+            $players = array_map(fn($p) => $p['player']['value'], $jsonPlayer['results']['bindings']);
 
         } catch (\Exception $e) {
             return view('clubdetail', [
                 'club' => null,
-                'error' => $e->getMessage(),
-                'id' => $id
+                'players' => [],
+                'id' => $id,
+                'error' => $e->getMessage()
             ]);
         }
 
-        return view('clubdetail', compact('club', 'id'));
+        return view('clubdetail', [
+            'club' => $club,
+            'players' => $players,
+            'id' => $id
+        ]);
     }
 }

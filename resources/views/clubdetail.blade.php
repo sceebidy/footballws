@@ -37,13 +37,26 @@
             display: inline-block;
             margin-bottom: 15px;
         }
+        .player-list {
+            background: rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .player-item {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .player-item:last-child {
+            border-bottom: none;
+        }
     </style>
 </head>
 <body>
 
 <div class="container mt-5">
 
-    <a href="{{ url('/football') }}" class="back">← Back</a>
+    <a href="{{ url('/') }}" class="back">← Back</a>
 
     @if(isset($error))
         <div class="alert alert-danger mt-4">{{ $error }}</div>
@@ -62,9 +75,7 @@
                 </div>
             @endif
 
-            <h1>
-                {{ $club['name']['value'] ?? 'Unknown Club' }}
-            </h1>
+            <h1>{{ $club['name']['value'] ?? 'Unknown Club' }}</h1>
             <p class="text-info">{{ $club['nickname']['value'] ?? '' }}</p>
 
             <p><strong>🏟️ Stadium:</strong> {{ $club['stadium']['value'] ?? '-' }}</p>
@@ -77,9 +88,22 @@
 
             <hr class="text-secondary">
 
-            <p><strong>Club URI:</strong>  
-                <span class="text-info">{{ $clubUri ?? '' }}</span>
-            </p>
+            <!-- ========================
+                 DAFTAR PEMAIN
+            ========================= -->
+            <h3 class="mt-4">👥 Squad / Players</h3>
+
+            @if(count($players) > 0)
+                <div class="player-list">
+                    @foreach ($players as $p)
+                        <div class="player-item">
+                            {{ $p }}
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <p class="text-secondary">⚠️ Player data not available.</p>
+            @endif
 
         </div>
 

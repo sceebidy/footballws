@@ -1,172 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>⚽ Football Club Explorer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: radial-gradient(circle at top, #0b132b, #1c2541);
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
-            min-height: 100vh;
-        }
-        h1 {
-            color: #5bc0be;
-            text-shadow: 0 0 12px rgba(91,192,190,0.6);
-        }
-       .club-card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 16px;
-    padding: 18px;
-    transition: 0.35s ease;
-    height: 100%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-
-    /* 🔥 Tambahan biar teks panjang tidak keluar box */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-}
-
-        .club-card:hover {
-            transform: translateY(-6px);
-            background: rgba(255,255,255,0.12);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-        }
-        h3 {
-            color: #5bc0be;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-        .desc {
-            color: #ddd;
-            font-size: 0.9rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 70px;
-        }
-        .search-bar {
-            max-width: 480px;
-            margin: 25px auto;
-        }
-        .controls {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .btn-primary {
-            background-color: #5bc0be;
-            border: none;
-            transition: 0.3s;
-        }
-        .btn-primary:hover {
-            background-color: #4ba3a1;
-            transform: scale(1.05);
-        }
-        .btn-outline-info {
-            color: #5bc0be;
-            border-color: #5bc0be;
-        }
-        .btn-outline-info.active {
-            background-color: #5bc0be;
-            color: #fff;
-        }
-        .back-btn {
-            display: inline-block;
-            margin-top: 10px;
-            color: #ccc;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .back-btn:hover {
-            color: #5bc0be;
-            text-shadow: 0 0 8px rgba(91,192,190,0.6);
-        }
-        mark {
-            background: #5bc0be;
-            color: #000;
-            border-radius: 3px;
-            padding: 0 2px;
-        }
-        footer {
-            font-size: 0.85rem;
-            opacity: 0.75;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pencarian Klub Sepak Bola</title>
+    <link rel="stylesheet" href="{{ asset('/football.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center mt-4 mb-3">🏆 Football Club Explorer</h1>
-
-        <form method="GET" action="{{ url('/football') }}" class="d-flex search-bar">
-            <input type="text" name="q" class="form-control me-2" placeholder="Search club..." value="{{ $search ?? '' }}">
-            <button class="btn btn-primary">Search</button>
-        </form>
-
-        @if(!empty($search))
-            <div class="text-center">
-                <a href="{{ url('/football') }}" class="back-btn">← Back to all clubs</a>
-            </div>
-        @endif
-
-        @isset($error)
-            <div class="alert alert-danger text-center">{{ $error }}</div>
-        @endisset
-
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            @forelse ($results as $r)
-                @php
-                    $teamName = $r['team']['value'];
-
-                    if (!empty($search)) {
-                        $pattern = '/' . preg_quote($search, '/') . '/i';
-                        $teamName = preg_replace($pattern, '<mark>$0</mark>', $teamName);
-                    }
-                @endphp
-
-                <div class="col">
-                    <div class="club-card h-100">
-
-                        {{-- Nama Klub --}}
-                        <h3>
-                            <a href="{{ route('football.show', basename($r['club']['value'])) }}" 
-                               class="text-decoration-none text-info">
-                                {!! $teamName !!}
-                            </a>
-                        </h3>
-
-                        {{-- Stadion --}}
-                        <p><strong>🏟 Stadium:</strong> {{ $r['stadium']['value'] }}</p>
-
-                        {{-- Negara --}}
-                        <p><strong>🌍 Country:</strong> {{ $r['country']['value'] }}</p>
-
-                        {{-- Pelatih --}}
-                        <p><strong>👔 Coach:</strong> {{ $r['coach']['value'] }}</p>
-
-                        {{-- Pemilik --}}
-                        <p><strong>💼 Owner:</strong> {{ $r['owner']['value'] }}</p>
-
-                        {{-- Lokasi --}}
-                        <p><strong>📍 Home Location:</strong> {{ $r['location']['value'] }}</p>
-
-                        {{-- Logo --}}
-                        @if(isset($r['logo']['value']))
-                            <img src="{{ $r['logo']['value'] }}" alt="Logo" style="max-width:90px; margin-top:10px;">
-                        @endif
-
-                    </div>
-                </div>
-            @empty
-                <p class="text-center mt-5">⚠ No data found or Fuseki not running.</p>
-            @endforelse
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Sistem Pencarian Klub Sepak Bola</h1>
+            <p>Database lengkap klub sepak bola dengan informasi terperinci</p>
         </div>
 
-        <footer class="text-center mt-5 mb-3 text-secondary">
-            Data source: RDF via Fuseki | Displayed with Laravel
-        </footer>
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-input-container">
+                <div class="search-container">
+                    <input type="text" id="search-input" 
+                           placeholder="Masukkan nama klub, negara, pelatih, stadion, atau lokasi..." 
+                           value="{{ $search ?? '' }}">
+                    <button id="clear-search" class="clear-btn" style="display: none;">×</button>
+                    <select id="criteria-select">
+                        <option value="all" {{ ($criteria ?? 'all') == 'all' ? 'selected' : '' }}>Semua Kategori</option>
+                        <option value="team" {{ ($criteria ?? '') == 'team' ? 'selected' : '' }}>Nama Klub</option>
+                        <option value="country" {{ ($criteria ?? '') == 'country' ? 'selected' : '' }}>Negara</option>
+                        <option value="coach" {{ ($criteria ?? '') == 'coach' ? 'selected' : '' }}>Pelatih</option>
+                        <option value="stadium" {{ ($criteria ?? '') == 'stadium' ? 'selected' : '' }}>Stadion</option>
+                        <option value="location" {{ ($criteria ?? '') == 'location' ? 'selected' : '' }}>Lokasi</option>
+                        <option value="owner" {{ ($criteria ?? '') == 'owner' ? 'selected' : '' }}>Pemilik</option>
+                    </select>
+                </div>
+                <div id="suggestions"></div>
+                <div class="did-you-mean" id="did-you-mean" style="display: none;">
+                    <p>Maksud Anda:</p>
+                    <div id="correction-suggestions"></div>
+                </div>
+            </div>
 
+            <!-- Quick Filters -->
+            <div class="quick-filters">
+                <button class="filter-btn active" data-criteria="all">Semua</button>
+                <button class="filter-btn" data-criteria="team">Klub</button>
+                <button class="filter-btn" data-criteria="country">Negara</button>
+                <button class="filter-btn" data-criteria="coach">Pelatih</button>
+                <button class="filter-btn" data-criteria="stadium">Stadion</button>
+            </div>
+
+            <!-- Country Filter Section -->
+            <div class="country-filter" id="country-filter" style="display: none;">
+                <h3>Filter Berdasarkan Negara</h3>
+                <div class="country-grid" id="country-grid">
+                    <!-- Negara akan dimuat secara dinamis -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <div>Sedang mencari data...</div>
+        </div>
+
+        <!-- Results Container -->
+        <div class="results-container" id="results-container">
+            @if(isset($error))
+                <div class="empty-state">
+                    <h3>Terjadi Kesalahan</h3>
+                    <p>{{ $error }}</p>
+                </div>
+            @elseif(empty($results))
+                @if(isset($search) && $search != '')
+                    <div class="empty-state">
+                        <h3>Data Tidak Ditemukan</h3>
+                        <p>Tidak ada hasil yang cocok dengan pencarian "<span class="search-query">{{ $search }}</span>"</p>
+                    </div>
+                @else
+                    <div class="empty-state">
+                        <h3>Selamat Datang</h3>
+                        <p>Gunakan form pencarian di atas untuk menemukan informasi klub sepak bola</p>
+                    </div>
+                @endif
+            @else
+                <div class="results-header">
+                    <div class="results-count">
+                        Menampilkan <strong>{{ count($results) }}</strong> hasil
+                        @if(isset($search) && $search != '')
+                            untuk "<span class="search-query">{{ $search }}</span>"
+                        @endif
+                    </div>
+                </div>
+
+                <div class="results-grid">
+                    @foreach($results as $result)
+                        <div class="club-card">
+                            <div class="club-header">
+                                <div>
+                                    <div class="club-name">{{ $result['team']['value'] ?? 'N/A' }}</div>
+                                    <div class="club-country">{{ $result['country']['value'] ?? 'N/A' }}</div>
+                                </div>
+                            </div>
+                            
+                            <div class="club-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Lokasi</span>
+                                    <span class="detail-value">{{ $result['location']['value'] ?? 'N/A' }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Stadion</span>
+                                    <span class="detail-value">{{ $result['stadium']['value'] ?? 'N/A' }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Pelatih</span>
+                                    <span class="detail-value">{{ $result['coach']['value'] ?? 'N/A' }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Pemilik</span>
+                                    <span class="detail-value">{{ $result['owner']['value'] ?? 'N/A' }}</span>
+                                </div>
+                            </div>
+
+                            @if(isset($result['club']['value']))
+                                @php
+                                    $clubUri = $result['club']['value'];
+                                    $parts = explode('/', $clubUri);
+                                    $id = end($parts);
+                                @endphp
+                                <div class="club-actions">
+                                    <a href="{{ route('football.show', $id) }}" class="detail-link">Lihat Detail Lengkap</a>
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
+
+                <!-- Statistics -->
+                <div class="statistics">
+                    <div class="stat-card">
+                        <div class="stat-number">{{ count($results) }}</div>
+                        <div class="stat-label">Total Klub Ditemukan</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{ count(array_unique(array_column(array_column($results, 'country'), 'value'))) }}</div>
+                        <div class="stat-label">Negara Berbeda</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{ count(array_unique(array_column(array_column($results, 'coach'), 'value'))) }}</div>
+                        <div class="stat-label">Pelatih Berbeda</div>
+                    </div>
+                </div>
+            @endif
+        </div>
     </div>
+
+    <script src="{{ asset('/football.js') }}"></script>
 </body>
 </html>

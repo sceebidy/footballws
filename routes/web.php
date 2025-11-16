@@ -5,6 +5,8 @@ use App\Http\Controllers\FootballController;
 
 // Route utama
 Route::get('/', fn() => redirect('/football'));
+Route::get('/league/{id}', [App\Http\Controllers\FootballController::class, 'league'])
+    ->name('league.show');
 
 // Route pencarian dengan kriteria
 Route::get('/football', [FootballController::class, 'index']);

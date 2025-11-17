@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns:schema="http://schema.org/" 
+         xmlns:ex="http://example.com/">
+
+    <!-- Persib Bandung -->
+    <rdf:Description rdf:about="http://example.com/team/199">
+        <rdf:type rdf:resource="http://schema.org/SportsTeam"/>
+        <schema:name>Persib Bandung</schema:name>
+        <schema:logo>https://media.api-sports.io/football/teams/199.png</schema:logo>
+        <schema:foundingDate>1933</schema:foundingDate>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium>Stadion Gelora Bandung Lautan Api</schema:homeStadium>
+        <ex:stadiumCapacity>38000</ex:stadiumCapacity>
+
+        <!-- Statistics -->
+        <ex:matchesPlayed>34</ex:matchesPlayed>
+        <ex:matchesWon>18</ex:matchesWon>
+        <ex:matchesDrawn>8</ex:matchesDrawn>
+        <ex:matchesLost>8</ex:matchesLost>
+        <ex:goalsFor>55</ex:goalsFor>
+        <ex:goalsAgainst>35</ex:goalsAgainst>
+
+        <!-- Players -->
+        <ex:hasPlayer>
+            <ex:Player>
+                <ex:name>Teja Paku Alam</ex:name>
+                <ex:position>Goalkeeper</ex:position>
+                <ex:shirtNumber>28</ex:shirtNumber>
+                <ex:nationality>Indonesia</ex:nationality>
+            </ex:Player>
+        </ex:hasPlayer>
+        <ex:hasPlayer>
+            <ex:Player>
+                <ex:name>David da Silva</ex:name>
+                <ex:position>Forward</ex:position>
+                <ex:shirtNumber>10</ex:shirtNumber>
+                <ex:nationality>Brazil</ex:nationality>
+            </ex:Player>
+        </ex:hasPlayer>
+        <ex:hasPlayer>
+            <ex:Player>
+                <ex:name>Ciro Alves</ex:name>
+                <ex:position>Forward</ex:position>
+                <ex:shirtNumber>30</ex:shirtNumber>
+                <ex:nationality>Brazil</ex:nationality>
+            </ex:Player>
+        </ex:hasPlayer>
+        <ex:hasPlayer>
+            <ex:Player>
+                <ex:name>Zalnando</ex:name>
+                <ex:position>Defender</ex:position>
+                <ex:shirtNumber>14</ex:shirtNumber>
+                <ex:nationality>Indonesia</ex:nationality>
+            </ex:Player>
+        </ex:hasPlayer>
+        <ex:hasPlayer>
+            <ex:Player>
+                <ex:name>Dedi Kusnandar</ex:name>
+                <ex:position>Midfielder</ex:position>
+                <ex:shirtNumber>8</ex:shirtNumber>
+                <ex:nationality>Indonesia</ex:nationality>
+            </ex:Player>
+        </ex:hasPlayer>
+    </rdf:Description>
+
+    <!-- Persija Jakarta -->
+    <rdf:Description rdf:about="http://example.com/team/198">
+        <rdf:type rdf:resource="http://schema.org/SportsTeam"/>
+        <schema:name>Persija Jakarta</schema:name>
+        <schema:logo>https://media.api-sports.io/football/teams/198.png</schema:logo>
+        <schema:foundingDate>1928</schema:foundingDate>
+        <schema:addressCountry>Indonesia</schema:addressCountry>
+        <schema:homeStadium>Stadion Gelora Bung Karno</schema:homeStadium>
+        <ex:stadiumCapacity>77193</ex:stadiumCapacity>
+
+        <!-- Statistics -->
+        <ex:matchesPlayed>34</ex:matchesPlayed>
+        <ex:matchesWon>16</ex:matchesWon>
+        <ex:matchesDrawn>9</ex:matchesDrawn>
+        <ex:matchesLost>9</ex:matchesLost>
+        <ex:goalsFor>48</ex:goalsFor>
+        <ex:goalsAgainst>38</ex:goalsAgainst>
+
+        <!-- Players -->
+        <ex:hasPlayer>
+            <ex:Player>
+                <ex:name>Andritany Ardhiyasa</ex:name>
+                <ex:position>Goalkeeper</ex:position>
+                <ex:shirtNumber>1</ex:shirtNumber>
+                <ex:nationality>Indonesia</ex:nationality>
+            </ex:Player>
+        </ex:hasPlayer>
+        <ex:hasPlayer>
+            <ex:Player>
+                <ex:name>Marko Simic</ex:name>
+                <ex:position>Forward</ex:position>
+                <ex:shirtNumber>9</ex:shirtNumber>
+                <ex:nationality>Croatia</ex:nationality>
+            </ex:Player>
+        </ex:hasPlayer>
+        <ex:hasPlayer>
+            <ex:Player>
+                <ex:name>Michael Krmencik</ex:name>
+                <ex:position>Forward</ex:position>
+                <ex:shirtNumber>18</ex:shirtNumber>
+                <ex:nationality>Czech Republic</ex:nationality>
+            </ex:Player>
+        </ex:hasPlayer>
+    </rdf:Description>
+
+</rdf:RDF>

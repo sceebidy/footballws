@@ -9,85 +9,24 @@ class FootballController extends Controller
 {
     public function index(Request $request)
     {
-        $sparqlEndpoint = 'http://localhost:3030/football/query';
+        $sparqlEndpoint = 'http://localhost:3030/gas/query';
 
-        $search = strtolower(trim($request->query('q', '')));
-        $criteria = $request->query('criteria', 'all');
-
-        // NORMALISASI TYPO
-        $replacements = [
-            '0' => 'o',
-            '1' => 'i',
-            '3' => 'e',
-            '4' => 'a',
-            '5' => 's',
-            '7' => 't',
-            '@' => 'a',
-            '$' => 's',
-            '!' => 'i'
-        ];
-        $search = strtr($search, $replacements);
-
-        // FILTER MULTI-KRITERIA
-        $filter = '';
-        if ($search) {
-            $safe = preg_quote($search, '/');
-            
-            switch ($criteria) {
-                case 'team':
-                    $filter = "FILTER (REGEX(LCASE(?team), '.*{$safe}.*'))";
-                    break;
-                case 'country':
-                    $filter = "FILTER (REGEX(LCASE(?country), '.*{$safe}.*'))";
-                    break;
-                case 'coach':
-                    $filter = "FILTER (REGEX(LCASE(?coach), '.*{$safe}.*'))";
-                    break;
-                case 'stadium':
-                    $filter = "FILTER (REGEX(LCASE(?stadium), '.*{$safe}.*'))";
-                    break;
-                case 'location':
-                    $filter = "FILTER (REGEX(LCASE(?location), '.*{$safe}.*'))";
-                    break;
-                case 'owner':
-                    $filter = "FILTER (REGEX(LCASE(?owner), '.*{$safe}.*'))";
-                    break;
-                case 'all':
-                default:
-                    $filter = "
-                        FILTER (
-                            REGEX(LCASE(?team), '.*{$safe}.*') ||
-                            REGEX(LCASE(?alt), '.*{$safe}.*') ||
-                            REGEX(LCASE(?country), '.*{$safe}.*') ||
-                            REGEX(LCASE(?location), '.*{$safe}.*') ||
-                            REGEX(LCASE(?stadium), '.*{$safe}.*') ||
-                            REGEX(LCASE(?coach), '.*{$safe}.*') ||
-                            REGEX(LCASE(?owner), '.*{$safe}.*')
-                        )
-                    ";
-                    break;
-            }
-        }
-
-        // SPARQL UNTUK SCHEMA.ORG
         $query = "
-            PREFIX schema: <http://schema.org/>
+            PREFIX schema1: <http://schema.org/>
+            PREFIX ex: <http://example.com/>
 
-            SELECT ?club ?team ?alt ?country ?location ?stadium ?coach ?owner ?logo
+            SELECT ?club ?teamName ?country ?coach ?logo
+                   (GROUP_CONCAT(DISTINCT ?playerName; separator=\", \") AS ?players)
             WHERE {
-                ?club a schema:SportsTeam ;
-                      schema:name ?team ;
-                      schema:alternateName ?alt ;
-                      schema:addressCountry ?country ;
-                      schema:homeLocation ?location ;
-                      schema:homeStadium ?stadium ;
-                      schema:coach ?coach ;
-                      schema:owner ?owner ;
-                      schema:logo ?logo .
-                $filter
+                ?club a schema1:SportsTeam ;
+                      schema1:name ?teamName ;
+                      schema1:addressCountry ?country ;
+                      schema1:coach ?coach ;
+                      schema1:logo ?logo ;
+                      ex:player ?playerName .
             }
-            ORDER BY ?team
-            LIMIT 300
+            GROUP BY ?club ?teamName ?country ?coach ?logo
+            ORDER BY ?teamName
         ";
 
         try {
@@ -101,279 +40,110 @@ class FootballController extends Controller
             $results = $data['results']['bindings'] ?? [];
 
         } catch (\Exception $e) {
-            return view('football', [
-                'results' => [],
-                'search' => $search,
-                'criteria' => $criteria,
-                'error' => $e->getMessage(),
-            ]);
+            return view('football', ['results' => [], 'error' => $e->getMessage()]);
         }
 
-        return view('football', compact('results', 'search', 'criteria'));
+        return view('football', compact('results'));
     }
 
-    // METHOD BARU UNTUK AUTOSUGGEST/SEARCH-AS-YOU-TYPE
-    public function autosuggest(Request $request)
-    {
-        $sparqlEndpoint = 'http://localhost:3030/football/query';
 
-        $search = strtolower(trim($request->query('q', '')));
 
-        // NORMALISASI TYPO
-        $replacements = [
-            '0' => 'o',
-            '1' => 'i',
-            '3' => 'e',
-            '4' => 'a',
-            '5' => 's',
-            '7' => 't',
-            '@' => 'a',
-            '$' => 's',
-            '!' => 'i'
-        ];
-        $search = strtr($search, $replacements);
-
-        $results = [];
-
-        if (strlen($search) >= 1) { // Mulai suggest dari 1 karakter
-            $safe = preg_quote($search, '/');
-
-            $query = "
-                PREFIX schema: <http://schema.org/>
-
-                SELECT DISTINCT ?team ?country ?coach ?stadium ?location
-                WHERE {
-                    ?club a schema:SportsTeam ;
-                          schema:name ?team ;
-                          schema:addressCountry ?country ;
-                          schema:homeLocation ?location ;
-                          schema:homeStadium ?stadium ;
-                          schema:coach ?coach .
-                    FILTER (
-                        REGEX(LCASE(?team), '.*{$safe}.*') ||
-                        REGEX(LCASE(?country), '.*{$safe}.*') ||
-                        REGEX(LCASE(?location), '.*{$safe}.*') ||
-                        REGEX(LCASE(?stadium), '.*{$safe}.*') ||
-                        REGEX(LCASE(?coach), '.*{$safe}.*')
-                    )
-                }
-                LIMIT 10
-            ";
-
-            try {
-                $client = new Client(['timeout' => 10]);
-                $response = $client->post($sparqlEndpoint, [
-                    'form_params' => ['query' => $query],
-                    'headers' => ['Accept' => 'application/sparql-results+json']
-                ]);
-
-                $data = json_decode($response->getBody(), true);
-                $results = $data['results']['bindings'] ?? [];
-
-            } catch (\Exception $e) {
-                // Return empty array jika error
-                return response()->json([]);
-            }
-        }
-
-        return response()->json($results);
-    }
-
-    // METHOD UNTUK REAL-TIME SEARCH (halaman langsung menampilkan hasil saat ketik)
-    public function realtimeSearch(Request $request)
-    {
-        $sparqlEndpoint = 'http://localhost:3030/football/query';
-
-        $search = strtolower(trim($request->query('q', '')));
-
-        // NORMALISASI TYPO
-        $replacements = [
-            '0' => 'o',
-            '1' => 'i',
-            '3' => 'e',
-            '4' => 'a',
-            '5' => 's',
-            '7' => 't',
-            '@' => 'a',
-            '$' => 's',
-            '!' => 'i'
-        ];
-        $search = strtr($search, $replacements);
-
-        $filter = '';
-        if ($search) {
-            $safe = preg_quote($search, '/');
-            $filter = "
-                FILTER (
-                    REGEX(LCASE(?team), '.*{$safe}.*') ||
-                    REGEX(LCASE(?alt), '.*{$safe}.*') ||
-                    REGEX(LCASE(?country), '.*{$safe}.*') ||
-                    REGEX(LCASE(?location), '.*{$safe}.*') ||
-                    REGEX(LCASE(?stadium), '.*{$safe}.*') ||
-                    REGEX(LCASE(?coach), '.*{$safe}.*') ||
-                    REGEX(LCASE(?owner), '.*{$safe}.*')
-                )
-            ";
-        }
-
-        $query = "
-            PREFIX schema: <http://schema.org/>
-
-            SELECT ?club ?team ?alt ?country ?location ?stadium ?coach ?owner ?logo
-            WHERE {
-                ?club a schema:SportsTeam ;
-                      schema:name ?team ;
-                      schema:alternateName ?alt ;
-                      schema:addressCountry ?country ;
-                      schema:homeLocation ?location ;
-                      schema:homeStadium ?stadium ;
-                      schema:coach ?coach ;
-                      schema:owner ?owner ;
-                      schema:logo ?logo .
-                $filter
-            }
-            ORDER BY ?team
-            LIMIT 50
-        ";
-
-        try {
-            $client = new Client(['timeout' => 10]);
-            $response = $client->post($sparqlEndpoint, [
-                'form_params' => ['query' => $query],
-                'headers' => ['Accept' => 'application/sparql-results+json']
-            ]);
-
-            $data = json_decode($response->getBody(), true);
-            $results = $data['results']['bindings'] ?? [];
-
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
-
-        return response()->json(['results' => $results, 'search' => $search]);
-    }
-
-    // METHOD UNTUK PENCARIAN SPESIFIK BERDASARKAN FIELD
-    public function searchByField(Request $request, $field, $value)
-    {
-        $sparqlEndpoint = 'http://localhost:3030/football/query';
-
-        $safeValue = preg_quote(strtolower($value), '/');
-
-        $query = "
-            PREFIX schema: <http://schema.org/>
-
-            SELECT ?club ?team ?alt ?country ?location ?stadium ?coach ?owner ?logo
-            WHERE {
-                ?club a schema:SportsTeam ;
-                      schema:name ?team ;
-                      schema:alternateName ?alt ;
-                      schema:addressCountry ?country ;
-                      schema:homeLocation ?location ;
-                      schema:homeStadium ?stadium ;
-                      schema:coach ?coach ;
-                      schema:owner ?owner ;
-                      schema:logo ?logo .
-                FILTER (REGEX(LCASE(?$field), '.*{$safeValue}.*'))
-            }
-            ORDER BY ?team
-            LIMIT 300
-        ";
-
-        try {
-            $client = new Client(['timeout' => 15]);
-            $response = $client->post($sparqlEndpoint, [
-                'form_params' => ['query' => $query],
-                'headers' => ['Accept' => 'application/sparql-results+json']
-            ]);
-
-            $data = json_decode($response->getBody(), true);
-            $results = $data['results']['bindings'] ?? [];
-
-        } catch (\Exception $e) {
-            return view('football', [
-                'results' => [],
-                'search' => $value,
-                'criteria' => $field,
-                'error' => $e->getMessage(),
-            ]);
-        }
-
-        return view('football', [
-            'results' => $results,
-            'search' => $value,
-            'criteria' => $field
-        ]);
-    }
-
-    // METHOD CONVENIENCE UNTUK ROUTE SPESIFIK
-    public function byCountry($country)
-    {
-        return $this->searchByField(new Request(), 'country', $country);
-    }
-
-    public function byCoach($coach)
-    {
-        return $this->searchByField(new Request(), 'coach', $coach);
-    }
-
-    public function byStadium($stadium)
-    {
-        return $this->searchByField(new Request(), 'stadium', $stadium);
-    }
-
-    public function byLocation($location)
-    {
-        return $this->searchByField(new Request(), 'location', $location);
-    }
-
-    public function byOwner($owner)
-    {
-        return $this->searchByField(new Request(), 'owner', $owner);
-    }
-
+    // ===========================
+    // DETAIL CLUB + DETAIL PLAYER
+    // ===========================
     public function show($id)
     {
-        $sparqlEndpoint = 'http://localhost:3030/football/query';
+        $sparqlEndpoint = 'http://localhost:3030/gas/query';
 
-        // DETAIL QUERY SESUAI RDF SCHEMA.ORG
-        $query = "
-            PREFIX schema: <http://schema.org/>
+        // DETAIL CLUB
+        $clubQuery = "
+            PREFIX schema1: <http://schema.org/>
+            PREFIX ex: <http://example.com/>
 
-            SELECT ?team ?alt ?country ?location ?stadium ?coach ?owner ?logo
+            SELECT ?team ?country ?coach ?logo ?location ?founding
+                   (GROUP_CONCAT(DISTINCT ?playerName; separator=\", \") AS ?playerList)
             WHERE {
-                ?club a schema:SportsTeam ;
-                      schema:name ?team ;
-                      schema:alternateName ?alt ;
-                      schema:addressCountry ?country ;
-                      schema:homeLocation ?location ;
-                      schema:homeStadium ?stadium ;
-                      schema:coach ?coach ;
-                      schema:owner ?owner ;
-                      schema:logo ?logo .
-                FILTER(STR(?club) = 'http://example.com/resource/{$id}')
+                ?club a schema1:SportsTeam ;
+                      schema1:name ?team ;
+                      schema1:addressCountry ?country ;
+                      schema1:coach ?coach ;
+                      schema1:logo ?logo ;
+                      schema1:homeLocation ?location ;
+                      schema1:foundingDate ?founding ;
+                      ex:player ?playerName .
+
+                FILTER(STR(?club) = 'http://example.com/team/{$id}')
             }
-            LIMIT 1
+            GROUP BY ?team ?country ?coach ?logo ?location ?founding
+        ";
+
+        // AMBIL SEMUA PLAYER DETAIL
+        $allPlayersQuery = "
+            PREFIX schema1: <http://schema.org/>
+            PREFIX ex: <http://example.com/>
+
+            SELECT ?player ?name ?position ?nationality ?birth
+            WHERE {
+                ?player a schema1:Person ;
+                        schema1:name ?name .
+
+                OPTIONAL { ?player ex:position ?position . }
+                OPTIONAL { ?player schema1:nationality ?nationality . }
+                OPTIONAL { ?player schema1:birthDate ?birth . }
+            }
         ";
 
         try {
             $client = new Client(['timeout' => 15]);
-            $response = $client->post($sparqlEndpoint, [
-                'form_params' => ['query' => $query],
+
+            // DETAIL CLUB
+            $clubRes = $client->post($sparqlEndpoint, [
+                'form_params' => ['query' => $clubQuery],
                 'headers' => ['Accept' => 'application/sparql-results+json']
             ]);
+            $club = json_decode($clubRes->getBody(), true)['results']['bindings'][0] ?? null;
 
-            $data = json_decode($response->getBody(), true);
-            $club = $data['results']['bindings'][0] ?? null;
+            if (!$club) {
+                return view('clubdetail', [
+                    'club' => null,
+                    'players' => [],
+                    'id' => $id
+                ]);
+            }
+
+            // LIST PLAYER DARI CLUB (STRING)
+            $clubPlayerNames = array_map('trim', explode(',', $club['playerList']['value']));
+
+            // SEMUA PLAYER DETAIL
+            $allPlayersRes = $client->post($sparqlEndpoint, [
+                'form_params' => ['query' => $allPlayersQuery],
+                'headers' => ['Accept' => 'application/sparql-results+json']
+            ]);
+            $allPlayers = json_decode($allPlayersRes->getBody(), true)['results']['bindings'] ?? [];
+
+            // MATCHING BERDASARKAN NAMA
+            $teamPlayers = [];
+            foreach ($allPlayers as $p) {
+                $name = $p['name']['value'];
+
+                if (in_array($name, $clubPlayerNames)) {
+                    $teamPlayers[] = $p;
+                }
+            }
 
         } catch (\Exception $e) {
             return view('clubdetail', [
                 'club' => null,
+                'players' => [],
                 'id' => $id,
                 'error' => $e->getMessage(),
             ]);
         }
 
-        return view('clubdetail', compact('club', 'id'));
+        return view('clubdetail', [
+            'club' => $club,
+            'players' => $teamPlayers,
+            'id' => $id,
+        ]);
     }
 }

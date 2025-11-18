@@ -6,6 +6,7 @@
     <title>{{ $club['team']['value'] ?? 'Club Detail' }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     
     <style>
         :root {
@@ -48,12 +49,18 @@
             height: 100%;
         }
         
-        .club-info-card {
+        .club-info-card, .stadium-card {
             background: white;
             border-radius: 20px;
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .stadium-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         
         .info-item {
@@ -78,7 +85,27 @@
             color: #5f6368;
         }
         
-        .players-section {
+        .stadium-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+        
+        .stadium-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stadium-feature i {
+            width: 20px;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .players-section, .stadium-section {
             background: white;
             border-radius: 20px;
             padding: 2rem;
@@ -149,13 +176,65 @@
             font-weight: 600;
         }
         
+        .capacity-badge {
+            background: linear-gradient(135deg, var(--secondary-color), #2ecc71);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .stadium-map {
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 1rem;
+            border: 2px solid #e9ecef;
+        }
+        
+        .map-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .map-link:hover {
+            background: #0d1f3d;
+            color: white;
+        }
+        
+        .satellite-view-btn {
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 10px;
+            padding: 8px 15px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+            border: none;
+        }
+        
+        .satellite-view-btn:hover {
+            background: #2a8c4a;
+            color: white;
+        }
+        
         @media (max-width: 768px) {
             .club-header {
                 border-radius: 0 0 20px 20px;
                 padding: 2rem 0;
             }
             
-            .club-logo, .club-info-card {
+            .club-logo, .club-info-card, .stadium-card {
                 padding: 1.5rem;
             }
         }
@@ -210,20 +289,113 @@
                             <div class="info-value">{{ $club['coach']['value'] }}</div>
                         </div>
                         
-                        <div class="info-item">
-                            <div class="info-label"><i class="fas fa-map-marker-alt me-2"></i> Lokasi</div>
-                            <div class="info-value">{{ $club['location']['value'] }}</div>
-                        </div>
+                     
                         
                         <div class="info-item">
                             <div class="info-label"><i class="fas fa-calendar-alt me-2"></i> Tahun Berdiri</div>
                             <div class="info-value">{{ $club['founding']['value'] }}</div>
                         </div>
-                        
-
                     </div>
                 </div>
             </div>
+
+            <!-- Stadium Section -->
+            @if(isset($stadium) && $stadium)
+            <div class="stadium-section">
+                <h3 class="fw-bold mb-4">Stadion Klub</h3>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="stadium-card">
+                            <h4 class="fw-bold mb-3">{{ $stadium['name']['value'] ?? 'Stadium Name' }}</h4>
+                            
+                            @if(isset($stadium['capacity']['value']))
+                            <div class="capacity-badge">
+                                <i class="fas fa-users me-1"></i> Kapasitas: {{ number_format($stadium['capacity']['value']) }} penonton
+                            </div>
+                            @endif
+                            
+                            @if(isset($stadium['address']['value']))
+                            <div class="stadium-feature">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>{{ $stadium['address']['value'] }}</span>
+                            </div>
+                            @endif
+                            
+                            @if(isset($stadium['geo']['value']))
+                            <div class="stadium-feature">
+                                <i class="fas fa-globe-americas"></i>
+                                <span>Koordinat: {{ $stadium['geo']['value'] }}</span>
+                            </div>
+                            
+                            <!-- Peta Interaktif -->
+                            <div class="stadium-map" id="stadiumMap"></div>
+                            
+                            <div class="mt-2">
+                                <a href="#" id="googleMapsLink" target="_blank" class="map-link">
+                                    <i class="fas fa-map-marked-alt"></i> Buka di Google Maps
+                                </a>
+                                <button id="satelliteView" class="satellite-view-btn">
+                                    <i class="fas fa-satellite"></i> Tampilan Satelit
+                                </button>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="stadium-card">
+                            <h5 class="fw-bold mb-3">Fasilitas Stadion</h5>
+                            
+                            <div class="stadium-feature">
+                                <i class="fas fa-chair"></i>
+                                <span>Kursi berkualitas premium</span>
+                            </div>
+                            
+                            <div class="stadium-feature">
+                                <i class="fas fa-utensils"></i>
+                                <span>Area makanan dan minuman</span>
+                            </div>
+                            
+                            <div class="stadium-feature">
+                                <i class="fas fa-restroom"></i>
+                                <span>Fasilitas toilet yang memadai</span>
+                            </div>
+                            
+                            <div class="stadium-feature">
+                                <i class="fas fa-parking"></i>
+                                <span>Area parkir yang luas</span>
+                            </div>
+                            
+                            <div class="stadium-feature">
+                                <i class="fas fa-first-aid"></i>
+                                <span>Klinik kesehatan</span>
+                            </div>
+                            
+                            <div class="stadium-feature">
+                                <i class="fas fa-store"></i>
+                                <span>Toko merchandise klub</span>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h6 class="fw-bold">Aksesibilitas:</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-primary">Transportasi Umum</span>
+                                    <span class="badge bg-success">Akses Disabilitas</span>
+                                    <span class="badge bg-info">WiFi Gratis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @else
+            <div class="stadium-section">
+                <div class="alert alert-info">
+                    <h5><i class="fas fa-info-circle me-2"></i>Informasi Stadium</h5>
+                    <p class="mb-0">Data stadium untuk klub ini sedang tidak tersedia.</p>
+                </div>
+            </div>
+            @endif
 
             <!-- Players Section -->
             <div class="players-section">
@@ -235,7 +407,6 @@
                 </div>
                 
                 <div class="row" id="playerList">
-                    
                     @foreach($players as $player)
                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4 player-item">
                             <div class="player-card text-center">
@@ -244,17 +415,16 @@
                                 </div>
                                 <div class="player-name">{{ $player['name']['value'] }}</div>
                                 <div class="player-position">
-    {{ $player['position']['value'] ?? 'Unknown Position' }}
-</div>
-
-                               <div class="player-nationality">
-    <i class="fas fa-flag me-1"></i> 
-    {{ $player['nationality']['value'] ?? '-' }}
-</div>
-<div class="player-birth">
-    <i class="fas fa-calendar me-1"></i>
-    {{ $player['birth']['value'] ?? '-' }}
-</div>
+                                    {{ $player['position']['value'] ?? 'Unknown Position' }}
+                                </div>
+                                <div class="player-nationality">
+                                    <i class="fas fa-flag me-1"></i> 
+                                    {{ $player['nationality']['value'] ?? '-' }}
+                                </div>
+                                <div class="player-birth">
+                                    <i class="fas fa-calendar me-1"></i>
+                                    {{ $player['birth']['value'] ?? '-' }}
+                                </div>
                             </div>
                         </div>
                     @endforeach
@@ -268,10 +438,86 @@
         @endif
     </div>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     
     <script>
+        // Fungsi untuk memproses data koordinat dari RDF
+        function parseCoordinates(geoValue) {
+            if (!geoValue) return null;
+            
+            // Format yang diharapkan: "45.47805556 9.12388889" atau "45.47805556, 9.12388889"
+            const coords = geoValue.split(/[\s,]+/).filter(coord => coord.trim() !== '');
+            
+            if (coords.length >= 2) {
+                const lat = parseFloat(coords[0]);
+                const lng = parseFloat(coords[1]);
+                
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    return [lat, lng];
+                }
+            }
+            
+            return null;
+        }
+
+        // Inisialisasi peta jika ada data koordinat
+        @if(isset($stadium['geo']['value']))
+        document.addEventListener('DOMContentLoaded', function() {
+            const geoValue = "{{ $stadium['geo']['value'] }}";
+            const coordinates = parseCoordinates(geoValue);
+            
+            if (coordinates) {
+                // Inisialisasi peta Leaflet
+                const map = L.map('stadiumMap').setView(coordinates, 16);
+                
+                // Tambahkan tile layer (peta dasar)
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                // Tambahkan marker untuk stadion
+                const stadiumMarker = L.marker(coordinates).addTo(map);
+                stadiumMarker.bindPopup("<b>{{ $stadium['name']['value'] ?? 'Stadium' }}</b><br>{{ $stadium['address']['value'] ?? '' }}").openPopup();
+                
+                // Tambahkan lingkaran untuk menunjukkan area sekitar stadion
+                L.circle(coordinates, {
+                    color: 'blue',
+                    fillColor: '#1a73e8',
+                    fillOpacity: 0.1,
+                    radius: 300
+                }).addTo(map);
+                
+                // Update link Google Maps
+                const googleMapsLink = document.getElementById('googleMapsLink');
+                googleMapsLink.href = `https://www.google.com/maps?q=${coordinates[0]},${coordinates[1]}`;
+                
+                // Event untuk tombol tampilan satelit
+                document.getElementById('satelliteView').addEventListener('click', function() {
+                    window.open(`https://www.google.com/maps/@?api=1&map_action=map&center=${coordinates[0]},${coordinates[1]}&zoom=17&basemap=satellite`, '_blank');
+                });
+                
+                // Event untuk membuka Google Maps saat marker diklik
+                stadiumMarker.on('click', function() {
+                    window.open(`https://www.google.com/maps?q=${coordinates[0]},${coordinates[1]}`, '_blank');
+                });
+            } else {
+                // Jika koordinat tidak valid, sembunyikan peta dan tampilkan pesan
+                document.getElementById('stadiumMap').innerHTML = `
+                    <div class="h-100 d-flex align-items-center justify-content-center bg-light rounded">
+                        <div class="text-center text-muted">
+                            <i class="fas fa-map-marked-alt fa-2x mb-2"></i>
+                            <p>Koordinat tidak valid untuk menampilkan peta</p>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('googleMapsLink').style.display = 'none';
+                document.getElementById('satelliteView').style.display = 'none';
+            }
+        });
+        @endif
+
+        // Fungsi pencarian pemain
         document.getElementById('playerSearch').addEventListener('input', function() {
             const keyword = this.value.toLowerCase();
             const players = document.querySelectorAll('.player-item');

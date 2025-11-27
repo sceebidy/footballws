@@ -7,15 +7,19 @@ use GuzzleHttp\Client;
 
 class FootballController extends Controller
 {
+    // ===========================
+    // HALAMAN UTAMA
+    // ===========================
     public function index(Request $request)
     {
         $sparqlEndpoint = 'http://localhost:3030/tugasbesar/query';
 
+        // Menambahkan stadiumName tetapi tidak mengubah fungsi utama
         $query = "
             PREFIX schema1: <http://schema.org/>
             PREFIX ex: <http://example.com/>
 
-            SELECT ?club ?teamName ?country ?coach ?logo
+            SELECT ?club ?teamName ?country ?coach ?logo ?stadiumName
                    (GROUP_CONCAT(DISTINCT ?playerName; separator=\", \") AS ?players)
             WHERE {
                 ?club a schema1:SportsTeam ;
@@ -24,8 +28,13 @@ class FootballController extends Controller
                       schema1:coach ?coach ;
                       schema1:logo ?logo ;
                       ex:player ?playerName .
+
+                OPTIONAL {
+                    ?club schema1:homeLocation ?stadiumIRI .
+                    ?stadiumIRI schema1:name ?stadiumName .
+                }
             }
-            GROUP BY ?club ?teamName ?country ?coach ?logo
+            GROUP BY ?club ?teamName ?country ?coach ?logo ?stadiumName
             ORDER BY ?teamName
         ";
 
@@ -40,20 +49,23 @@ class FootballController extends Controller
             $results = $data['results']['bindings'] ?? [];
 
         } catch (\Exception $e) {
-            return view('football', ['results' => [], 'error' => $e->getMessage()]);
+            return view('football', [
+                'results' => [],
+                'error' => $e->getMessage()
+            ]);
         }
 
         return view('football', compact('results'));
     }
 
     // ===========================
-    // DETAIL CLUB + DETAIL PLAYER + STADIUM
+    // DETAIL CLUB + PLAYER + STADIUM
     // ===========================
     public function show($id)
     {
         $sparqlEndpoint = 'http://localhost:3030/tugasbesar/query';
 
-        // DETAIL CLUB
+        // CLUB DETAIL
         $clubQuery = "
             PREFIX schema1: <http://schema.org/>
             PREFIX ex: <http://example.com/>
@@ -77,10 +89,9 @@ class FootballController extends Controller
             GROUP BY ?team ?country ?coach ?logo ?location ?founding ?stadium
         ";
 
-        // DETAIL STADIUM - QUERY YANG DIPERBAIKI UNTUK MENGAMBIL DATA LENGKAP
+        // STADIUM DETAIL
         $stadiumQuery = "
             PREFIX schema1: <http://schema.org/>
-            PREFIX ex: <http://example.com/>
 
             SELECT ?stadium ?name ?capacity ?address ?geo
             WHERE {
@@ -100,7 +111,7 @@ class FootballController extends Controller
             LIMIT 1
         ";
 
-        // DETAIL PLAYER DENGAN GAMBAR
+        // ALL PLAYER DETAIL
         $allPlayersQuery = "
             PREFIX schema1: <http://schema.org/>
             PREFIX ex: <http://example.com/>
@@ -120,7 +131,7 @@ class FootballController extends Controller
         try {
             $client = new Client(['timeout' => 15]);
 
-            // DETAIL CLUB
+            // CLUB DETAIL
             $clubRes = $client->post($sparqlEndpoint, [
                 'form_params' => ['query' => $clubQuery],
                 'headers' => ['Accept' => 'application/sparql-results+json']
@@ -137,7 +148,7 @@ class FootballController extends Controller
                 ]);
             }
 
-            // DETAIL STADIUM - QUERY YANG BENAR
+            // STADIUM
             $stadiumRes = $client->post($sparqlEndpoint, [
                 'form_params' => ['query' => $stadiumQuery],
                 'headers' => ['Accept' => 'application/sparql-results+json']
@@ -145,23 +156,25 @@ class FootballController extends Controller
             $stadiumData = json_decode($stadiumRes->getBody(), true);
             $stadium = $stadiumData['results']['bindings'][0] ?? null;
 
-            // LIST PLAYER DARI CLUB (STRING)
-            $clubPlayerNames = array_map('trim', explode(',', $club['playerList']['value']));
+            // PLAYER STRING → ARRAY
+            $clubPlayerNames = isset($club['playerList']['value'])
+                ? array_map('trim', explode(',', $club['playerList']['value']))
+                : [];
 
-            // SEMUA PLAYER DETAIL
+            // ALL PLAYERS
             $allPlayersRes = $client->post($sparqlEndpoint, [
                 'form_params' => ['query' => $allPlayersQuery],
                 'headers' => ['Accept' => 'application/sparql-results+json']
             ]);
+
             $allPlayersData = json_decode($allPlayersRes->getBody(), true);
             $allPlayers = $allPlayersData['results']['bindings'] ?? [];
 
-            // MATCHING BERDASARKAN NAMA
+            // MATCH PLAYERS
             $teamPlayers = [];
             foreach ($allPlayers as $p) {
-                $name = $p['name']['value'];
-
-                if (in_array($name, $clubPlayerNames)) {
+                if (isset($p['name']['value']) &&
+                    in_array($p['name']['value'], $clubPlayerNames)) {
                     $teamPlayers[] = $p;
                 }
             }
@@ -172,7 +185,7 @@ class FootballController extends Controller
                 'players' => [],
                 'stadium' => null,
                 'id' => $id,
-                'error' => $e->getMessage(),
+                'error' => $e->getMessage()
             ]);
         }
 
@@ -180,18 +193,20 @@ class FootballController extends Controller
             'club' => $club,
             'players' => $teamPlayers,
             'stadium' => $stadium,
-            'id' => $id,
+            'id' => $id
         ]);
     }
 
     // ===========================
-    // SEARCH FUNCTIONALITY
+    // SEARCH FUNCTION
     // ===========================
     public function search(Request $request)
     {
-        $searchTerm = $request->input('search');
+        $searchTerm = trim($request->input('search', ''));
         $sparqlEndpoint = 'http://localhost:3030/tugasbesar/query';
+        $safeSearch = addslashes($searchTerm);
 
+        // SUPPORT: team, country, coach, players, stadium name
         $query = "
             PREFIX schema1: <http://schema.org/>
             PREFIX ex: <http://example.com/>
@@ -206,9 +221,18 @@ class FootballController extends Controller
                       schema1:logo ?logo ;
                       ex:player ?playerName .
 
-                FILTER(REGEX(LCASE(?teamName), LCASE(\"$searchTerm\")) || 
-                       REGEX(LCASE(?country), LCASE(\"$searchTerm\")) ||
-                       REGEX(LCASE(?coach), LCASE(\"$searchTerm\")))
+                OPTIONAL {
+                    ?club schema1:homeLocation ?stadiumIRI .
+                    ?stadiumIRI schema1:name ?stadiumName .
+                }
+
+                FILTER(
+                    REGEX(LCASE(?teamName), LCASE(\"$safeSearch\")) ||
+                    REGEX(LCASE(?country), LCASE(\"$safeSearch\")) ||
+                    REGEX(LCASE(?coach), LCASE(\"$safeSearch\")) ||
+                    REGEX(LCASE(?playerName), LCASE(\"$safeSearch\")) ||
+                    REGEX(LCASE(?stadiumName), LCASE(\"$safeSearch\"))
+                )
             }
             GROUP BY ?club ?teamName ?country ?coach ?logo
             ORDER BY ?teamName
@@ -225,7 +249,10 @@ class FootballController extends Controller
             $results = $data['results']['bindings'] ?? [];
 
         } catch (\Exception $e) {
-            return view('football', ['results' => [], 'error' => $e->getMessage()]);
+            return view('football', [
+                'results' => [],
+                'error' => $e->getMessage()
+            ]);
         }
 
         return view('football', compact('results', 'searchTerm'));

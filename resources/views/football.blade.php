@@ -494,15 +494,21 @@
     // ==============================
     // 5. INTENT DETECTION
     // ==============================
-    function detectIntent(msg) {
-        msg = msg.toLowerCase();
-        if (msg.includes("pelatih") || msg.includes("coach")) return "coach";
-        if (msg.includes("negara") || msg.includes("country")) return "country";
-        if (msg.includes("stadion") || msg.includes("stadium") || msg.includes("arena")) return "stadium";
-        if (msg.includes("pemain") || msg.includes("player")) return "playerlist";
-        if (msg.startsWith("siapa")) return "coach";
-        return "unknown";
-    }
+    function detectIntents(msg) {
+    msg = msg.toLowerCase();
+    const intents = [];
+
+    if (msg.includes("pelatih") || msg.includes("coach")) intents.push("coach");
+    if (msg.includes("negara")  || msg.includes("country") || msg.includes("asal")) intents.push("country");
+    if (msg.includes("stadion") || msg.includes("stadium") || msg.includes("arena")) intents.push("stadium");
+    if (msg.includes("pemain")  || msg.includes("player")) intents.push("playerlist");
+
+    // kasus pertanyaan "siapa ..."
+    if (msg.startsWith("siapa") && !intents.includes("coach")) intents.push("coach");
+
+    return intents.length ? intents : ["unknown"];
+}
+
 
     // ==============================
 // 6. ENTITY EXTRACTION (CLUB, PLAYER, STADIUM)
@@ -601,7 +607,7 @@ function extractStadium(msg) {
         input.value = "";
 
         const message = msg.toLowerCase();
-        const intent  = detectIntent(message);
+        const intents  = detectIntents(message);
         const club    = extractClub(message);
 
         const foundPlayer = extractPlayer(message);
@@ -617,25 +623,53 @@ function extractStadium(msg) {
         }
 
         if (club) {
-            if (intent === "coach")
-                botReply(`Pelatih <b>${cap(club.name)}</b> adalah <b>${cap(club.coach)}</b>.`);
-            else if (intent === "country")
-                botReply(`<b>${cap(club.name)}</b> berasal dari <b>${cap(club.country)}</b>.`);
-            else if (intent === "stadium")
-                botReply(`Stadion <b>${cap(club.name)}</b> adalah <b>${cap(club.stadium || "Tidak diketahui")}</b>.`);
-            else if (intent === "playerlist") {
-                const list = club.players.map(cap).join(", ");
-                botReply(`Daftar pemain <b>${cap(club.name)}</b>:<br>${list}`);
-            } else {
-                botReply(`
-                    Klub <b>${cap(club.name)}</b><br>
-                    Negara: ${cap(club.country)}<br>
-                    Pelatih: ${cap(club.coach)}<br>
-                    Stadion: ${cap(club.stadium || "Tidak diketahui")}
-                `);
-            }
-            return;
+    let responses = [];
+
+    // Loop semua intent yang ditemukan
+    intents.forEach(intent => {
+
+        if (intent === "coach") {
+            responses.push(
+                `Pelatih <b>${cap(club.name)}</b> adalah <b>${cap(club.coach)}</b>.`
+            );
         }
+
+        if (intent === "country") {
+            responses.push(
+                `<b>${cap(club.name)}</b> berasal dari <b>${cap(club.country)}</b>.`
+            );
+        }
+
+        if (intent === "stadium") {
+            responses.push(
+                `Stadion <b>${cap(club.name)}</b> adalah <b>${cap(club.stadium || "Tidak diketahui")}</b>.`
+            );
+        }
+
+        if (intent === "playerlist") {
+            const list = club.players.map(cap).join(", ");
+            responses.push(
+                `Daftar pemain <b>${cap(club.name)}</b>:<br>${list}`
+            );
+        }
+    });
+
+    // Jika ada jawaban multi-intent
+    if (responses.length > 0) {
+        botReply(responses.join("<br>"));
+        return;
+    }
+
+    // Jika tidak ada intent yang dikenali, tampilkan info klub lengkap
+    botReply(`
+        Klub <b>${cap(club.name)}</b><br>
+        Negara: ${cap(club.country)}<br>
+        Pelatih: ${cap(club.coach)}<br>
+        Stadion: ${cap(club.stadium || "Tidak diketahui")}
+    `);
+
+    return;
+}
 
         const fallback = [
             "Maaf, saya tidak menemukan itu di database RDF.",

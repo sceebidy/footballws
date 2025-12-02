@@ -296,7 +296,7 @@
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-   <script>
+  <script>
     // ==============================
     // ELEMENT DASAR
     // ==============================
@@ -307,7 +307,7 @@
     const noResults     = document.getElementById("noResults");
 
     // ==============================
-    // 1. KUMPULKAN ENTITAS RDF (CLUB, STADIUM, PLAYER) UNTUK SUGGESTION
+    // 1. KUMPULKAN ENTITAS RDF
     // ==============================
     const allEntities = [];
 
@@ -344,19 +344,15 @@
     @endforeach
 
     // ==============================
-    // 2. LEVENSHTEIN DISTANCE (UNTUK SUGGESTION CERDAS)
+    // 2. LEVENSHTEIN DISTANCE
     // ==============================
     function levenshteinDistance(a, b) {
         const matrix = [];
         const alen = a.length;
         const blen = b.length;
 
-        for (let i = 0; i <= blen; i++) {
-            matrix[i] = [i];
-        }
-        for (let j = 0; j <= alen; j++) {
-            matrix[0][j] = j;
-        }
+        for (let i = 0; i <= blen; i++) matrix[i] = [i];
+        for (let j = 0; j <= alen; j++) matrix[0][j] = j;
 
         for (let i = 1; i <= blen; i++) {
             for (let j = 1; j <= alen; j++) {
@@ -364,9 +360,9 @@
                     matrix[i][j] = matrix[i - 1][j - 1];
                 } else {
                     matrix[i][j] = Math.min(
-                        matrix[i - 1][j - 1] + 1, // substitution
-                        matrix[i][j - 1] + 1,     // insertion
-                        matrix[i - 1][j] + 1      // deletion
+                        matrix[i - 1][j - 1] + 1,
+                        matrix[i][j - 1] + 1,
+                        matrix[i - 1][j] + 1
                     );
                 }
             }
@@ -374,6 +370,32 @@
         return matrix[blen][alen];
     }
 
+    // ==============================
+    // NORMALISASI UNTUK FUZZY SEARCH
+    // ==============================
+    function normalize(str) {
+        return str
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function fuzzyMatch(keyword, text) {
+        keyword = normalize(keyword);
+        text = normalize(text);
+
+        if (!text) return false;
+        if (text.includes(keyword)) return true;
+
+        const dist = levenshteinDistance(keyword, text);
+        const sim = 1 - (dist / Math.max(keyword.length, text.length));
+
+        return sim >= 0.55;
+    }
+
+    // ==============================
+    // SMART SUGGESTION
+    // ==============================
     function findSmartSuggestion(keyword) {
         keyword = keyword.toLowerCase().trim();
         if (keyword.length < 3) return null;
@@ -390,13 +412,10 @@
             let score = similarity * 50;
 
             if (name.startsWith(keyword)) score += 40;
-
-            const lenDiff = Math.abs(keyword.length - name.length);
-            if (lenDiff <= 2) score += 10;
-
-            if (type === "club")    score += 50;
+            if (Math.abs(keyword.length - name.length) <= 2) score += 10;
+            if (type === "club") score += 50;
             if (type === "stadium") score += 30;
-            if (type === "player")  score += 10;
+            if (type === "player") score += 10;
 
             if (score > bestScore) {
                 bestScore = score;
@@ -404,8 +423,7 @@
             }
         });
 
-        if (bestScore < 50) return null;
-        return bestMatch;
+        return bestScore < 50 ? null : bestMatch;
     }
 
     function showSuggestion(match) {
@@ -413,7 +431,6 @@
             suggestionBox.classList.add("d-none");
             return;
         }
-
         suggestionBox.innerHTML = `
             <div class="suggestion-item">
                 <i class="fas fa-lightbulb me-2 text-warning"></i>
@@ -430,7 +447,7 @@
     }
 
     // ==============================
-    // 3. DATA UNTUK CHATBOT (DARI CARD)
+    // 3. DATA CHATBOT
     // ==============================
     const clubData = [];
     document.querySelectorAll(".club-card").forEach(card => {
@@ -447,7 +464,7 @@
     });
 
     // ==============================
-    // 4. UTIL & HELPERS
+    // 4. UTIL
     // ==============================
     function cap(str) {
         if (!str) return "";
@@ -455,111 +472,125 @@
     }
 
     function botReply(text) {
-        const content = document.getElementById("chatContent");
-        content.innerHTML += `
-            <div style="margin:10px 0; text-align:left;">
-                <div style="
-                    display:inline-block;
-                    background:#e8f0fe;
-                    padding:8px 12px;
-                    border-radius:12px;
-                ">${text}</div>
+        document.getElementById("chatContent").innerHTML += `
+            <div style="margin:10px 0;text-align:left;">
+                <div style="display:inline-block;background:#e8f0fe;padding:8px 12px;border-radius:12px;">
+                    ${text}
+                </div>
             </div>
         `;
-        content.scrollTop = content.scrollHeight;
     }
 
     function userReply(text) {
-        const content = document.getElementById("chatContent");
-        content.innerHTML += `
-            <div style="margin:10px 0; text-align:right;">
-                <div style="
-                    display:inline-block;
-                    background:#d1ecf1;
-                    padding:8px 12px;
-                    border-radius:12px;
-                ">${text}</div>
+        document.getElementById("chatContent").innerHTML += `
+            <div style="margin:10px 0;text-align:right;">
+                <div style="display:inline-block;background:#d1ecf1;padding:8px 12px;border-radius:12px;">
+                    ${text}
+                </div>
             </div>
         `;
-        content.scrollTop = content.scrollHeight;
     }
 
     // ==============================
-    // 5. INTENT DETECTION CHATBOT
+    // 5. INTENT DETECTION
     // ==============================
     function detectIntent(msg) {
         msg = msg.toLowerCase();
-
         if (msg.includes("pelatih") || msg.includes("coach")) return "coach";
-        if (msg.includes("negara")  || msg.includes("country")) return "country";
+        if (msg.includes("negara") || msg.includes("country")) return "country";
         if (msg.includes("stadion") || msg.includes("stadium") || msg.includes("arena")) return "stadium";
-        if (msg.includes("pemain")  || msg.includes("player")) return "playerlist";
-
-        // contoh: "siapa pelatih arsenal"
+        if (msg.includes("pemain") || msg.includes("player")) return "playerlist";
         if (msg.startsWith("siapa")) return "coach";
-
         return "unknown";
     }
 
     // ==============================
-    // 6. ENTITY EXTRACTION UNTUK KLUB & PEMAIN
-    // ==============================
-    function extractClub(msg) {
-        msg = msg.toLowerCase().trim();
+// 6. ENTITY EXTRACTION (CLUB, PLAYER, STADIUM)
+// ==============================
 
-        let bestMatch = null;
-        let bestScore = 0;
+// normalisasi untuk mengatasi "1. FC Köln" vs "fc koln"
+function normalize(str) {
+    return str
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-zA-Z ]/g, "")
+        .toLowerCase()
+        .trim();
+}
 
-        for (const c of clubData) {
-            const name = c.name.toLowerCase();
+// fuzzy matching Levenshtein
+function fuzzyScore(a, b) {
+    const dist = levenshteinDistance(a, b);
+    return 1 - (dist / Math.max(a.length, b.length));
+}
 
-            if (!name) continue;
+function extractClub(msg) {
+    const query = normalize(msg);
 
-            // exact sama
-            if (msg === name) return c;
+    let bestMatch = null;
+    let bestScore = 0;
 
-            // nama klub muncul lengkap di kalimat
-            if (msg.includes(name)) return c;
+    for (const c of clubData) {
+        const name = normalize(c.name);
+        if (!name) continue;
 
-            // token-based matching
-            const msgWords = msg.split(" ");
-            const clubWords = name.split(" ");
+        // perfect match
+        if (query === name) return c;
 
-            let score = 0;
+        // partial match
+        if (name.includes(query) || query.includes(name)) return c;
 
-            clubWords.forEach(cw => {
-                msgWords.forEach(mw => {
-                    if (mw.length > 2 && cw.startsWith(mw)) {
-                        score += 1;
-                    }
-                });
-            });
+        // fuzzy match
+        const score = fuzzyScore(query, name);
 
-            if (score > bestScore) {
-                bestScore = score;
-                bestMatch = c;
-            }
+        if (score > bestScore) {
+            bestScore = score;
+            bestMatch = c;
         }
-
-        return bestScore > 0 ? bestMatch : null;
     }
 
-    function extractPlayer(msg) {
-        msg = msg.toLowerCase();
+    return bestScore >= 0.55 ? bestMatch : null;
+}
 
-        for (const c of clubData) {
-            for (const p of c.players) {
-                if (!p) continue;
-                if (p.includes(msg) || msg.includes(p)) {
-                    return { player: p, club: c };
-                }
-            }
+function extractPlayer(msg) {
+    const query = normalize(msg);
+
+    for (const c of clubData) {
+        for (const p of c.players) {
+            if (!p) continue;
+
+            const pname = normalize(p);
+
+            if (query === pname) return { player: p, club: c };
+            if (pname.includes(query) || query.includes(pname)) return { player: p, club: c };
+
+            const score = fuzzyScore(query, pname);
+            if (score >= 0.65) return { player: p, club: c };
         }
-        return null;
     }
+    return null;
+}
+
+function extractStadium(msg) {
+    const query = normalize(msg);
+
+    for (const c of clubData) {
+        if (!c.stadium) continue;
+
+        const stadium = normalize(c.stadium);
+
+        if (query === stadium) return c;
+        if (stadium.includes(query) || query.includes(stadium)) return c;
+
+        const score = fuzzyScore(query, stadium);
+        if (score >= 0.60) return c;
+    }
+    return null;
+}
+
 
     // ==============================
-    // 7. CHATBOT MAIN LOGIC
+    // 7. CHATBOT LOGIC
     // ==============================
     function processChat() {
         const input = document.getElementById("chatInput");
@@ -573,59 +604,49 @@
         const intent  = detectIntent(message);
         const club    = extractClub(message);
 
-        // ========== CASE: PLAYER NAME ==========
         const foundPlayer = extractPlayer(message);
         if (foundPlayer) {
             botReply(`Pemain <b>${cap(foundPlayer.player)}</b> bermain untuk <b>${cap(foundPlayer.club.name)}</b>.`);
             return;
         }
 
-        // ========== CASE: CLUB FOUND + INTENT ==========
-        if (club) {
-            if (intent === "coach") {
-                botReply(`Pelatih <b>${cap(club.name)}</b> adalah <b>${cap(club.coach)}</b>.`);
-                return;
-            }
-
-            if (intent === "country") {
-                botReply(`<b>${cap(club.name)}</b> berasal dari <b>${cap(club.country)}</b>.`);
-                return;
-            }
-
-            if (intent === "stadium") {
-                botReply(`Stadion <b>${cap(club.name)}</b> adalah <b>${cap(club.stadium || "Tidak diketahui")}</b>.`);
-                return;
-            }
-
-            if (intent === "playerlist") {
-                const list = club.players.map(cap).join(", ");
-                botReply(`Daftar pemain <b>${cap(club.name)}</b>: <br>${list}`);
-                return;
-            }
-        }
-
-        // ======= NAMA KLUB SAJA, TANPA INTENT (BIODATA KLUB) =======
-        if (club && intent === "unknown") {
-            botReply(`
-                Klub <b>${cap(club.name)}</b><br>
-                Negara: ${cap(club.country)}<br>
-                Pelatih: ${cap(club.coach)}<br>
-                Stadion: ${cap(club.stadium || "Tidak diketahui")}
-            `);
+        const stadiumClub = extractStadium(message);
+        if (stadiumClub) {
+            botReply(`Stadion <b>${cap(stadiumClub.name)}</b> adalah <b>${cap(stadiumClub.stadium)}</b>.`);
             return;
         }
 
-        // ========== FALLBACK ==========
+        if (club) {
+            if (intent === "coach")
+                botReply(`Pelatih <b>${cap(club.name)}</b> adalah <b>${cap(club.coach)}</b>.`);
+            else if (intent === "country")
+                botReply(`<b>${cap(club.name)}</b> berasal dari <b>${cap(club.country)}</b>.`);
+            else if (intent === "stadium")
+                botReply(`Stadion <b>${cap(club.name)}</b> adalah <b>${cap(club.stadium || "Tidak diketahui")}</b>.`);
+            else if (intent === "playerlist") {
+                const list = club.players.map(cap).join(", ");
+                botReply(`Daftar pemain <b>${cap(club.name)}</b>:<br>${list}`);
+            } else {
+                botReply(`
+                    Klub <b>${cap(club.name)}</b><br>
+                    Negara: ${cap(club.country)}<br>
+                    Pelatih: ${cap(club.coach)}<br>
+                    Stadion: ${cap(club.stadium || "Tidak diketahui")}
+                `);
+            }
+            return;
+        }
+
         const fallback = [
             "Maaf, saya tidak menemukan itu di database RDF.",
-            "Coba tanya tentang klub, pelatih, negara, stadion, atau pemain.",
+            "Coba tanya tentang klub, pemain, pelatih, stadion, atau negara.",
             "Saya tidak paham maksudnya. Coba lebih spesifik."
         ];
         botReply(fallback[Math.floor(Math.random() * fallback.length)]);
     }
 
     // ==============================
-    // 8. SEARCH INPUT (FILTER + SUGGESTION + HIGHLIGHT)
+    // 8. SEARCH FILTER + FUZZY (UPGRADE)
     // ==============================
     searchInput.addEventListener("input", function () {
         const keyword = this.value.toLowerCase().trim();
@@ -645,11 +666,11 @@
 
             const match =
                 !keyword ||
-                name.includes(keyword) ||
-                coach.includes(keyword) ||
-                country.includes(keyword) ||
-                players.includes(keyword) ||
-                stadium.includes(keyword);
+                fuzzyMatch(keyword, name) ||
+                fuzzyMatch(keyword, coach) ||
+                fuzzyMatch(keyword, country) ||
+                fuzzyMatch(keyword, players) ||
+                fuzzyMatch(keyword, stadium);
 
             card.style.display = match ? "block" : "none";
             if (match) visibleCount++;
@@ -663,22 +684,6 @@
         } else {
             suggestionBox.classList.add("d-none");
         }
-
-        document.querySelectorAll(".club-name, .club-coach, .club-country").forEach(el => {
-            const original = el.getAttribute("data-original-text") || el.textContent;
-            if (!el.getAttribute("data-original-text")) {
-                el.setAttribute("data-original-text", original);
-            }
-
-            if (keyword) {
-                const regex = new RegExp(keyword, "gi");
-                el.innerHTML = original.replace(regex, match =>
-                    `<span class="highlight">${match}</span>`
-                );
-            } else {
-                el.innerHTML = original;
-            }
-        });
     });
 
     // ==============================
@@ -692,7 +697,7 @@
             const ca = a.dataset.country || "";
             const cb = b.dataset.country || "";
 
-            if (this.value === "asc")  return ca.localeCompare(cb);
+            if (this.value === "asc") return ca.localeCompare(cb);
             if (this.value === "desc") return cb.localeCompare(ca);
             return 0;
         });
@@ -701,7 +706,7 @@
     });
 
     // ==============================
-    // 10. TUTUP SUGGESTION JIKA KLIK DI LUAR
+    // 10. TUTUP SUGGESTION
     // ==============================
     document.addEventListener("click", function (e) {
         if (!suggestionBox.contains(e.target) && e.target !== searchInput) {
@@ -710,7 +715,7 @@
     });
 
     // ==============================
-    // 11. CHATBOT EVENT (OPEN/CLOSE & SEND)
+    // 11. CHATBOT EVENT
     // ==============================
     const chatbotButton = document.getElementById("chatbotButton");
     const chatbotWindow = document.getElementById("chatbotWindow");
@@ -718,30 +723,23 @@
     const chatInput     = document.getElementById("chatInput");
 
     chatbotButton.onclick = () => {
-        if (!chatbotWindow.style.display || chatbotWindow.style.display === "none") {
-            chatbotWindow.style.display = "flex";
-        } else {
-            chatbotWindow.style.display = "none";
-        }
+        chatbotWindow.style.display =
+            (!chatbotWindow.style.display || chatbotWindow.style.display === "none")
+                ? "flex"
+                : "none";
     };
 
     chatSend.onclick = processChat;
-
     chatInput.addEventListener("keypress", e => {
         if (e.key === "Enter") processChat();
     });
 
     // ==============================
-    // 12. ANIMASI FADE-IN KARTU
+    // 12. ANIMASI KARTU
     // ==============================
-    document.addEventListener("DOMContentLoaded", function () {
-        const cardEls = document.querySelectorAll(".club-card");
-        cardEls.forEach((card, index) => {
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".club-card").forEach((card, index) => {
             card.style.animationDelay = `${index * 0.08}s`;
         });
     });
 </script>
-
-
-</body>
-</html>
